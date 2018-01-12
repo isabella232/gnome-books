@@ -69,6 +69,7 @@ var EPUBView = new Lang.Class({
 
     createView: function() {
         let view = new Gepub.Widget();
+        view.paginate = true;
 
         this.invertedStyle = new WebKit2.UserStyleSheet(
             'body { background: black; filter: invert(100%); }',
@@ -145,11 +146,11 @@ var EPUBView = new Lang.Class({
     },
 
     goPrev: function() {
-        this._epubdoc.go_prev();
+        this.view.page_prev();
     },
 
     goNext: function() {
-        this._epubdoc.go_next();
+        this.view.page_next();
     },
 
     get hasPages() {
