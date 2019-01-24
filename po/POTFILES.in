@@ -31,7 +31,6 @@ src/mainWindow.js
 src/notifications.js
 src/overview.js
 src/password.js
-src/presentation.js
 src/preview.js
 src/properties.js
 src/search.js

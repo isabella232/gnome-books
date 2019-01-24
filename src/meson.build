@@ -59,7 +59,6 @@ resource_data = files(
   'overview.js',
   'password.js',
   'places.js',
-  'presentation.js',
   'preview.js',
   'properties.js',
   'query.js',
