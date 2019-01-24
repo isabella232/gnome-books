@@ -64,7 +64,6 @@ resource_data = files(
   'searchbar.js',
   'search.js',
   'selections.js',
-  'shellSearchProvider.js',
   'testentry.js',
   'trackerController.js',
   'trackerUtils.js',

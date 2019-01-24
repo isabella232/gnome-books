@@ -40,7 +40,6 @@ const Properties = imports.properties;
 const Query = imports.query;
 const Search = imports.search;
 const Selections = imports.selections;
-const ShellSearchProvider = imports.shellSearchProvider;
 const TrackerController = imports.trackerController;
 const TrackerUtils = imports.trackerUtils;
 const Utils = imports.utils;
@@ -100,7 +99,6 @@ var Application = new Lang.Class({
         this.minersRunning = [];
         this._activationTimestamp = Gdk.CURRENT_TIME;
         this._extractPriority = null;
-        this._searchProvider = null;
 
         let appid;
         GLib.set_application_name(_("Books"));
@@ -199,7 +197,6 @@ var Application = new Lang.Class({
 
         // now init application components
         Search.initSearch(imports.application);
-        Search.initSearch(imports.shellSearchProvider);
 
         modeController = new WindowMode.ModeController();
         offsetCollectionsController = new Search.OffsetCollectionsController();
@@ -242,35 +239,6 @@ var Application = new Lang.Class({
         } catch (e) {
             logError(e, 'Unable to connect to the tracker extractor');
         }
-    },
-
-    vfunc_dbus_register: function(connection, path) {
-        this.parent(connection, path);
-
-        if (this._searchProvider != null)
-            throw(new Error('ShellSearchProvider already instantiated - dbus_register called twice?'));
-
-        this._searchProvider = new ShellSearchProvider.ShellSearchProvider();
-        this._searchProvider.connect('activate-result', Lang.bind(this, this._onActivateResult));
-        this._searchProvider.connect('launch-search', Lang.bind(this, this._onLaunchSearch));
-
-        try {
-            this._searchProvider.export(connection);
-        } catch(e) {
-            this._searchProvider = null;
-            throw(e);
-        }
-
-        return true;
-    },
-
-    vfunc_dbus_unregister: function(connection, path) {
-        if (this._searchProvider != null) {
-            this._searchProvider.unexport(connection);
-            this._searchProvider = null;
-        }
-
-        this.parent(connection, path);
     },
 
     vfunc_handle_local_options: function(options) {
