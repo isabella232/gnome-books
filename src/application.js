@@ -138,16 +138,6 @@ var Application = new Lang.Class({
         this._mainWindow.showAbout();
     },
 
-    _onActionHelp: function() {
-        try {
-            Gtk.show_uri_on_window(this._mainWindow,
-                                   'help:gnome-documents',
-                                   Gtk.get_current_event_time());
-        } catch (e) {
-            logError(e, 'Unable to display help');
-        }
-    },
-
     _onActionNightMode: function(action) {
         let state = action.get_state();
         settings.set_value('night-mode', GLib.Variant.new('b', !state.get_boolean()));
@@ -213,9 +203,6 @@ var Application = new Lang.Class({
               accels: ['<Primary>q'] },
             { name: 'about',
               callback: Lang.bind(this, this._onActionAbout) },
-            { name: 'help',
-              callback: Lang.bind(this, this._onActionHelp),
-              accels: ['F1'] },
             { name: 'night-mode',
               callback: Lang.bind(this, this._onActionNightMode),
               create_hook: Lang.bind(this, this._nightModeCreateHook),
