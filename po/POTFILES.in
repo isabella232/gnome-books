@@ -17,7 +17,6 @@ data/ui/selection-toolbar.ui
 data/ui/view-menu.ui
 src/application.js
 src/documents.js
-src/edit.js
 src/embed.js
 src/epubview.js
 src/evinceview.js

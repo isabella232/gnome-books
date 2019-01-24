@@ -120,10 +120,6 @@ var EvinceView = new Lang.Class({
             this._bookmarks.remove(bookmark);
     },
 
-    _edit: function() {
-        Application.modeController.setWindowMode(WindowMode.WindowMode.EDIT);
-    },
-
     _print: function() {
         let doc = Application.documentManager.getActiveItem();
         if (doc)
@@ -174,8 +170,6 @@ var EvinceView = new Lang.Class({
               state: GLib.Variant.new('b', false),
               stateChanged: Lang.bind(this, this._bookmarkStateChanged),
               accels: ['<Primary>d'] },
-            { name: 'edit-current',
-              callback: Lang.bind(this, this._edit) },
             { name: 'print-current',
               callback: Lang.bind(this, this._print),
               accels: ['<Primary>p'] },
@@ -257,7 +251,6 @@ var EvinceView = new Lang.Class({
         this._onPageChanged();
 
         this.getAction('copy').enabled = false;
-        this.getAction('edit-current').enabled = doc.canEdit();
         this.getAction('print-current').enabled = doc.canPrint(docModel);
         let presentCurrent = this.getAction('present-current');
         if (presentCurrent)

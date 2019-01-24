@@ -27,7 +27,6 @@ var WindowMode = {
     DOCUMENTS: 1,
     PREVIEW_EV: 2,
     PREVIEW_EPUB: 4,
-    EDIT: 5,
     COLLECTIONS: 6,
     SEARCH: 7,
 };
