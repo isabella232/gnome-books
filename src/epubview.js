@@ -169,7 +169,7 @@ var EPUBView = new Lang.Class({
     },
 
     set nightMode(v) {
-        if (this.view && Application.application.isBooks) {
+        if (this.view) {
             if (v)
                 this.view.get_user_content_manager().add_style_sheet(this.invertedStyle);
             else

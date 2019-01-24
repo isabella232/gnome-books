@@ -155,10 +155,7 @@ const FetchCollectionStateForSelectionJob = new Lang.Class({
 
             let application = Gio.Application.get_default();
             let collectionsIdentifier;
-            if (application.isBooks)
-                collectionsIdentifier = Query.LOCAL_BOOKS_COLLECTIONS_IDENTIFIER;
-            else
-                collectionsIdentifier = Query.LOCAL_DOCUMENTS_COLLECTIONS_IDENTIFIER;
+            collectionsIdentifier = Query.LOCAL_BOOKS_COLLECTIONS_IDENTIFIER;
 
             for (let itemIdx in this._collectionsForItems) {
                 let item = Application.documentManager.getItemById(itemIdx);
@@ -851,7 +848,6 @@ var SelectionToolbar = new Lang.Class({
     InternalChildren: [ 'toolbarOpen',
                         'toolbarPrint',
                         'toolbarTrash',
-                        'toolbarShare',
                         'toolbarProperties',
                         'toolbarCollection' ],
 
@@ -869,10 +865,6 @@ var SelectionToolbar = new Lang.Class({
         this._toolbarPrint.connect('clicked', Lang.bind(this, this._onToolbarPrint));
         this._toolbarTrash.connect('clicked', Lang.bind(this, this._onToolbarTrash));
 
-        if (!Application.application.isBooks) {
-            this._toolbarShare.connect('clicked', Lang.bind(this, this._onToolbarShare));
-            this._toolbarShare.show();
-        }
         this._toolbarProperties.connect('clicked', Lang.bind(this, this._onToolbarProperties));
         this._toolbarCollection.connect('clicked', Lang.bind(this, this._onToolbarCollection));
 
@@ -944,7 +936,6 @@ var SelectionToolbar = new Lang.Class({
         let showPrint = false;
         let showProperties = hasSelection;
         let showOpen = hasSelection;
-        let showShare = hasSelection;
         let showCollection = hasSelection;
 
         this._insideRefresh = true;
@@ -956,10 +947,6 @@ var SelectionToolbar = new Lang.Class({
                 if ((doc.defaultAppName) &&
                     (apps.indexOf(doc.defaultAppName) == -1))
                     apps.push(doc.defaultAppName);
-                if (!doc.canShare() ||
-                    (doc.collection != false) ||
-                    (selection.length > 1))
-                    showShare = false;
 
                 showTrash &= doc.canTrash();
             }));
@@ -994,8 +981,6 @@ var SelectionToolbar = new Lang.Class({
         this._toolbarProperties.set_sensitive(showProperties);
         this._toolbarTrash.set_sensitive(showTrash);
         this._toolbarOpen.set_sensitive(showOpen);
-        if (!Application.application.isBooks)
-            this._toolbarShare.set_sensitive(showShare);
         this._toolbarCollection.set_sensitive(showCollection);
 
         this._insideRefresh = false;
@@ -1057,16 +1042,6 @@ var SelectionToolbar = new Lang.Class({
                 dialog.destroy();
                 this._selectionModeAction.change_state(GLib.Variant.new('b', false));
             }));
-    },
-
-   _onToolbarShare: function(widget) {
-       let dialog = new Sharing.SharingDialog();
-
-       dialog.connect('response', Lang.bind(this,
-           function(widget, response) {
-               dialog.destroy();
-               this._selectionModeAction.change_state(GLib.Variant.new('b', false));
-           }));
     },
 
     _onToolbarPrint: function(widget) {

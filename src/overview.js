@@ -274,7 +274,7 @@ const EmptyResultsBox = new Lang.Class({
         if (this._mode == WindowMode.WindowMode.COLLECTIONS)
             text = _("No collections found");
         else
-            text = Application.application.isBooks ? _("No books found") : _("No documents found");
+            text = _("No books found");
 
         this.add(new Gtk.Label({ label: '<b><span size="large">' + text + '</span></b>',
                                  use_markup: true,
@@ -289,48 +289,11 @@ const EmptyResultsBox = new Lang.Class({
 
         if (this._mode == WindowMode.WindowMode.COLLECTIONS) {
             let label;
-            if (Application.application.isBooks)
-                label = _("You can create collections from the Books view");
-            else
-                label = _("You can create collections from the Documents view");
+            label = _("You can create collections from the Books view");
 
             this.add(new Gtk.Label({ label: label }));
             return;
         }
-
-        if (Application.application.isBooks)
-            return;
-
-        let documentsPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS);
-        let detailsStr = _("Documents from your <a href=\"system-settings\">Online Accounts</a> and " +
-                           "<a href=\"file://%s\">Documents folder</a> will appear here.").format(documentsPath);
-        let details = new Gtk.Label({ label: detailsStr,
-                                      use_markup: true });
-        this.add(details);
-
-        details.connect('activate-link', Lang.bind(this,
-            function(label, uri) {
-                if (uri != 'system-settings')
-                    return false;
-
-                try {
-                    let app = Gio.AppInfo.create_from_commandline(
-                        'gnome-control-center online-accounts', null, 0);
-
-                    let screen = this.get_screen();
-                    let display = screen ? screen.get_display() : Gdk.Display.get_default();
-                    let ctx = display.get_app_launch_context();
-
-                    if (screen)
-                        ctx.set_screen(screen);
-
-                    app.launch([], ctx);
-                } catch(e) {
-                    logError(e, 'Unable to launch gnome-control-center');
-                }
-
-                return true;
-            }));
     }
 });
 
@@ -1052,7 +1015,7 @@ var OverviewStack = new Lang.Class({
 
         // now create the actual content widgets
         this._documents = new ViewContainer(this, WindowMode.WindowMode.DOCUMENTS);
-        let label = Application.application.isBooks ? _('Books') : _("Documents");
+        let label = _('Books');
         this._stack.add_titled(this._documents, 'documents', label);
 
         this._collections = new ViewContainer(this, WindowMode.WindowMode.COLLECTIONS);

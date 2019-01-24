@@ -463,10 +463,6 @@ const DocCommon = new Lang.Class({
         throw(new Error('DocCommon implementations must override canEdit'));
     },
 
-    canShare: function() {
-        throw(new Error('DocCommon implementations must override canShare'));
-    },
-
     canTrash: function() {
         throw(new Error('DocCommon implementations must override canTrash'));
     },
@@ -717,18 +713,7 @@ const DocCommon = new Lang.Class({
             return;
         }
 
-        if (LOKView.isOpenDocumentFormat(this.mimeType) && !Application.application.isBooks) {
-            let exception = null;
-            if (!LOKView.isAvailable()) {
-                exception = new GLib.Error(Gio.IOErrorEnum,
-                                           Gio.IOErrorEnum.NOT_SUPPORTED,
-                                           "Internal error: LibreOffice isn't available");
-            }
-            callback (this, null, exception);
-            return;
-        }
-
-        if (EPUBView.isEpub(this.mimeType) && Application.application.isBooks) {
+        if (EPUBView.isEpub(this.mimeType)) {
             callback(this, null, null);
             return;
         }
@@ -922,10 +907,6 @@ var LocalDocument = new Lang.Class({
         return this.collection;
     },
 
-    canShare: function() {
-        return false;
-    },
-
     canTrash: function() {
         return true;
     },
@@ -1086,10 +1067,7 @@ var DocumentManager = new Lang.Class({
         if (error.domain == Gio.IOErrorEnum) {
             switch (error.code) {
             case Gio.IOErrorEnum.NOT_SUPPORTED:
-                if (Application.application.isBooks)
-                    message = _("You are using a preview of Books. Full viewing capabilities are coming soon!");
-                else
-                    message = _("LibreOffice support is not available. Please contact your system administrator.");
+                message = _("You are using a preview of Books. Full viewing capabilities are coming soon!");
                 break;
             default:
                 break;
@@ -1130,9 +1108,7 @@ var DocumentManager = new Lang.Class({
 
     _requestPreview: function(doc) {
         let windowMode;
-        if (LOKView.isOpenDocumentFormat(doc.mimeType) && !Application.application.isBooks) {
-            windowMode = WindowMode.WindowMode.PREVIEW_LOK;
-        } else if (EPUBView.isEpub(doc.mimeType) && Application.application.isBooks) {
+        if (EPUBView.isEpub(doc.mimeType)) {
             windowMode = WindowMode.WindowMode.PREVIEW_EPUB;
         } else {
             windowMode = WindowMode.WindowMode.PREVIEW_EV;
