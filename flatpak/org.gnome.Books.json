@@ -34,8 +34,7 @@
                  "/share/pkgconfig", "/share/aclocal",
                  "/man", "/share/man", "/share/gtk-doc",
                  "/share/vala",
-                 "*.la", "*.a",
-                 "/bin/gnome-documents" ],
+                 "*.la", "*.a" ],
     "modules": [
         {
             "name": "librest",
@@ -211,7 +210,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gnome-documents.git"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-books.git"
                 }
             ]
         }

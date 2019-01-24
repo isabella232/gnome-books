@@ -15,7 +15,6 @@ xsltproc_cmd = [
 ]
 
 mans = [
-  'gnome-documents',
   'gnome-books'
 ]
 
@@ -28,6 +27,6 @@ foreach man: mans
     output: output,
     command: xsltproc_cmd,
     install: true,
-    install_dir: join_paths(documents_mandir, 'man1')
+    install_dir: join_paths(books_mandir, 'man1')
   )
 endforeach

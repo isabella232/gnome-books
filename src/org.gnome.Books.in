@@ -1,5 +1,5 @@
 #!@GJS@
-imports.package.init({ name: "gnome-documents",
+imports.package.init({ name: "gnome-books",
                        version: "@PACKAGE_VERSION@",
                        prefix: "@prefix@",
                        libdir: "@libdir@" });

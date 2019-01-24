@@ -36,6 +36,5 @@ src/preview.js
 src/properties.js
 src/search.js
 src/selections.js
-src/sharing.js
 src/shellSearchProvider.js
 src/trackerController.js

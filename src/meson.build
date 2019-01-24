@@ -2,7 +2,7 @@
 '''
 js_conf = configuration_data()
 js_conf.set('PACKAGE_NAME', meson.project_name())
-js_conf.set('PACKAGE_VERSION', documents_version)
+js_conf.set('PACKAGE_VERSION', books_version)
 js_conf.set('GETTEXT_PACKAGE', meson.project_name())
 
 js = 'config.js'
@@ -77,22 +77,22 @@ resource_data = files(
 )
 
 service_conf = configuration_data()
-service_conf.set('bindir', documents_bindir)
+service_conf.set('bindir', books_bindir)
 
 app_conf = configuration_data()
-app_conf.set('prefix', documents_prefix)
-app_conf.set('libdir', documents_libdir)
-app_conf.set('PACKAGE_VERSION', documents_version)
+app_conf.set('prefix', books_prefix)
+app_conf.set('libdir', books_libdir)
+app_conf.set('PACKAGE_VERSION', books_version)
 app_conf.set('GJS', gjs_console)
 
-foreach app: documents_apps
+foreach app: books_apps
   service = app + '.service'
 
   configure_file(
     input: service + '.in',
     output: service,
     install: true,
-    install_dir: join_paths(documents_datadir, 'dbus-1', 'services'),
+    install_dir: join_paths(books_datadir, 'dbus-1', 'services'),
     configuration: service_conf
   )
 
@@ -100,7 +100,7 @@ foreach app: documents_apps
     input: app + '.in',
     output: app,
     install: true,
-    install_dir: documents_pkgdatadir,
+    install_dir: books_pkgdatadir,
     configuration: app_conf
   )
 
@@ -113,7 +113,7 @@ foreach app: documents_apps
     dependencies: resource_data,
     gresource_bundle: true,
     install: true,
-    install_dir: documents_pkgdatadir
+    install_dir: books_pkgdatadir
   )
 endforeach
 
@@ -123,21 +123,21 @@ incs = [
 ]
 
 cflags = [
-  '-DPREFIX="@0@"'.format(documents_prefix),
-  '-DLIBDIR="@0@"'.format(documents_libdir),
+  '-DPREFIX="@0@"'.format(books_prefix),
+  '-DLIBDIR="@0@"'.format(books_libdir),
   '-DG_LOG_DOMAIN="Gdprivate"',
   '-DG_DISABLE_DEPRECATED'
 ]
 
 libgdprivate = shared_library(
-  '@0@-@1@'.format(documents_private_ns.to_lower(), documents_api_version),
+  '@0@-@1@'.format(books_private_ns.to_lower(), books_api_version),
   sources: sources,
   include_directories: incs,
-  dependencies: documents_deps,
+  dependencies: books_deps,
   c_args: cflags,
   install: true,
-  install_dir: documents_pkglibdir,
-  install_rpath: documents_pkglibdir
+  install_dir: books_pkglibdir,
+  install_rpath: books_pkglibdir
 )
 
 gir_incs = [
@@ -153,12 +153,12 @@ gir_incs = [
 gnome.generate_gir(
   libgdprivate,
   sources: sources + headers,
-  nsversion: documents_api_version,
-  namespace: documents_private_ns,
-  identifier_prefix: documents_ns,
-  symbol_prefix: documents_ns.to_lower(),
+  nsversion: books_api_version,
+  namespace: books_private_ns,
+  identifier_prefix: books_ns,
+  symbol_prefix: books_ns.to_lower(),
   includes: gir_incs,
   install: true,
-  install_dir_gir: join_paths(documents_pkgdatadir, 'gir-' + documents_gir_version),
-  install_dir_typelib: join_paths(documents_pkglibdir, 'girepository-' + documents_gir_version)
+  install_dir_gir: join_paths(books_pkgdatadir, 'gir-' + books_gir_version),
+  install_dir_typelib: join_paths(books_pkglibdir, 'girepository-' + books_gir_version)
 )

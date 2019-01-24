@@ -1,34 +1,33 @@
 project(
-  'gnome-documents', 'c',
-  version: '3.30.0',
+  'gnome-books', 'c',
+  version: '3.31.0',
   license: 'GPL2+',
   default_options: 'buildtype=debugoptimized',
   meson_version: '>= 0.42.0'
 )
 
-documents_version = meson.project_version()
+books_version = meson.project_version()
 
-documents_ns = 'Gd'
-documents_private_ns = documents_ns + 'Private'
+books_ns = 'Gd'
+books_private_ns = books_ns + 'Private'
 
-documents_api_version = '1.0'
-documents_gir_version = '1.0'
+books_api_version = '1.0'
+books_gir_version = '1.0'
 
-documents_apps = [
+books_apps = [
   'org.gnome.Books',
-  'org.gnome.Documents'
 ]
 
-documents_prefix = get_option('prefix')
-documents_bindir = join_paths(documents_prefix, get_option('bindir'))
-documents_datadir = join_paths(documents_prefix, get_option('datadir'))
-documents_libdir = join_paths(documents_prefix, get_option('libdir'))
-documents_mandir = join_paths(documents_prefix, get_option('mandir'))
+books_prefix = get_option('prefix')
+books_bindir = join_paths(books_prefix, get_option('bindir'))
+books_datadir = join_paths(books_prefix, get_option('datadir'))
+books_libdir = join_paths(books_prefix, get_option('libdir'))
+books_mandir = join_paths(books_prefix, get_option('mandir'))
 
-documents_pkgdatadir = join_paths(documents_datadir, meson.project_name())
-documents_pkglibdir = join_paths(documents_libdir, meson.project_name())
+books_pkgdatadir = join_paths(books_datadir, meson.project_name())
+books_pkglibdir = join_paths(books_libdir, meson.project_name())
 
-documents_schemadir = join_paths(documents_datadir, 'glib-2.0', 'schemas')
+books_schemadir = join_paths(books_datadir, 'glib-2.0', 'schemas')
 
 if not get_option('buildtype').contains('plain')
   run_command('git', '-C', meson.source_root(), 'submodule', 'update', '--init', '--recursive')
@@ -42,7 +41,7 @@ config_h = configuration_data()
 set_defines = [
   # package
   ['PACKAGE_NAME', meson.project_name()],
-  ['PACKAGE_VERSION', documents_version],
+  ['PACKAGE_VERSION', books_version],
   # i18n
   ['GETTEXT_PACKAGE', meson.project_name()]
 ]
@@ -60,7 +59,7 @@ tracker_req_version = '>= 0.17.3'
 gjs_dep = dependency('gjs-1.0', version: '>= 1.48.0')
 gjs_console = gjs_dep.get_pkgconfig_variable('gjs_console')
 
-documents_deps = [
+books_deps = [
   gjs_dep,
   dependency('evince-document-3.0', version: evince_req_version),
   dependency('evince-view-3.0', version: evince_req_version),
@@ -86,14 +85,14 @@ dependency('zapojit-0.0')
 # so we need check for that explicity.
 config_h.set(
   'HAVE_CAIRO_SURFACE_SET_DEVICE_SCALE',
-  cc.has_function('cairo_surface_set_device_scale', dependencies: documents_deps)
+  cc.has_function('cairo_surface_set_device_scale', dependencies: books_deps)
 )
 
 libgd = subproject(
   'libgd',
   default_options: [
-    'pkgdatadir=' + documents_pkgdatadir,
-    'pkglibdir=' + documents_pkglibdir,
+    'pkgdatadir=' + books_pkgdatadir,
+    'pkglibdir=' + books_pkglibdir,
     'static=false',
     'with-gtk-hacks=true',
     'with-introspection=true',
@@ -102,7 +101,7 @@ libgd = subproject(
     'with-tagged-entry=true'
   ]
 )
-documents_deps += libgd.get_variable('libgd_dep')
+books_deps += libgd.get_variable('libgd_dep')
 
 configure_file(
   output: 'config.h',
@@ -117,7 +116,6 @@ po_dir = join_paths(meson.source_root(), 'po')
 
 top_inc = include_directories('.')
 
-subdir('help')
 subdir('src')
 subdir('data')
 subdir('po')
@@ -126,18 +124,14 @@ if get_option('documentation')
   subdir('man')
 endif
 
-if get_option('getting_started')
-  subdir('getting-started')
-endif
-
 meson.add_install_script(
   'meson_post_install.py',
-  documents_datadir,
-  documents_bindir
+  books_datadir,
+  books_bindir
 )
 
-output = '\n        ' + meson.project_name() + ' ' + documents_version + '\n'
+output = '\n        ' + meson.project_name() + ' ' + books_version + '\n'
 output += '        ======================\n\n'
-output += '        prefix:    ' + documents_prefix + '\n'
+output += '        prefix:    ' + books_prefix + '\n'
 output += '        compiler:  ' + cc.get_id() + '\n'
 message(output)
