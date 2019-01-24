@@ -26,7 +26,6 @@ const Application = imports.application;
 const EPUBView = imports.epubview;
 const Edit = imports.edit;
 const EvinceView = imports.evinceview;
-const LOKView = imports.lokview;
 const Search = imports.search;
 const Overview = imports.overview;
 const WindowMode = imports.windowMode;
@@ -69,9 +68,6 @@ const View = new Lang.Class({
         case WindowMode.WindowMode.PREVIEW_EV:
             constructor = EvinceView.EvinceView;
             break;
-        case WindowMode.WindowMode.PREVIEW_LOK:
-            constructor = LOKView.LOKView;
-            break;
         case WindowMode.WindowMode.PREVIEW_EPUB:
             constructor = EPUBView.EPUBView;
             break;
@@ -111,7 +107,6 @@ const View = new Lang.Class({
             this._stack.visible_child = this._overview;
             break;
         case WindowMode.WindowMode.PREVIEW_EV:
-        case WindowMode.WindowMode.PREVIEW_LOK:
         case WindowMode.WindowMode.PREVIEW_EPUB:
         case WindowMode.WindowMode.EDIT:
             this._createPreview(mode);

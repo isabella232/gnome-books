@@ -50,7 +50,6 @@ resource_data = files(
   'errorBox.js',
   'evinceview.js',
   'fullscreenAction.js',
-  'lokview.js',
   'main.js',
   'mainToolbar.js',
   'mainWindow.js',

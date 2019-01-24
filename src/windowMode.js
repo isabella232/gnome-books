@@ -26,7 +26,6 @@ var WindowMode = {
     NONE: 0,
     DOCUMENTS: 1,
     PREVIEW_EV: 2,
-    PREVIEW_LOK: 3,
     PREVIEW_EPUB: 4,
     EDIT: 5,
     COLLECTIONS: 6,

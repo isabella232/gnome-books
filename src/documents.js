@@ -21,7 +21,6 @@
 
 const EvDocument = imports.gi.EvinceDocument;
 const EvView = imports.gi.EvinceView;
-const LOKView = imports.lokview;
 const EPUBView = imports.epubview;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gio = imports.gi.Gio;
