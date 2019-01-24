@@ -332,26 +332,10 @@ const Source = new Lang.Class({
         this.name = null;
         this.icon = null;
 
-        if (params.object) {
-            this.object = params.object;
-            let account = params.object.get_account();
-
-            this.id = 'gd:goa-account:' + account.id;
-            this.name = account.provider_name;
-            this.icon = Gio.icon_new_for_string(account.provider_icon);
-        } else {
-            this.id = params.id;
-            this.name = params.name;
-        }
+        this.id = params.id;
+        this.name = params.name;
 
         this.builtin = params.builtin;
-    },
-
-    _getGettingStartedLocations: function() {
-        if (Application.application.gettingStartedLocation)
-            return Application.application.gettingStartedLocation;
-        else
-            return [];
     },
 
     _getTrackerLocations: function() {
@@ -402,9 +386,7 @@ const Source = new Lang.Class({
 
     _buildFilterLocal: function() {
         let locations = this._getBuiltinLocations();
-        locations = locations.concat(
-            this._getTrackerLocations(),
-            this._getGettingStartedLocations());
+        locations = locations.concat(this._getTrackerLocations());
 
         let filters = [];
         locations.forEach(Lang.bind(this,
@@ -423,11 +405,9 @@ const Source = new Lang.Class({
     getFilter: function() {
         let filters = [];
 
-        if (this.id == SearchSourceStock.LOCAL) {
+        if (this.id == SearchSourceStock.LOCAL ||
+            this.id == SearchSourceStock.ALL) {
             filters.push(this._buildFilterLocal());
-        } else if (this.id == SearchSourceStock.ALL) {
-            filters.push(this._buildFilterLocal());
-            filters.push(this._manager.getFilterNotLocal());
         } else {
             filters.push(this._buildFilterResource());
         }
@@ -464,57 +444,7 @@ const SourceManager = new Lang.Class({
                               builtin: true });
         this.addItem(source);
 
-        if (!Application.application.isBooks) {
-            Application.goaClient.connect('account-added', Lang.bind(this, this._refreshGoaAccounts));
-            Application.goaClient.connect('account-changed', Lang.bind(this, this._refreshGoaAccounts));
-            Application.goaClient.connect('account-removed', Lang.bind(this, this._refreshGoaAccounts));
-
-            this._refreshGoaAccounts();
-        }
-
         this.setActiveItemById(SearchSourceStock.ALL);
-    },
-
-    _refreshGoaAccounts: function() {
-        let newItems = {};
-        let newSources = new Map();
-        let accounts = Application.goaClient.get_accounts();
-
-        accounts.forEach(Lang.bind(this,
-            function(object) {
-                if (!object.get_account())
-                    return;
-
-                if (!object.get_documents())
-                    return;
-
-                let source = new Source({ object: object });
-
-                let otherSources = newSources.get(source.name);
-                if (!otherSources)
-                    otherSources = [];
-
-                otherSources.push(source);
-                newSources.set(source.name, otherSources);
-                newItems[source.id] = source;
-            }));
-
-        // Ensure an unique name for GOA accounts from the same provider
-        newSources.forEach(function(sources, name) {
-            if (sources.length == 1)
-                return;
-
-            sources.forEach(function(source) {
-                let account = source.object.get_account();
-                // Translators: the first %s is an online account provider name,
-                // e.g. "Google". The second %s is the identity used to log in,
-                // e.g. "foo@gmail.com".
-                source.name = _("%s (%s)").format(account.provider_name,
-                                                  account.presentation_identity);
-            });
-        });
-
-        this.processNewItems(newItems);
     },
 
     getFilter: function(flags) {
@@ -534,53 +464,6 @@ const SourceManager = new Lang.Class({
 
         return filter;
     },
-
-    getFilterNotLocal: function() {
-        let sources = this.getItems();
-        let filters = [];
-
-        for (let idx in sources) {
-            let source = sources[idx];
-            if (!source.builtin)
-                filters.push(source.getFilter());
-        }
-
-        if (filters.length == 0)
-            filters.push('false');
-
-        return '(' + filters.join(' || ') + ')';
-    },
-
-    hasOnlineSources: function() {
-        let hasOnline = false;
-        this.forEachItem(
-            function(source) {
-                if (source.object)
-                    hasOnline = true;
-            });
-
-        return hasOnline;
-    },
-
-    hasProviderType: function(providerType) {
-        let items = this.getForProviderType(providerType);
-        return (items.length > 0);
-    },
-
-    getForProviderType: function(providerType) {
-        let items = [];
-        this.forEachItem(Lang.bind(this,
-            function(source) {
-                if (!source.object)
-                    return;
-
-                let account = source.object.get_account();
-                if (account.provider_type == providerType)
-                    items.push(source);
-            }));
-
-        return items;
-    }
 });
 
 var OFFSET_STEP = 50;

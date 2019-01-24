@@ -33,7 +33,6 @@ const Mainloop = imports.mainloop;
 const Notifications = imports.notifications;
 const Properties = imports.properties;
 const Query = imports.query;
-const Sharing = imports.sharing;
 const TrackerUtils = imports.trackerUtils;
 const WindowMode = imports.windowMode;
 

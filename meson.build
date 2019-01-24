@@ -75,10 +75,7 @@ books_deps = [
 ]
 
 # we just check their existence for gir
-dependency('libgdata')
 dependency('libgepub-0.6')
-dependency('goa-1.0')
-dependency('zapojit-0.0')
 
 # Although GTK+ 3.10 includes hi-dpi functionality, it does not require a cairo with
 # cairo_surface_set_device_scale(), which we also need if we're to support hi-dpi,

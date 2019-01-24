@@ -55,7 +55,6 @@ resource_data = files(
   'mainToolbar.js',
   'mainWindow.js',
   'manager.js',
-  'miners.js',
   'notifications.js',
   'overview.js',
   'password.js',
@@ -67,7 +66,6 @@ resource_data = files(
   'searchbar.js',
   'search.js',
   'selections.js',
-  'sharing.js',
   'shellSearchProvider.js',
   'testentry.js',
   'trackerController.js',
@@ -141,13 +139,10 @@ libgdprivate = shared_library(
 )
 
 gir_incs = [
-  'GData-0.0',
   'GnomeDesktop-3.0',
-  'Goa-1.0',
   'Gtk-3.0',
   'EvinceDocument-3.0',
   'EvinceView-3.0',
-  'Zpj-0.0'
 ]
 
 gnome.generate_gir(

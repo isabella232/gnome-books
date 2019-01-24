@@ -26,7 +26,6 @@ const _ = imports.gettext.gettext;
 const EvDoc = imports.gi.EvinceDocument;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
-const Goa = imports.gi.Goa;
 const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
@@ -36,7 +35,6 @@ const TrackerControl = imports.gi.TrackerControl;
 const ChangeMonitor = imports.changeMonitor;
 const Format = imports.format;
 const MainWindow = imports.mainWindow;
-const Miners = imports.miners;
 const Notifications = imports.notifications;
 const Properties = imports.properties;
 const Query = imports.query;
@@ -52,7 +50,6 @@ const WindowMode = imports.windowMode;
 var application = null;
 var connection = null;
 var connectionQueue = null;
-var goaClient = null;
 var settings = null;
 
 // used by the application, but not by the search provider
@@ -126,42 +123,6 @@ var Application = new Lang.Class({
                              _("Show the version of the program"), null);
     },
 
-    _initGettingStarted: function() {
-        let manager = TrackerControl.MinerManager.new_full(false);
-
-        let languages = GLib.get_language_names();
-        let files = languages.map(
-            function(language) {
-                return Gio.File.new_for_path(pkg.pkgdatadir + '/getting-started/' + language +
-                    '/gnome-documents-getting-started.pdf');
-            });
-
-        this.gettingStartedLocation = null;
-
-        for (let i in files) {
-            try {
-                let info = files[i].query_info(Gio.FILE_ATTRIBUTE_STANDARD_TYPE,
-                                               Gio.FileQueryInfoFlags.NONE,
-                                               null);
-            } catch (e) {
-                continue;
-            }
-
-            this.gettingStartedLocation = files[i].get_parent();
-
-            try {
-                manager.index_file(files[i], null);
-            } catch (e) {
-                logError(e, 'Error indexing the getting started PDF');
-            }
-
-            break;
-        }
-
-        if (!this.gettingStartedLocation)
-            log('Can\'t find a valid getting started PDF document');
-    },
-
     _nightModeCreateHook: function(action) {
         settings.connect('changed::night-mode', Lang.bind(this,
             function() {
@@ -199,130 +160,6 @@ var Application = new Lang.Class({
     _onActionNightMode: function(action) {
         let state = action.get_state();
         settings.set_value('night-mode', GLib.Variant.new('b', !state.get_boolean()));
-    },
-
-    _createMiners: function(callback) {
-        let count = 3;
-
-        this.gdataMiner = new Miners.GDataMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-
-        this.owncloudMiner = new Miners.OwncloudMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-
-        this.zpjMiner = new Miners.ZpjMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-    },
-
-    _refreshMinerNow: function(miner) {
-        let env = GLib.getenv('DOCUMENTS_DISABLE_MINERS');
-        if (env)
-            return false;
-
-        if (!miner)
-            return false;
-
-        this.minersRunning.push(miner);
-        this.emit('miners-changed');
-
-        miner._cancellable = new Gio.Cancellable();
-        miner.RefreshDBRemote(['documents'], miner._cancellable, Lang.bind(this,
-            function(res, error) {
-                this.minersRunning = this.minersRunning.filter(
-                    function(element) {
-                        return element != miner;
-                    });
-                this.emit('miners-changed');
-
-                if (error) {
-                    if (!error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED))
-                        logError(error, 'Error updating the cache');
-
-                    return;
-                }
-
-                Mainloop.timeout_add_seconds(MINER_REFRESH_TIMEOUT,
-                                             Lang.bind(this, function() {
-                                                 this._refreshMinerNow(miner);
-                                             }));
-            }));
-
-        return false;
-    },
-
-    _refreshMiners: function() {
-        if (sourceManager.hasProviderType('google')) {
-            try {
-                // startup a refresh of the gdocs cache
-                this._refreshMinerNow(this.gdataMiner);
-            } catch (e) {
-                logError(e, 'Unable to start GData miner');
-            }
-        }
-
-        if (sourceManager.hasProviderType('owncloud')) {
-            try {
-                // startup a refresh of the owncloud cache
-                this._refreshMinerNow(this.owncloudMiner);
-            } catch (e) {
-                logError(e, 'Unable to start Owncloud miner');
-            }
-        }
-
-        if (sourceManager.hasProviderType('windows_live')) {
-            try {
-                // startup a refresh of the skydrive cache
-                this._refreshMinerNow(this.zpjMiner);
-            } catch (e) {
-                logError(e, 'Unable to start Zpj miner');
-            }
-        }
-    },
-
-    _startMiners: function() {
-        this._createMiners(Lang.bind(this,
-            function() {
-                this._refreshMiners();
-
-                this._sourceAddedId = sourceManager.connect('item-added',
-                                                            Lang.bind(this, this._refreshMiners));
-                this._sourceRemovedId = sourceManager.connect('item-removed',
-                                                              Lang.bind(this, this._refreshMiners));
-            }));
-    },
-
-    _stopMiners: function() {
-        if (this._sourceAddedId != 0) {
-            sourceManager.disconnect(this._sourceAddedId);
-            this._sourceAddedId = 0;
-        }
-
-        if (this._sourceRemovedId != 0) {
-            sourceManager.disconnect(this._sourceRemovedId);
-            this._sourceRemovedId = 0;
-        }
-
-        this.minersRunning.forEach(Lang.bind(this,
-            function(miner) {
-                miner._cancellable.cancel();
-            }));
-        this.minersRunning = [];
-
-        this.gdataMiner = null;
-        this.owncloudMiner = null;
-        this.zpjMiner = null;
     },
 
     _themeChanged: function(gtkSettings) {
@@ -367,15 +204,6 @@ var Application = new Lang.Class({
             return;
         }
 
-        if (!application.isBooks) {
-            try {
-                goaClient = Goa.Client.new_sync(null);
-            } catch (e) {
-                logError(e, 'Unable to create the GOA client');
-                return;
-            }
-        }
-
         connectionQueue = new TrackerController.TrackerConnectionQueue();
         changeMonitor = new ChangeMonitor.TrackerChangeMonitor();
 
@@ -414,9 +242,6 @@ var Application = new Lang.Class({
         if (this._mainWindow)
             return;
 
-        if (!this.isBooks)
-            this._initGettingStarted();
-
         notificationManager = new Notifications.NotificationManager();
         this._mainWindow = new MainWindow.MainWindow(this);
         this._mainWindow.connect('destroy', Lang.bind(this, this._onWindowDestroy));
@@ -427,9 +252,6 @@ var Application = new Lang.Class({
         } catch (e) {
             logError(e, 'Unable to connect to the tracker extractor');
         }
-
-        // start miners
-        this._startMiners();
     },
 
     vfunc_dbus_register: function(connection, path) {
@@ -499,9 +321,6 @@ var Application = new Lang.Class({
         modeController.setWindowMode(WindowMode.WindowMode.NONE);
         selectionController.setSelection(null);
         notificationManager = null;
-
-        // stop miners
-        this._stopMiners();
 
         if (this._extractPriority)
             this._extractPriority.ClearRdfTypesRemote();

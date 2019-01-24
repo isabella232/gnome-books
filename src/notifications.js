@@ -174,7 +174,6 @@ const IndexingNotification = new Lang.Class({
 
     _init: function() {
         this._closed = false;
-        this._timeoutId = 0;
 
         try {
             this._manager = TrackerControl.MinerManager.new_full(false);
@@ -196,7 +195,6 @@ const IndexingNotification = new Lang.Class({
         }
 
         let isIndexingLocal = false;
-        let isIndexingRemote = false;
 
         if (this._manager) {
             let running = this._manager.get_running();
@@ -208,47 +206,11 @@ const IndexingNotification = new Lang.Class({
             }
         }
 
-        if (Application.application.minersRunning.length > 0)
-            isIndexingRemote = true;
-
         if (isIndexingLocal) {
             this._display(_("Your documents are being indexed"),
                           _("Some documents might not be available during this process"));
-        } else if (isIndexingRemote) {
-            this._removeTimeout();
-            this._timeoutId = Mainloop.timeout_add_seconds(REMOTE_MINER_TIMEOUT, Lang.bind(this, this._onTimeoutExpired));
         } else {
             this._destroy(false);
-        }
-    },
-
-    _onTimeoutExpired: function() {
-        this._timeoutId = 0;
-
-        let primary = null;
-        let miner = null;
-
-        if (Application.application.minersRunning.length == 1) {
-            miner = Application.application.minersRunning[0];
-        }
-
-        if (miner && miner.DisplayName) {
-            // Translators: %s refers to an online account provider, e.g.
-            // "Google", or "Windows Live".
-            primary = _("Fetching documents from %s").format(miner.DisplayName);
-        } else {
-            primary = _("Fetching documents from online accounts");
-        }
-
-        this._display(primary, null);
-
-        return false;
-    },
-
-    _removeTimeout: function() {
-        if (this._timeoutId != 0) {
-            Mainloop.source_remove(this._timeoutId);
-            this._timeoutId = 0;
         }
     },
 
@@ -313,8 +275,6 @@ const IndexingNotification = new Lang.Class({
     },
 
     _destroy: function(closed) {
-        this._removeTimeout();
-
         if (this.widget) {
             this.widget.destroy();
             this.widget = null;
