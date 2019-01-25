@@ -21,18 +21,15 @@
 
 const EvDocument = imports.gi.EvinceDocument;
 const EvView = imports.gi.EvinceView;
-const LOKView = imports.lokview;
 const EPUBView = imports.epubview;
 const GdkPixbuf = imports.gi.GdkPixbuf;
 const Gio = imports.gi.Gio;
 const Gd = imports.gi.Gd;
 const GdPrivate = imports.gi.GdPrivate;
 const Gdk = imports.gi.Gdk;
-const GData = imports.gi.GData;
 const GLib = imports.gi.GLib;
 const GnomeDesktop = imports.gi.GnomeDesktop;
 const Gtk = imports.gi.Gtk;
-const Zpj = imports.gi.Zpj;
 const _ = imports.gettext.gettext;
 
 const Lang = imports.lang;
@@ -465,10 +462,6 @@ const DocCommon = new Lang.Class({
         throw(new Error('DocCommon implementations must override canEdit'));
     },
 
-    canShare: function() {
-        throw(new Error('DocCommon implementations must override canShare'));
-    },
-
     canTrash: function() {
         throw(new Error('DocCommon implementations must override canTrash'));
     },
@@ -719,18 +712,7 @@ const DocCommon = new Lang.Class({
             return;
         }
 
-        if (LOKView.isOpenDocumentFormat(this.mimeType) && !Application.application.isBooks) {
-            let exception = null;
-            if (!LOKView.isAvailable()) {
-                exception = new GLib.Error(Gio.IOErrorEnum,
-                                           Gio.IOErrorEnum.NOT_SUPPORTED,
-                                           "Internal error: LibreOffice isn't available");
-            }
-            callback (this, null, exception);
-            return;
-        }
-
-        if (EPUBView.isEpub(this.mimeType) && Application.application.isBooks) {
+        if (EPUBView.isEpub(this.mimeType)) {
             callback(this, null, null);
             return;
         }
@@ -867,18 +849,6 @@ var LocalDocument = new Lang.Class({
     populateFromCursor: function(cursor) {
         this.parent(cursor);
         this.uriToLoad = this.uri;
-
-        if (!Application.application.gettingStartedLocation)
-            return;
-
-        let file = Gio.File.new_for_uri(this.uri);
-        if (file.has_parent(Application.application.gettingStartedLocation)) {
-            // Translators: Documents ships a "Getting Started with Documents"
-            // tutorial PDF. The "GNOME" string below is displayed as the author name
-            // of that document, and doesn't normally need to be translated.
-            this.author = _("GNOME");
-            this.name = this.title = _("Getting Started with Documents");
-        }
     },
 
     createThumbnail: function(callback) {
@@ -936,10 +906,6 @@ var LocalDocument = new Lang.Class({
         return this.collection;
     },
 
-    canShare: function() {
-        return false;
-    },
-
     canTrash: function() {
         return true;
     },
@@ -968,489 +934,6 @@ var LocalDocument = new Lang.Class({
 
         let uri = sourceLink.get_uri();
         return [ uri, sourcePath ];
-    }
-});
-
-const GOOGLE_PREFIX = 'google:drive:';
-
-const GoogleDocument = new Lang.Class({
-    Name: 'GoogleDocument',
-    Extends: DocCommon,
-
-    _init: function(cursor) {
-        this._failedThumbnailing = false;
-
-        this.parent(cursor);
-
-        // overridden
-        this.defaultAppName = _("Google Docs");
-        this.sourceName = _("Google");
-    },
-
-    createGDataEntry: function(cancellable, callback) {
-        let source = Application.sourceManager.getItemById(this.resourceUrn);
-
-        let authorizer = new GData.GoaAuthorizer({ goa_object: source.object });
-        let service = new GData.DocumentsService({ authorizer: authorizer });
-        let gdata_id = this.identifier.substring(GOOGLE_PREFIX.length);
-
-        service.query_single_entry_async
-            (GData.DocumentsService.get_primary_authorization_domain(),
-             gdata_id, null,
-             GData.DocumentsText,
-             cancellable, Lang.bind(this,
-                 function(object, res) {
-                     let entry = null;
-                     let exception = null;
-
-                     try {
-                         entry = object.query_single_entry_finish(res);
-                     } catch (e) {
-                         exception = e;
-                     }
-
-                     callback(entry, service, exception);
-                 }));
-    },
-
-    downloadImpl: function(localFile, cancellable, callback) {
-        this.createGDataEntry(cancellable, Lang.bind(this,
-            function(entry, service, error) {
-                if (error) {
-                    callback(false, error);
-                    return;
-                }
-
-                Utils.debug('Created GDataEntry for ' + this.id);
-
-                let inputStream;
-
-                try {
-                    inputStream = entry.download(service, 'pdf', cancellable);
-                } catch(e) {
-                    callback(false, e);
-                    return;
-                }
-
-                localFile.replace_async(null,
-                                        false,
-                                        Gio.FileCreateFlags.PRIVATE,
-                                        GLib.PRIORITY_DEFAULT,
-                                        cancellable,
-                                        Lang.bind(this,
-                    function(object, res) {
-                        let outputStream;
-
-                        try {
-                            outputStream = object.replace_finish(res);
-                        } catch (e) {
-                            callback(false, e);
-                            return;
-                        }
-
-                        outputStream.splice_async(inputStream,
-                                                  Gio.OutputStreamSpliceFlags.CLOSE_SOURCE |
-                                                  Gio.OutputStreamSpliceFlags.CLOSE_TARGET,
-                                                  GLib.PRIORITY_DEFAULT,
-                                                  cancellable,
-                                                  Lang.bind(this,
-                            function(object, res) {
-                                try {
-                                    object.splice_finish(res);
-                                } catch (e) {
-                                    callback(false, e);
-                                    return;
-                                }
-
-                                callback(false, null);
-                            }));
-                    }));
-            }))
-    },
-
-    createThumbnail: function(callback) {
-        this.createGDataEntry(null, Lang.bind(this,
-            function(entry, service, exception) {
-                if (exception) {
-                    callback(false);
-                    return;
-                }
-
-                let uri = entry.get_thumbnail_uri();
-                if (!uri) {
-                    callback(false);
-                    return;
-                }
-
-                let authorizationDomain = GData.DocumentsService.get_primary_authorization_domain();
-                let inputStream = new GData.DownloadStream({ service: service,
-                                                             authorization_domain: authorizationDomain,
-                                                             download_uri: uri });
-
-                let path = GnomeDesktop.desktop_thumbnail_path_for_uri (this.uri,
-                                                                        GnomeDesktop.DesktopThumbnailSize.NORMAL);
-                let dirPath = GLib.path_get_dirname(path);
-                GLib.mkdir_with_parents(dirPath, 448);
-
-                let downloadFile = Gio.File.new_for_path(path);
-                downloadFile.replace_async
-                    (null, false, Gio.FileCreateFlags.PRIVATE, GLib.PRIORITY_DEFAULT, null, Lang.bind(this,
-                        function(source, res) {
-                            let outputStream;
-
-                            try {
-                                outputStream = downloadFile.replace_finish(res);
-                            } catch (e) {
-                                callback(false);
-                                return;
-                            }
-
-                            outputStream.splice_async(inputStream,
-                                Gio.OutputStreamSpliceFlags.CLOSE_SOURCE | Gio.OutputStreamSpliceFlags.CLOSE_TARGET,
-                                GLib.PRIORITY_DEFAULT, null, Lang.bind(this,
-                                    function(source, res) {
-                                        try {
-                                            outputStream.splice_finish(res);
-                                        } catch (e) {
-                                            callback(false);
-                                            return;
-                                        }
-
-                                        callback(true);
-                                    }));
-                        }));
-            }));
-    },
-
-    updateTypeDescription: function() {
-        let description;
-
-        if (this.collection)
-            description = _("Collection");
-        else if (this.rdfType.indexOf('nfo#Spreadsheet') != -1)
-            description = _("Spreadsheet");
-        else if (this.rdfType.indexOf('nfo#Presentation') != -1)
-            description = _("Presentation");
-        else if (this.rdfType.indexOf('nfo#EBook') != -1)
-            description = _("e-Book");
-        else
-            description = _("Document");
-
-        this.typeDescription = description;
-    },
-
-    populateFromCursor: function(cursor) {
-        this.shared = cursor.get_boolean(Query.QueryColumns.SHARED);
-
-        this.parent(cursor);
-
-        let localDir = GLib.build_filenamev([GLib.get_user_cache_dir(), "gnome-documents", "google"]);
-
-        let identifierHash = GLib.compute_checksum_for_string(GLib.ChecksumType.SHA1, this.identifier, -1);
-        let localFilename = identifierHash + ".pdf";
-
-        let localPath = GLib.build_filenamev([localDir, localFilename]);
-        let localFile = Gio.File.new_for_path(localPath);
-        this.uriToLoad = localFile.get_uri();
-    },
-
-    canEdit: function() {
-        return !this.collection;
-    },
-
-    canShare: function() {
-        return true;
-    },
-
-    canTrash: function() {
-        return false;
-    },
-
-    getSourceLink: function() {
-        let uri = 'http://docs.google.com/';
-        return [ uri, this.sourceName ];
-    }
-});
-
-const OWNCLOUD_PREFIX = 'owncloud:';
-
-const OwncloudDocument = new Lang.Class({
-    Name: 'OwncloudDocument',
-    Extends: DocCommon,
-
-    _init: function(cursor) {
-        this._failedThumbnailing = true;
-
-        this.parent(cursor);
-
-        // overridden
-        this.sourceName = _("ownCloud");
-
-        if (this.mimeType)
-            this.defaultApp = Gio.app_info_get_default_for_type(this.mimeType, true);
-
-        if (this.defaultApp)
-            this.defaultAppName = this.defaultApp.get_name();
-    },
-
-    populateFromCursor: function(cursor) {
-        this.parent(cursor);
-
-        let localDir = GLib.build_filenamev([GLib.get_user_cache_dir(), "gnome-documents", "owncloud"]);
-
-        let identifierHash = this.identifier.substring(OWNCLOUD_PREFIX.length);
-        let filenameStripped = GdPrivate.filename_strip_extension(this.filename);
-        let extension = this.filename.substring(filenameStripped.length);
-        let localFilename = identifierHash + extension;
-
-        let localPath = GLib.build_filenamev([localDir, localFilename]);
-        let localFile = Gio.File.new_for_path(localPath);
-        this.uriToLoad = localFile.get_uri();
-    },
-
-    createThumbnail: function(callback) {
-        GdPrivate.queue_thumbnail_job_for_file_async(this._file, Lang.bind(this,
-            function(object, res) {
-                let thumbnailed = false;
-
-                try {
-                    thumbnailed = GdPrivate.queue_thumbnail_job_for_file_finish(res);
-                } catch (e) {
-                    /* We don't care about reporting errors here, just fail the
-                     * thumbnail.
-                     */
-                }
-
-                callback(thumbnailed);
-            }));
-    },
-
-    updateTypeDescription: function() {
-        let description = '';
-
-        if (this.collection)
-            description = _("Collection");
-        else if (this.mimeType)
-            description = Gio.content_type_get_description(this.mimeType);
-
-        this.typeDescription = description;
-    },
-
-    downloadImpl: function(localFile, cancellable, callback) {
-        let remoteFile = Gio.File.new_for_uri(this.uri);
-        remoteFile.read_async(GLib.PRIORITY_DEFAULT, cancellable, Lang.bind(this,
-            function(object, res) {
-                let inputStream;
-
-                try {
-                    inputStream = object.read_finish(res);
-                } catch (e) {
-                    callback(false, e);
-                    return;
-                }
-
-                localFile.replace_async(null,
-                                        false,
-                                        Gio.FileCreateFlags.PRIVATE,
-                                        GLib.PRIORITY_DEFAULT,
-                                        cancellable,
-                                        Lang.bind(this,
-                    function(object, res) {
-                        let outputStream;
-
-                        try {
-                            outputStream = object.replace_finish(res);
-                        } catch (e) {
-                            callback(false, e);
-                            return;
-                        }
-
-                        outputStream.splice_async(inputStream,
-                                                  Gio.OutputStreamSpliceFlags.CLOSE_SOURCE |
-                                                  Gio.OutputStreamSpliceFlags.CLOSE_TARGET,
-                                                  GLib.PRIORITY_DEFAULT,
-                                                  cancellable,
-                                                  Lang.bind(this,
-                            function(object, res) {
-                                try {
-                                    object.splice_finish(res);
-                                } catch (e) {
-                                    callback(false, e);
-                                    return;
-                                }
-
-                                callback(false, null);
-                            }));
-                    }));
-            }));
-    },
-
-    canEdit: function() {
-        return false;
-    },
-
-    canShare: function() {
-        return false;
-    },
-
-    canTrash: function() {
-        return false;
-    },
-
-    getSourceLink: function() {
-        let source = Application.sourceManager.getItemById(this.resourceUrn);
-        let account = source.object.get_account();
-        let presentationIdentity = account.presentation_identity;
-        let uri ='https://' + presentationIdentity + '/';
-        return [ uri, presentationIdentity ];
-    }
-});
-
-const SKYDRIVE_PREFIX = 'windows-live:skydrive:';
-
-const SkydriveDocument = new Lang.Class({
-    Name: 'SkydriveDocument',
-    Extends: DocCommon,
-
-    _init: function(cursor) {
-        this._failedThumbnailing = true;
-
-        this.parent(cursor);
-
-        // overridden
-        this.defaultAppName = _("OneDrive");
-        this.sourceName = _("OneDrive");
-    },
-
-    populateFromCursor: function(cursor) {
-        this.parent(cursor);
-
-        let localDir = GLib.build_filenamev([GLib.get_user_cache_dir(), "gnome-documents", "skydrive"]);
-
-        let identifierHash = GLib.compute_checksum_for_string(GLib.ChecksumType.SHA1, this.identifier, -1);
-        let filenameStripped = GdPrivate.filename_strip_extension(this.filename);
-        let extension = this.filename.substring(filenameStripped.length);
-        let localFilename = identifierHash + extension;
-
-        let localPath = GLib.build_filenamev([localDir, localFilename]);
-        let localFile = Gio.File.new_for_path(localPath);
-        this.uriToLoad = localFile.get_uri();
-    },
-
-    _createZpjEntry: function(cancellable, callback) {
-        let source = Application.sourceManager.getItemById(this.resourceUrn);
-
-        let authorizer = new Zpj.GoaAuthorizer({ goa_object: source.object });
-        let service = new Zpj.Skydrive({ authorizer: authorizer });
-        let zpj_id = this.identifier.substring(SKYDRIVE_PREFIX.length);
-
-        service.query_info_from_id_async
-            (zpj_id, cancellable,
-             Lang.bind(this,
-                 function(object, res) {
-                     let entry = null;
-                     let exception = null;
-
-                     try {
-                         entry = object.query_info_from_id_finish(res);
-                     } catch (e) {
-                         exception = e;
-                     }
-
-                     callback(entry, service, exception);
-                 }));
-    },
-
-    downloadImpl: function(localFile, cancellable, callback) {
-        this._createZpjEntry(cancellable, Lang.bind(this,
-            function(entry, service, error) {
-                if (error) {
-                    callback(false, error);
-                    return;
-                }
-
-                Utils.debug('Created ZpjEntry for ' + this.id);
-
-                service.download_file_to_stream_async(entry, cancellable, Lang.bind(this,
-                    function(object, res) {
-                        let inputStream;
-
-                        try {
-                            inputStream = object.download_file_to_stream_finish(res);
-                        } catch (e) {
-                            callback(false, e);
-                            return;
-                        }
-
-                        localFile.replace_async(null,
-                                                false,
-                                                Gio.FileCreateFlags.PRIVATE,
-                                                GLib.PRIORITY_DEFAULT,
-                                                cancellable,
-                                                Lang.bind(this,
-                            function(object, res) {
-                                let outputStream;
-
-                                try {
-                                    outputStream = object.replace_finish(res);
-                                } catch (e) {
-                                    callback(false, e);
-                                    return;
-                                }
-
-                                outputStream.splice_async(inputStream,
-                                                          Gio.OutputStreamSpliceFlags.CLOSE_SOURCE |
-                                                          Gio.OutputStreamSpliceFlags.CLOSE_TARGET,
-                                                          GLib.PRIORITY_DEFAULT,
-                                                          cancellable,
-                                                          Lang.bind(this,
-                                    function(object, res) {
-                                        try {
-                                            object.splice_finish(res);
-                                        } catch (e) {
-                                            callback(false, e);
-                                            return;
-                                        }
-
-                                        callback(false, null);
-                                    }));
-                            }));
-                    }));
-            }));
-    },
-
-    updateTypeDescription: function() {
-        let description;
-
-        if (this.collection)
-            description = _("Collection");
-        else if (this.rdfType.indexOf('nfo#Spreadsheet') != -1)
-            description = _("Spreadsheet");
-        else if (this.rdfType.indexOf('nfo#Presentation') != -1)
-            description = _("Presentation");
-        else if (this.rdfType.indexOf('nfo#EBook') != -1)
-            description = _("e-Book");
-        else
-            description = _("Document");
-
-        this.typeDescription = description;
-    },
-
-    canEdit: function() {
-        return false;
-    },
-
-    canShare: function() {
-        return false;
-    },
-
-    canTrash: function() {
-        return false;
-    },
-
-    getSourceLink: function() {
-        let uri = 'https://onedrive.live.com';
-        return [ uri, this.sourceName ];
     }
 });
 
@@ -1507,33 +990,11 @@ var DocumentManager = new Lang.Class({
             }));
     },
 
-    _identifierIsGoogle: function(identifier) {
-        return (identifier &&
-                (identifier.indexOf(GOOGLE_PREFIX) != -1));
-    },
-
-    _identifierIsOwncloud: function(identifier) {
-        return (identifier &&
-                (identifier.indexOf(OWNCLOUD_PREFIX) != -1));
-    },
-
-    _identifierIsSkydrive: function(identifier) {
-        return (identifier &&
-                (identifier.indexOf(SKYDRIVE_PREFIX) != -1));
-    },
-
     createDocumentFromCursor: function(cursor) {
         let identifier = cursor.get_string(Query.QueryColumns.IDENTIFIER)[0];
         let doc;
 
-        if (this._identifierIsGoogle(identifier))
-            doc = new GoogleDocument(cursor);
-        else if (this._identifierIsOwncloud(identifier))
-            doc = new OwncloudDocument(cursor);
-        else if (this._identifierIsSkydrive(identifier))
-            doc = new SkydriveDocument(cursor);
-        else
-            doc = new LocalDocument(cursor);
+        doc = new LocalDocument(cursor);
 
         return doc;
     },
@@ -1602,31 +1063,10 @@ var DocumentManager = new Lang.Class({
 
     _humanizeError: function(error) {
         let message = error.message;
-        if (error.domain == GData.ServiceError) {
-            switch (error.code) {
-            case GData.ServiceError.NETWORK_ERROR:
-                message = _("Please check the network connection.");
-                break;
-            case GData.ServiceError.PROXY_ERROR:
-                message = _("Please check the network proxy settings.");
-                break;
-            case GData.ServiceError.AUTHENTICATION_REQUIRED:
-                message = _("Unable to sign in to the document service.");
-                break;
-            case GData.ServiceError.NOT_FOUND:
-                message = _("Unable to locate this document.");
-                break;
-            default:
-                message = _("Hmm, something is fishy (%d).").format(error.code);
-                break;
-            }
-        } else if (error.domain == Gio.IOErrorEnum) {
+        if (error.domain == Gio.IOErrorEnum) {
             switch (error.code) {
             case Gio.IOErrorEnum.NOT_SUPPORTED:
-                if (Application.application.isBooks)
-                    message = _("You are using a preview of Books. Full viewing capabilities are coming soon!");
-                else
-                    message = _("LibreOffice support is not available. Please contact your system administrator.");
+                message = _("You are using a preview of Books. Full viewing capabilities are coming soon!");
                 break;
             default:
                 break;
@@ -1667,9 +1107,7 @@ var DocumentManager = new Lang.Class({
 
     _requestPreview: function(doc) {
         let windowMode;
-        if (LOKView.isOpenDocumentFormat(doc.mimeType) && !Application.application.isBooks) {
-            windowMode = WindowMode.WindowMode.PREVIEW_LOK;
-        } else if (EPUBView.isEpub(doc.mimeType) && Application.application.isBooks) {
+        if (EPUBView.isEpub(doc.mimeType)) {
             windowMode = WindowMode.WindowMode.PREVIEW_EPUB;
         } else {
             windowMode = WindowMode.WindowMode.PREVIEW_EV;

@@ -4,8 +4,6 @@
     <file>application.js</file>
     <file>changeMonitor.js</file>
     <file>documents.js</file>
-    <file>edit.js</file>
-    <file>lokview.js</file>
     <file>epubview.js</file>
     <file>embed.js</file>
     <file>errorBox.js</file>
@@ -14,12 +12,10 @@
     <file>mainToolbar.js</file>
     <file>mainWindow.js</file>
     <file>manager.js</file>
-    <file>miners.js</file>
     <file>notifications.js</file>
     <file>overview.js</file>
     <file>password.js</file>
     <file>places.js</file>
-    <file>presentation.js</file>
     <file>preview.js</file>
     <file>evinceview.js</file>
     <file>properties.js</file>
@@ -27,8 +23,6 @@
     <file>searchbar.js</file>
     <file>search.js</file>
     <file>selections.js</file>
-    <file>sharing.js</file>
-    <file>shellSearchProvider.js</file>
     <file>testentry.js</file>
     <file>trackerController.js</file>
     <file>trackerUtils.js</file>

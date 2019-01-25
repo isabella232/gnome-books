@@ -26,7 +26,6 @@ const _ = imports.gettext.gettext;
 const EvDoc = imports.gi.EvinceDocument;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
-const Goa = imports.gi.Goa;
 const Gtk = imports.gi.Gtk;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
@@ -36,13 +35,11 @@ const TrackerControl = imports.gi.TrackerControl;
 const ChangeMonitor = imports.changeMonitor;
 const Format = imports.format;
 const MainWindow = imports.mainWindow;
-const Miners = imports.miners;
 const Notifications = imports.notifications;
 const Properties = imports.properties;
 const Query = imports.query;
 const Search = imports.search;
 const Selections = imports.selections;
-const ShellSearchProvider = imports.shellSearchProvider;
 const TrackerController = imports.trackerController;
 const TrackerUtils = imports.trackerUtils;
 const Utils = imports.utils;
@@ -52,7 +49,6 @@ const WindowMode = imports.windowMode;
 var application = null;
 var connection = null;
 var connectionQueue = null;
-var goaClient = null;
 var settings = null;
 
 // used by the application, but not by the search provider
@@ -99,22 +95,14 @@ var Application = new Lang.Class({
         'miners-changed': {}
     },
 
-    _init: function(isBooks) {
+    _init: function() {
         this.minersRunning = [];
         this._activationTimestamp = Gdk.CURRENT_TIME;
         this._extractPriority = null;
-        this._searchProvider = null;
-
-        this.isBooks = isBooks;
 
         let appid;
-        if (this.isBooks) {
-            GLib.set_application_name(_("Books"));
-            appid = 'org.gnome.Books';
-        } else {
-            GLib.set_application_name(_("Documents"));
-            appid = 'org.gnome.Documents';
-        }
+        GLib.set_application_name(_("Books"));
+        appid = 'org.gnome.Books';
 
         // needed by data/ui/view-menu.ui
         GObject.type_ensure(Gio.ThemedIcon);
@@ -124,42 +112,6 @@ var Application = new Lang.Class({
 
         this.add_main_option('version', 'v'.charCodeAt(0), GLib.OptionFlags.NONE, GLib.OptionArg.NONE,
                              _("Show the version of the program"), null);
-    },
-
-    _initGettingStarted: function() {
-        let manager = TrackerControl.MinerManager.new_full(false);
-
-        let languages = GLib.get_language_names();
-        let files = languages.map(
-            function(language) {
-                return Gio.File.new_for_path(pkg.pkgdatadir + '/getting-started/' + language +
-                    '/gnome-documents-getting-started.pdf');
-            });
-
-        this.gettingStartedLocation = null;
-
-        for (let i in files) {
-            try {
-                let info = files[i].query_info(Gio.FILE_ATTRIBUTE_STANDARD_TYPE,
-                                               Gio.FileQueryInfoFlags.NONE,
-                                               null);
-            } catch (e) {
-                continue;
-            }
-
-            this.gettingStartedLocation = files[i].get_parent();
-
-            try {
-                manager.index_file(files[i], null);
-            } catch (e) {
-                logError(e, 'Error indexing the getting started PDF');
-            }
-
-            break;
-        }
-
-        if (!this.gettingStartedLocation)
-            log('Can\'t find a valid getting started PDF document');
     },
 
     _nightModeCreateHook: function(action) {
@@ -183,146 +135,12 @@ var Application = new Lang.Class({
     },
 
     _onActionAbout: function() {
-        this._mainWindow.showAbout(this.isBooks);
-    },
-
-    _onActionHelp: function() {
-        try {
-            Gtk.show_uri_on_window(this._mainWindow,
-                                   'help:gnome-documents',
-                                   Gtk.get_current_event_time());
-        } catch (e) {
-            logError(e, 'Unable to display help');
-        }
+        this._mainWindow.showAbout();
     },
 
     _onActionNightMode: function(action) {
         let state = action.get_state();
         settings.set_value('night-mode', GLib.Variant.new('b', !state.get_boolean()));
-    },
-
-    _createMiners: function(callback) {
-        let count = 3;
-
-        this.gdataMiner = new Miners.GDataMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-
-        this.owncloudMiner = new Miners.OwncloudMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-
-        this.zpjMiner = new Miners.ZpjMiner(Lang.bind(this,
-            function() {
-                count--;
-                if (count == 0)
-                    callback();
-            }));
-    },
-
-    _refreshMinerNow: function(miner) {
-        let env = GLib.getenv('DOCUMENTS_DISABLE_MINERS');
-        if (env)
-            return false;
-
-        if (!miner)
-            return false;
-
-        this.minersRunning.push(miner);
-        this.emit('miners-changed');
-
-        miner._cancellable = new Gio.Cancellable();
-        miner.RefreshDBRemote(['documents'], miner._cancellable, Lang.bind(this,
-            function(res, error) {
-                this.minersRunning = this.minersRunning.filter(
-                    function(element) {
-                        return element != miner;
-                    });
-                this.emit('miners-changed');
-
-                if (error) {
-                    if (!error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.CANCELLED))
-                        logError(error, 'Error updating the cache');
-
-                    return;
-                }
-
-                Mainloop.timeout_add_seconds(MINER_REFRESH_TIMEOUT,
-                                             Lang.bind(this, function() {
-                                                 this._refreshMinerNow(miner);
-                                             }));
-            }));
-
-        return false;
-    },
-
-    _refreshMiners: function() {
-        if (sourceManager.hasProviderType('google')) {
-            try {
-                // startup a refresh of the gdocs cache
-                this._refreshMinerNow(this.gdataMiner);
-            } catch (e) {
-                logError(e, 'Unable to start GData miner');
-            }
-        }
-
-        if (sourceManager.hasProviderType('owncloud')) {
-            try {
-                // startup a refresh of the owncloud cache
-                this._refreshMinerNow(this.owncloudMiner);
-            } catch (e) {
-                logError(e, 'Unable to start Owncloud miner');
-            }
-        }
-
-        if (sourceManager.hasProviderType('windows_live')) {
-            try {
-                // startup a refresh of the skydrive cache
-                this._refreshMinerNow(this.zpjMiner);
-            } catch (e) {
-                logError(e, 'Unable to start Zpj miner');
-            }
-        }
-    },
-
-    _startMiners: function() {
-        this._createMiners(Lang.bind(this,
-            function() {
-                this._refreshMiners();
-
-                this._sourceAddedId = sourceManager.connect('item-added',
-                                                            Lang.bind(this, this._refreshMiners));
-                this._sourceRemovedId = sourceManager.connect('item-removed',
-                                                              Lang.bind(this, this._refreshMiners));
-            }));
-    },
-
-    _stopMiners: function() {
-        if (this._sourceAddedId != 0) {
-            sourceManager.disconnect(this._sourceAddedId);
-            this._sourceAddedId = 0;
-        }
-
-        if (this._sourceRemovedId != 0) {
-            sourceManager.disconnect(this._sourceRemovedId);
-            this._sourceRemovedId = 0;
-        }
-
-        this.minersRunning.forEach(Lang.bind(this,
-            function(miner) {
-                miner._cancellable.cancel();
-            }));
-        this.minersRunning = [];
-
-        this.gdataMiner = null;
-        this.owncloudMiner = null;
-        this.zpjMiner = null;
     },
 
     _themeChanged: function(gtkSettings) {
@@ -350,10 +168,7 @@ var Application = new Lang.Class({
         EvDoc.init();
 
         application = this;
-        if (application.isBooks)
-            settings = new Gio.Settings({ schema_id: 'org.gnome.books' });
-        else
-            settings = new Gio.Settings({ schema_id: 'org.gnome.documents' });
+        settings = new Gio.Settings({ schema_id: 'org.gnome.books' });
 
         let gtkSettings = Gtk.Settings.get_default();
         gtkSettings.connect('notify::gtk-theme-name', Lang.bind(this, this._themeChanged));
@@ -367,21 +182,11 @@ var Application = new Lang.Class({
             return;
         }
 
-        if (!application.isBooks) {
-            try {
-                goaClient = Goa.Client.new_sync(null);
-            } catch (e) {
-                logError(e, 'Unable to create the GOA client');
-                return;
-            }
-        }
-
         connectionQueue = new TrackerController.TrackerConnectionQueue();
         changeMonitor = new ChangeMonitor.TrackerChangeMonitor();
 
         // now init application components
         Search.initSearch(imports.application);
-        Search.initSearch(imports.shellSearchProvider);
 
         modeController = new WindowMode.ModeController();
         offsetCollectionsController = new Search.OffsetCollectionsController();
@@ -398,9 +203,6 @@ var Application = new Lang.Class({
               accels: ['<Primary>q'] },
             { name: 'about',
               callback: Lang.bind(this, this._onActionAbout) },
-            { name: 'help',
-              callback: Lang.bind(this, this._onActionHelp),
-              accels: ['F1'] },
             { name: 'night-mode',
               callback: Lang.bind(this, this._onActionNightMode),
               create_hook: Lang.bind(this, this._nightModeCreateHook),
@@ -414,9 +216,6 @@ var Application = new Lang.Class({
         if (this._mainWindow)
             return;
 
-        if (!this.isBooks)
-            this._initGettingStarted();
-
         notificationManager = new Notifications.NotificationManager();
         this._mainWindow = new MainWindow.MainWindow(this);
         this._mainWindow.connect('destroy', Lang.bind(this, this._onWindowDestroy));
@@ -427,38 +226,6 @@ var Application = new Lang.Class({
         } catch (e) {
             logError(e, 'Unable to connect to the tracker extractor');
         }
-
-        // start miners
-        this._startMiners();
-    },
-
-    vfunc_dbus_register: function(connection, path) {
-        this.parent(connection, path);
-
-        if (this._searchProvider != null)
-            throw(new Error('ShellSearchProvider already instantiated - dbus_register called twice?'));
-
-        this._searchProvider = new ShellSearchProvider.ShellSearchProvider();
-        this._searchProvider.connect('activate-result', Lang.bind(this, this._onActivateResult));
-        this._searchProvider.connect('launch-search', Lang.bind(this, this._onLaunchSearch));
-
-        try {
-            this._searchProvider.export(connection);
-        } catch(e) {
-            this._searchProvider = null;
-            throw(e);
-        }
-
-        return true;
-    },
-
-    vfunc_dbus_unregister: function(connection, path) {
-        if (this._searchProvider != null) {
-            this._searchProvider.unexport(connection);
-            this._searchProvider = null;
-        }
-
-        this.parent(connection, path);
     },
 
     vfunc_handle_local_options: function(options) {
@@ -499,9 +266,6 @@ var Application = new Lang.Class({
         modeController.setWindowMode(WindowMode.WindowMode.NONE);
         selectionController.setSelection(null);
         notificationManager = null;
-
-        // stop miners
-        this._stopMiners();
 
         if (this._extractPriority)
             this._extractPriority.ClearRdfTypesRemote();

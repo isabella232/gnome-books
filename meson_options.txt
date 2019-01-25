@@ -1,2 +1,1 @@
 option('documentation', type: 'boolean', value: true, description: 'build documentation')
-option('getting_started', type: 'boolean', value: false, description: 'build getting started PDFs')

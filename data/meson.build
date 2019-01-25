@@ -18,14 +18,13 @@ gnome.mkenums(
   vtail: '  </@type@>',
   ftail: '</schemalist>',
   install_header: true,
-  install_dir: documents_schemadir
+  install_dir: books_schemadir
 )
 
 resource_data = files(
   'application.css',
   'media/dnd-counter.svg',
   'media/thumbnail-frame.png',
-  'ui/documents-app-menu.ui',
   'ui/books-app-menu.ui',
   'ui/help-overlay.ui',
   'ui/help-overlay.ui',
@@ -41,7 +40,7 @@ desktop_file_validate = find_program('desktop-file-validate', required: false)
 appstream_util = find_program('appstream-util', required: false)
 schemas = []
 
-foreach app: documents_apps
+foreach app: books_apps
   resource = app + '.data'
 
   sources += gnome.compile_resources(
@@ -51,7 +50,7 @@ foreach app: documents_apps
     dependencies: resource_data,
     gresource_bundle: true,
     install: true,
-    install_dir: documents_pkgdatadir
+    install_dir: books_pkgdatadir
   )
 
   appdata = app + '.appdata.xml'
@@ -62,7 +61,7 @@ foreach app: documents_apps
     output: appdata,
     po_dir: po_dir,
     install: true,
-    install_dir: join_paths(documents_datadir, 'metainfo')
+    install_dir: join_paths(books_datadir, 'metainfo')
   )
   if appstream_util.found()
     test(
@@ -83,7 +82,7 @@ foreach app: documents_apps
     output: desktop,
     po_dir: po_dir,
     install: true,
-    install_dir: join_paths(documents_datadir, 'applications')
+    install_dir: join_paths(books_datadir, 'applications')
   )
   if desktop_file_validate.found()
     test(
@@ -100,10 +99,5 @@ endforeach
 
 install_data(
   schemas,
-  install_dir: documents_schemadir
-)
-
-install_data(
-  'org.gnome.Documents.search-provider.ini',
-  install_dir: join_paths(documents_datadir, 'gnome-shell', 'search-providers')
+  install_dir: books_schemadir
 )

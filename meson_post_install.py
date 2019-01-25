@@ -15,14 +15,13 @@ bindir = os.path.normpath(destdir + os.sep + sys.argv[2])
 #        https://github.com/mesonbuild/meson/blob/master/mesonbuild/scripts/uninstall.py#L39
 apps = [
   ['org.gnome.Books', 'gnome-books'],
-  ['org.gnome.Documents', 'gnome-documents']
 ]
 
 if not os.path.exists(bindir):
   os.makedirs(bindir)
 
 for app in apps:
-  src = os.path.join(datadir, 'gnome-documents', app[0])
+  src = os.path.join(datadir, 'gnome-books', app[0])
   dest = os.path.join(bindir, app[1])
   subprocess.call(['ln', '-s', '-f', src, dest])
 

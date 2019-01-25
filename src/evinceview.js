@@ -33,7 +33,6 @@ const Mainloop = imports.mainloop;
 const Application = imports.application;
 const Documents = imports.documents;
 const Places = imports.places;
-const Presentation = imports.presentation;
 const Preview = imports.preview;
 const Utils = imports.utils;
 const WindowMode = imports.windowMode;
@@ -121,20 +120,6 @@ var EvinceView = new Lang.Class({
             this._bookmarks.remove(bookmark);
     },
 
-    _presentStateChanged: function(action) {
-        if (!this._model)
-            return;
-
-        if (action.state.get_boolean())
-            this._promptPresentation();
-        else
-            this._hidePresentation();
-    },
-
-    _edit: function() {
-        Application.modeController.setWindowMode(WindowMode.WindowMode.EDIT);
-    },
-
     _print: function() {
         let doc = Application.documentManager.getActiveItem();
         if (doc)
@@ -185,8 +170,6 @@ var EvinceView = new Lang.Class({
               state: GLib.Variant.new('b', false),
               stateChanged: Lang.bind(this, this._bookmarkStateChanged),
               accels: ['<Primary>d'] },
-            { name: 'edit-current',
-              callback: Lang.bind(this, this._edit) },
             { name: 'print-current',
               callback: Lang.bind(this, this._print),
               accels: ['<Primary>p'] },
@@ -197,13 +180,6 @@ var EvinceView = new Lang.Class({
               callback: Lang.bind(this, this._scrollDown),
               accels: ['Page_Down'] }
         ];
-
-        if (!Application.application.isBooks)
-            actions.push({ name: 'present-current',
-                           callback: Utils.actionToggleCallback,
-                           state: GLib.Variant.new('b', false),
-                           stateChanged: Lang.bind(this, this._presentStateChanged),
-                           accels: ['F5'] });
 
         return actions;
     },
@@ -261,10 +237,7 @@ var EvinceView = new Lang.Class({
 
         this.parent(manager, doc, docModel);
 
-        if (Application.application.isBooks)
-            docModel.set_sizing_mode(EvView.SizingMode.FIT_PAGE);
-        else
-            docModel.set_sizing_mode(EvView.SizingMode.AUTOMATIC);
+        docModel.set_sizing_mode(EvView.SizingMode.FIT_PAGE);
 
         docModel.set_continuous(false);
         docModel.set_page_layout(EvView.PageLayout.AUTOMATIC);
@@ -278,7 +251,6 @@ var EvinceView = new Lang.Class({
         this._onPageChanged();
 
         this.getAction('copy').enabled = false;
-        this.getAction('edit-current').enabled = doc.canEdit();
         this.getAction('print-current').enabled = doc.canPrint(docModel);
         let presentCurrent = this.getAction('present-current');
         if (presentCurrent)
@@ -337,40 +309,6 @@ var EvinceView = new Lang.Class({
         let hasBookmark = (this._bookmarks.find_bookmark(bookmark) != null);
 
         this.getAction('bookmark-page').change_state(GLib.Variant.new('b', hasBookmark));
-    },
-
-    _hidePresentation: function() {
-        if (this._presentation) {
-            this._presentation.close();
-            this._presentation = null;
-        }
-
-        this.getAction('present-current').change_state(GLib.Variant.new('b', false));
-    },
-
-    _showPresentation: function(output) {
-        this._presentation = new Presentation.PresentationWindow(this._model);
-        this._presentation.connect('destroy', Lang.bind(this, this._hidePresentation));
-        if (output)
-            this._presentation.setOutput(output);
-    },
-
-    _promptPresentation: function() {
-        let outputs = new Presentation.PresentationOutputs();
-        if (outputs.list.length < 2) {
-            this._showPresentation();
-        } else {
-            let chooser = new Presentation.PresentationOutputChooser(outputs);
-            chooser.connect('output-activated', Lang.bind(this,
-                function(chooser, output) {
-                    if (output) {
-                        this._showPresentation(output);
-                    } else {
-                        this._hidePresentation();
-                    }
-                }));
-
-        }
     },
 
     _onViewSelectionChanged: function() {
@@ -568,11 +506,6 @@ var EvinceView = new Lang.Class({
     get canFullscreen() {
         return true;
     },
-
-    set nightMode(v) {
-        if (this._model && !Application.application.isBooks)
-            this._model.set_inverted_colors(v);
-    }
 });
 
 const EvinceViewNavControls = new Lang.Class({

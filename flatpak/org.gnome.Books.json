@@ -12,51 +12,23 @@
         /* Wayland access */
         "--socket=wayland",
         /* Read-only access to users documents */
-        /* Books can be outside xdg-dirs */
-        "--filesystem=host:ro",
+        "--filesystem=xdg-documents:ro", "--filesystem=xdg-download:ro",
         /* Needs to talk to the network: */
         "--share=network",
-        /* Tracker access */
+        /* Tracker D-Bus access */
         "--talk-name=org.freedesktop.Tracker1",
         "--talk-name=org.freedesktop.Tracker1.Miner.Extract",
+        "--env=TRACKER_SPARQL_BACKEND=bus",
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    "build-options" : {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
     "cleanup": [ "/include", "/lib/pkgconfig",
                  "/share/pkgconfig", "/share/aclocal",
                  "/man", "/share/man", "/share/gtk-doc",
                  "/share/vala",
-                 "*.la", "*.a",
-                 "/bin/gnome-documents" ],
+                 "*.la", "*.a" ],
     "modules": [
-        {
-            "name": "librest",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz",
-                    "sha256": "0513aad38e5d3cedd4ae3c551634e3be1b9baaa79775e53b2dba9456f15b01c9"
-                }
-            ]
-        },
-        {
-            "name": "gnome-online-accounts",
-            "config-opts": [ "--disable-telepathy", "--disable-documentation", "--disable-backend", "--disable-Werror" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gnome-online-accounts.git"
-                }
-            ]
-        },
         {
             "name": "gnome-desktop",
             "buildsystem": "meson",
@@ -65,36 +37,6 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
-                }
-            ]
-        },
-        {
-            "name": "liboauth",
-            "config-opts": [ "--enable-nss" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://netix.dl.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz",
-                    "sha256": "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f"
-                }
-            ]
-        },
-        {
-            "name": "libgdata",
-            "config-opts": [ "--disable-always-build-tests", "--disable-Werror", "--disable-static" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libgdata.git"
-                }
-            ]
-        },
-        {
-            "name": "libzapojit",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libzapojit.git"
                 }
             ]
         },
@@ -159,7 +101,7 @@
             "name": "tracker",
             "buildsystem": "meson",
             "cleanup": [ "/bin", "/etc", "/lib/systemd", "/libexec", "/share/dbus-1/services" ],
-            "config-opts": [ "--default-library=shared", "-Dbash-completion=no", "-Ddocs=false" ],
+            "config-opts": [ "--default-library=shared", "-Dbash-completion=no", "-Ddocs=false", "-Dsystemd_user_services=no" ],
             "sources": [
                 {
                     "type": "git",
@@ -177,7 +119,8 @@
                              "-Dextract=false",
                              "-Dgeneric_media_extractor=none",
                              "-Dwriteback=false",
-                             "-Dminer_fs=true" ],
+                             "-Dminer_fs=true",
+                             "-Ddbus_services=/app/share/dbus-1/services/" ],
             "sources": [
                 {
                     "type": "git",
@@ -211,7 +154,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gnome-documents.git"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-books.git"
                 }
             ]
         }
