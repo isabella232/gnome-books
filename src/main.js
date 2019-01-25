@@ -42,7 +42,5 @@ const GLib = imports.gi.GLib;
 
 function main(args) {
     let application = new Application.Application(pkg.name == 'org.gnome.Books');
-    if (GLib.getenv('DOCUMENTS_PERSIST'))
-        application.hold();
     return application.run(args);
 }
