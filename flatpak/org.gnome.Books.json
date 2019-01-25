@@ -101,7 +101,7 @@
             "name": "tracker",
             "buildsystem": "meson",
             "cleanup": [ "/bin", "/etc", "/lib/systemd", "/libexec", "/share/dbus-1/services" ],
-            "config-opts": [ "--default-library=shared", "-Dbash-completion=no", "-Ddocs=false" ],
+            "config-opts": [ "--default-library=shared", "-Dbash-completion=no", "-Ddocs=false", "-Dsystemd_user_services=no" ],
             "sources": [
                 {
                     "type": "git",
@@ -119,7 +119,8 @@
                              "-Dextract=false",
                              "-Dgeneric_media_extractor=none",
                              "-Dwriteback=false",
-                             "-Dminer_fs=true" ],
+                             "-Dminer_fs=true",
+                             "-Ddbus_services=/app/share/dbus-1/services/" ],
             "sources": [
                 {
                     "type": "git",
