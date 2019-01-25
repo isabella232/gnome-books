@@ -12,13 +12,13 @@
         /* Wayland access */
         "--socket=wayland",
         /* Read-only access to users documents */
-        /* Books can be outside xdg-dirs */
-        "--filesystem=host:ro",
+        "--filesystem=xdg-documents:ro", "--filesystem=xdg-download:ro",
         /* Needs to talk to the network: */
         "--share=network",
-        /* Tracker access */
+        /* Tracker D-Bus access */
         "--talk-name=org.freedesktop.Tracker1",
         "--talk-name=org.freedesktop.Tracker1.Miner.Extract",
+        "--env=TRACKER_SPARQL_BACKEND=bus",
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
