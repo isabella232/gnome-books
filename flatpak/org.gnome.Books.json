@@ -19,6 +19,8 @@
         "--talk-name=org.freedesktop.Tracker1",
         "--talk-name=org.freedesktop.Tracker1.Miner.Extract",
         "--env=TRACKER_SPARQL_BACKEND=bus",
+        /* For the WebP loader */
+        "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
         /* Needed for dconf to work */
         "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
         "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
@@ -38,6 +40,21 @@
                     "type": "git",
                     "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
                 }
+            ]
+        },
+        {
+            "name": "webp-pixbuf-loader",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/aruiz/webp-pixbuf-loader.git",
+                    "commit": "9b92950d49d7939f90ba7413deb7ec6b392b2054"
+                }
+            ],
+            "post-install": [
+                "GDK_PIXBUF_MODULEDIR=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders/ gdk-pixbuf-query-loaders > loaders.cache",
+                "cat /usr/lib/*/gdk-pixbuf-2.0/2.10.0/loaders.cache loaders.cache > /app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
             ]
         },
         {
