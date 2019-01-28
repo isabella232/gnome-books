@@ -17,7 +17,6 @@ configure_file(
 headers = files(
   'lib/gd-bookmark.h',
   'lib/gd-bookmarks.h',
-  'lib/gd-display-preview.h',
   'lib/gd-metadata.h',
   'lib/gd-nav-bar.h',
   'lib/gd-pdf-loader.h',
@@ -30,7 +29,6 @@ headers = files(
 sources = files(
   'lib/gd-bookmark.c',
   'lib/gd-bookmarks.c',
-  'lib/gd-display-preview.c',
   'lib/gd-metadata.c',
   'lib/gd-nav-bar.c',
   'lib/gd-pdf-loader.c',
