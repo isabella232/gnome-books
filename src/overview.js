@@ -129,11 +129,16 @@ const ViewModel = new Lang.Class({
         this._resetCount();
 
         let iter = this.append();
-        this.set(iter,
-            [ 0, 1, 2, 3, 4, 5 ],
-            [ doc.id, doc.uri, doc.name,
-              doc.author, doc.surface, doc.mtime ]);
-
+        if (doc.surface)
+            this.set(iter,
+                [ 0, 1, 2, 3, 4, 5 ],
+                [ doc.id, doc.uri, doc.name,
+                  doc.author, doc.surface, doc.mtime ]);
+        else
+            this.set(iter,
+                [ 0, 1, 2, 3, 5 ],
+                [ doc.id, doc.uri, doc.name,
+                  doc.author, doc.mtime ]);
         let treePath = this.get_path(iter);
         let treeRowRef = Gtk.TreeRowReference.new(this, treePath);
         doc.rowRefs[this._rowRefKey] = treeRowRef;
@@ -185,11 +190,18 @@ const ViewModel = new Lang.Class({
                 return;
 
             let objectIter = this.get_iter(objectPath)[1];
-            if (objectIter)
-                this.set(objectIter,
-                    [ 0, 1, 2, 3, 4, 5 ],
-                    [ doc.id, doc.uri, doc.name,
-                      doc.author, doc.surface, doc.mtime ]);
+            if (objectIter) {
+                if (doc.surface)
+                    this.set(objectIter,
+                        [ 0, 1, 2, 3, 4, 5 ],
+                        [ doc.id, doc.uri, doc.name,
+                          doc.author, doc.surface, doc.mtime ]);
+                else
+                    this.set(objectIter,
+                        [ 0, 1, 2, 3, 5 ],
+                        [ doc.id, doc.uri, doc.name,
+                          doc.author, doc.mtime ]);
+            }
         }
     },
 
