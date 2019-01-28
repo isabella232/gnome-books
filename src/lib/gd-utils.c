@@ -105,7 +105,7 @@ gd_queue_thumbnail_job_for_file_finish (GAsyncResult *res, GError **error)
   return g_task_propagate_boolean (task, error);
 }
 
-const char *
+static const char *
 gd_filename_get_extension_offset (const char *filename)
 {
 	char *end, *end2;
