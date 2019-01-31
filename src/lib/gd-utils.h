@@ -31,8 +31,6 @@ void gd_queue_thumbnail_job_for_file_async (GFile *file,
 
 gboolean gd_queue_thumbnail_job_for_file_finish (GAsyncResult *res, GError **error);
 
-const char *gd_filename_get_extension_offset (const char *filename);
-
 char *gd_filename_strip_extension (const char * filename_with_extension);
 
 gchar *gd_iso8601_from_timestamp (gint64 timestamp);

@@ -17,7 +17,6 @@ configure_file(
 headers = files(
   'lib/gd-bookmark.h',
   'lib/gd-bookmarks.h',
-  'lib/gd-display-preview.h',
   'lib/gd-metadata.h',
   'lib/gd-nav-bar.h',
   'lib/gd-pdf-loader.h',
@@ -30,7 +29,6 @@ headers = files(
 sources = files(
   'lib/gd-bookmark.c',
   'lib/gd-bookmarks.c',
-  'lib/gd-display-preview.c',
   'lib/gd-metadata.c',
   'lib/gd-nav-bar.c',
   'lib/gd-pdf-loader.c',
@@ -79,37 +77,35 @@ app_conf.set('libdir', books_libdir)
 app_conf.set('PACKAGE_VERSION', books_version)
 app_conf.set('GJS', gjs_console)
 
-foreach app: books_apps
-  service = app + '.service'
+service = 'org.gnome.Books.service'
 
-  configure_file(
-    input: service + '.in',
-    output: service,
-    install: true,
-    install_dir: join_paths(books_datadir, 'dbus-1', 'services'),
-    configuration: service_conf
-  )
+configure_file(
+  input: service + '.in',
+  output: service,
+  install: true,
+  install_dir: join_paths(books_datadir, 'dbus-1', 'services'),
+  configuration: service_conf
+)
 
-  configure_file(
-    input: app + '.in',
-    output: app,
-    install: true,
-    install_dir: books_pkgdatadir,
-    configuration: app_conf
-  )
+configure_file(
+  input: 'org.gnome.Books.in',
+  output: 'org.gnome.Books',
+  install: true,
+  install_dir: books_pkgdatadir,
+  configuration: app_conf
+)
 
-  resource = app + '.src'
+resource = 'org.gnome.Books.src'
 
-  sources += gnome.compile_resources(
-    resource,
-    resource + '.gresource.xml',
-    source_dir: '.',
-    dependencies: resource_data,
-    gresource_bundle: true,
-    install: true,
-    install_dir: books_pkgdatadir
-  )
-endforeach
+sources += gnome.compile_resources(
+  resource,
+  resource + '.gresource.xml',
+  source_dir: '.',
+  dependencies: resource_data,
+  gresource_bundle: true,
+  install: true,
+  install_dir: books_pkgdatadir
+)
 
 incs = [
   top_inc,

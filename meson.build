@@ -14,10 +14,6 @@ books_private_ns = books_ns + 'Private'
 books_api_version = '1.0'
 books_gir_version = '1.0'
 
-books_apps = [
-  'org.gnome.Books',
-]
-
 books_prefix = get_option('prefix')
 books_bindir = join_paths(books_prefix, get_option('bindir'))
 books_datadir = join_paths(books_prefix, get_option('datadir'))
