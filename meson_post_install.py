@@ -13,17 +13,13 @@ bindir = os.path.normpath(destdir + os.sep + sys.argv[2])
 
 # FIXME: meson will not track the creation of these files
 #        https://github.com/mesonbuild/meson/blob/master/mesonbuild/scripts/uninstall.py#L39
-apps = [
-  ['org.gnome.Books', 'gnome-books'],
-]
 
 if not os.path.exists(bindir):
   os.makedirs(bindir)
 
-for app in apps:
-  src = os.path.join(datadir, 'gnome-books', app[0])
-  dest = os.path.join(bindir, app[1])
-  subprocess.call(['ln', '-s', '-f', src, dest])
+src = os.path.join(datadir, 'gnome-books', 'org.gnome.Books')
+dest = os.path.join(bindir, 'gnome-books')
+subprocess.call(['ln', '-s', '-f', src, dest])
 
 if not os.environ.get('DESTDIR'):
   icondir = os.path.join(datadir, 'icons', 'hicolor')

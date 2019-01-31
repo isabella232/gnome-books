@@ -38,66 +38,61 @@ resource_data = files(
 
 desktop_file_validate = find_program('desktop-file-validate', required: false)
 appstream_util = find_program('appstream-util', required: false)
-schemas = []
 
-foreach app: books_apps
-  resource = app + '.data'
+resource = 'org.gnome.Books.data'
 
-  sources += gnome.compile_resources(
-    resource,
-    resource + '.gresource.xml',
-    source_dir: '.',
-    dependencies: resource_data,
-    gresource_bundle: true,
-    install: true,
-    install_dir: books_pkgdatadir
+sources += gnome.compile_resources(
+  resource,
+  resource + '.gresource.xml',
+  source_dir: '.',
+  dependencies: resource_data,
+  gresource_bundle: true,
+  install: true,
+  install_dir: books_pkgdatadir
+)
+
+appdata = 'org.gnome.Books.appdata.xml'
+
+appdata_file = i18n.merge_file(
+  appdata,
+  input: appdata + '.in',
+  output: appdata,
+  po_dir: po_dir,
+  install: true,
+  install_dir: join_paths(books_datadir, 'metainfo')
+)
+if appstream_util.found()
+  test(
+      'validate-appdata', appstream_util,
+      args: [
+          'validate-relax', '--nonet', appdata_file.full_path()
+      ]
   )
-
-  appdata = app + '.appdata.xml'
-
-  appdata_file = i18n.merge_file(
-    appdata,
-    input: appdata + '.in',
-    output: appdata,
-    po_dir: po_dir,
-    install: true,
-    install_dir: join_paths(books_datadir, 'metainfo')
-  )
-  if appstream_util.found()
-    test(
-        'validate-appdata', appstream_util,
-        args: [
-            'validate-relax', '--nonet', appdata_file.full_path()
-        ]
-    )
-    endif
-
-
-  desktop = app + '.desktop'
-
-  desktop_file = i18n.merge_file(
-    desktop,
-    type: 'desktop',
-    input: desktop + '.in',
-    output: desktop,
-    po_dir: po_dir,
-    install: true,
-    install_dir: join_paths(books_datadir, 'applications')
-  )
-  if desktop_file_validate.found()
-    test(
-        'validate-desktop',
-        desktop_file_validate,
-        args: [
-            desktop_file.full_path()
-        ]
-    )
   endif
 
-  schemas += app.to_lower() + '.gschema.xml'
-endforeach
+
+desktop = 'org.gnome.Books.desktop'
+
+desktop_file = i18n.merge_file(
+  desktop,
+  type: 'desktop',
+  input: desktop + '.in',
+  output: desktop,
+  po_dir: po_dir,
+  install: true,
+  install_dir: join_paths(books_datadir, 'applications')
+)
+if desktop_file_validate.found()
+  test(
+      'validate-desktop',
+      desktop_file_validate,
+      args: [
+          desktop_file.full_path()
+      ]
+  )
+endif
 
 install_data(
-  schemas,
+  'org.gnome.books.gschema.xml',
   install_dir: books_schemadir
 )

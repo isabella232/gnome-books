@@ -77,37 +77,35 @@ app_conf.set('libdir', books_libdir)
 app_conf.set('PACKAGE_VERSION', books_version)
 app_conf.set('GJS', gjs_console)
 
-foreach app: books_apps
-  service = app + '.service'
+service = 'org.gnome.Books.service'
 
-  configure_file(
-    input: service + '.in',
-    output: service,
-    install: true,
-    install_dir: join_paths(books_datadir, 'dbus-1', 'services'),
-    configuration: service_conf
-  )
+configure_file(
+  input: service + '.in',
+  output: service,
+  install: true,
+  install_dir: join_paths(books_datadir, 'dbus-1', 'services'),
+  configuration: service_conf
+)
 
-  configure_file(
-    input: app + '.in',
-    output: app,
-    install: true,
-    install_dir: books_pkgdatadir,
-    configuration: app_conf
-  )
+configure_file(
+  input: 'org.gnome.Books.in',
+  output: 'org.gnome.Books',
+  install: true,
+  install_dir: books_pkgdatadir,
+  configuration: app_conf
+)
 
-  resource = app + '.src'
+resource = 'org.gnome.Books.src'
 
-  sources += gnome.compile_resources(
-    resource,
-    resource + '.gresource.xml',
-    source_dir: '.',
-    dependencies: resource_data,
-    gresource_bundle: true,
-    install: true,
-    install_dir: books_pkgdatadir
-  )
-endforeach
+sources += gnome.compile_resources(
+  resource,
+  resource + '.gresource.xml',
+  source_dir: '.',
+  dependencies: resource_data,
+  gresource_bundle: true,
+  install: true,
+  install_dir: books_pkgdatadir
+)
 
 incs = [
   top_inc,
