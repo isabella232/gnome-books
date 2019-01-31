@@ -8,25 +8,25 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"documents&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-03-12 15:05+0000\n"
-"PO-Revision-Date: 2018-03-24 20:48+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
+"POT-Creation-Date: 2019-01-26 12:17+0000\n"
+"PO-Revision-Date: 2019-01-27 01:55+0200\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
+"com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"20)) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:112 src/overview.js:1052
+#: src/application.js:104 src/overview.js:1018
 msgid "Books"
-msgstr "Cărți "
+msgstr "Cărți"
 
 #: data/org.gnome.Books.appdata.xml.in:8
 msgid "An e-book manager application for GNOME"
@@ -43,7 +43,6 @@ msgstr ""
 "managerului de fișiere pentru a gestiona cărți electronice."
 
 #: data/org.gnome.Books.appdata.xml.in:15
-#: data/org.gnome.Documents.appdata.xml.in:16
 msgid "It lets you:"
 msgstr "Vă permite:"
 
@@ -56,7 +55,6 @@ msgid "Search through e-books"
 msgstr "Căutați prin cărțile electronice"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-#| msgid "View e-books fullscreen"
 msgid "View e-books (PDF and comics) fullscreen"
 msgstr "Vizualizează cărți electronice (PDF și benzi desenate) pe tot ecranul"
 
@@ -65,7 +63,6 @@ msgid "Print e-books"
 msgstr "Tipăriți cărțile electronice"
 
 #: data/org.gnome.Books.appdata.xml.in:32
-#: data/org.gnome.Documents.appdata.xml.in:39
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
@@ -81,149 +78,76 @@ msgstr "org.gnome.Books"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
 msgid "Books;Comics;ePub;PDF;"
-msgstr "Books;Comics;ePub;PDF;Carte;Cărți;Benzi desenate"
+msgstr "Books;Comics;ePub;PDF;Carte;Cărți;Cărți electronice;Benzi desenate;"
 
-#: data/org.gnome.books.gschema.xml:5 data/org.gnome.documents.gschema.xml:5
+#: data/org.gnome.books.gschema.xml:5
 msgid "View as"
 msgstr "Vezi ca"
 
-#: data/org.gnome.books.gschema.xml:6 data/org.gnome.documents.gschema.xml:6
+#: data/org.gnome.books.gschema.xml:6
 msgid "View as type"
 msgstr "Vizualizează ca tip"
 
-#: data/org.gnome.books.gschema.xml:10 data/org.gnome.documents.gschema.xml:10
+#: data/org.gnome.books.gschema.xml:10
 msgid "Sort by"
 msgstr "Ordonează după"
 
-#: data/org.gnome.books.gschema.xml:11 data/org.gnome.documents.gschema.xml:11
+#: data/org.gnome.books.gschema.xml:11
 msgid "Sort by type"
 msgstr "Ordonează după tip"
 
-#: data/org.gnome.books.gschema.xml:15 data/org.gnome.documents.gschema.xml:15
+#: data/org.gnome.books.gschema.xml:15
 msgid "Window size"
 msgstr "Dimensiunea ferestrei"
 
-#: data/org.gnome.books.gschema.xml:16 data/org.gnome.documents.gschema.xml:16
+#: data/org.gnome.books.gschema.xml:16
 msgid "Window size (width and height)."
 msgstr "Dimensiunea ferestrei (lățime și înălțime)."
 
-#: data/org.gnome.books.gschema.xml:20 data/org.gnome.documents.gschema.xml:20
+#: data/org.gnome.books.gschema.xml:20
 msgid "Window position"
 msgstr "Poziția ferestrei"
 
-#: data/org.gnome.books.gschema.xml:21 data/org.gnome.documents.gschema.xml:21
+#: data/org.gnome.books.gschema.xml:21
 msgid "Window position (x and y)."
 msgstr "Poziția ferestrei (x și y)."
 
-#: data/org.gnome.books.gschema.xml:25 data/org.gnome.documents.gschema.xml:25
+#: data/org.gnome.books.gschema.xml:25
 msgid "Window maximized"
 msgstr "Fereastra maximizată"
 
-#: data/org.gnome.books.gschema.xml:26 data/org.gnome.documents.gschema.xml:26
+#: data/org.gnome.books.gschema.xml:26
 msgid "Window maximized state"
 msgstr "Starea maximizată a ferestrei"
 
-#: data/org.gnome.books.gschema.xml:30 data/org.gnome.documents.gschema.xml:30
+#: data/org.gnome.books.gschema.xml:30
 msgid "Night mode"
 msgstr "Mod de noapte"
 
-#: data/org.gnome.books.gschema.xml:31 data/org.gnome.documents.gschema.xml:31
+#: data/org.gnome.books.gschema.xml:31
 msgid "Whether the application is in night mode."
 msgstr "Dacă aplicația este în modul de noapte."
 
-#: data/org.gnome.Documents.appdata.xml.in:7
-#: data/org.gnome.Documents.desktop.in:3 src/application.js:115
-#: src/overview.js:1052
-msgid "Documents"
-msgstr "Documente"
-
-#: data/org.gnome.Documents.appdata.xml.in:8
-msgid "A document manager application for GNOME"
-msgstr "O aplicație de administrat documente pentru GNOME"
-
-#: data/org.gnome.Documents.appdata.xml.in:10
-msgid ""
-"A simple application to access, organize and share your documents on GNOME. "
-"It is meant to be a simple and elegant replacement for using a file manager "
-"to deal with documents. Seamless cloud integration is offered through GNOME "
-"Online Accounts."
-msgstr ""
-"O aplicație simplă care vă permite să accesați, organizați și să partajați "
-"documentele dumneavoastră în mediul GNOME. Se dorește a fi un înlocuitor "
-"simplu și elegant pentru un gestionar de fișiere în lucrul cu documentele. "
-"Oferă integrare cloud perfectă prin Conturi Online GNOME."
-
-#: data/org.gnome.Documents.appdata.xml.in:18
-msgid "View recent local and online documents"
-msgstr "Vizualizează documente recente locale și online"
-
-#: data/org.gnome.Documents.appdata.xml.in:19
-msgid "Access your Google, ownCloud or OneDrive content"
-msgstr ""
-"Accesează conținutul conturilor dumneavoastră Google, OneDrive sau ownCloud"
-
-#: data/org.gnome.Documents.appdata.xml.in:20
-msgid "Search through documents"
-msgstr "Căută prin documente"
-
-#: data/org.gnome.Documents.appdata.xml.in:21
-msgid "See new documents shared by friends"
-msgstr "Vizualizează documente noi partajate de către prieteni"
-
-#: data/org.gnome.Documents.appdata.xml.in:22
-msgid "View documents fullscreen"
-msgstr "Vezi documente în modul ecran complet"
-
-#: data/org.gnome.Documents.appdata.xml.in:23
-msgid "Print documents"
-msgstr "Tipăriți documente"
-
-#: data/org.gnome.Documents.appdata.xml.in:24
-msgid "Select favorites"
-msgstr "Selectează favoritele"
-
-#: data/org.gnome.Documents.appdata.xml.in:25
-msgid "Allow opening full featured editor for non-trivial changes"
-msgstr ""
-"Permite deschiderea editorului cu opțiuni avansate pentru modificări "
-"importante."
-
-#: data/org.gnome.Documents.desktop.in:4
-msgid "Access, manage and share documents"
-msgstr "Accesează, administrează și partajează documente"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Documents.desktop.in:7
-#| msgid "Documents"
-msgid "org.gnome.Documents"
-msgstr "org.gnome.Documents"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Documents.desktop.in:15
-msgid "Docs;PDF;Document;"
-msgstr "Docs;PDF;Document;Documente;"
-
-#: data/ui/app-menu.ui:6 src/preview.js:453
+#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
+#: src/preview.js:452
 msgid "Night Mode"
 msgstr "Mod de noapte"
 
-#: data/ui/app-menu.ui:12
+#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Scurtături de tastatură"
 
-#: data/ui/app-menu.ui:16
+#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
 msgid "Help"
 msgstr "Ajutor"
 
-#: data/ui/app-menu.ui:20
-msgid "About"
-msgstr "Despre"
+#: data/ui/books-app-menu.ui:20
+msgid "About Books"
+msgstr "Despre Cărți"
 
-#: data/ui/app-menu.ui:24
-#| msgid "Quit"
-msgctxt "app menu"
-msgid "Quit"
-msgstr "Ieșire"
+#: data/ui/documents-app-menu.ui:20
+msgid "About Documents"
+msgstr "Despre Documente"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -236,19 +160,16 @@ msgid "Show help"
 msgstr "Arată ajutorul"
 
 #: data/ui/help-overlay.ui:22
-#| msgid "Quit"
 msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Ieșire"
 
 #: data/ui/help-overlay.ui:29
-#| msgid "Search"
 msgctxt "shortcut window"
 msgid "Search"
 msgstr "Caută"
 
 #: data/ui/help-overlay.ui:36
-#| msgid "Print documents"
 msgctxt "shortcut window"
 msgid "Print the current document"
 msgstr "Tipăriți documentul curent"
@@ -269,19 +190,16 @@ msgid "Preview"
 msgstr "Previzualizare"
 
 #: data/ui/help-overlay.ui:71
-#| msgid "Zoom In"
 msgctxt "shortcut window"
 msgid "Zoom in"
 msgstr "Mărește"
 
 #: data/ui/help-overlay.ui:78
-#| msgid "Zoom Out"
 msgctxt "shortcut window"
 msgid "Zoom out"
 msgstr "Micșorează"
 
 #: data/ui/help-overlay.ui:85
-#| msgid "Bookmark this page"
 msgctxt "shortcut window"
 msgid "Bookmark the current page"
 msgstr "Marchează pagina curentă"
@@ -317,7 +235,6 @@ msgid "Previous occurrence of the search string"
 msgstr "Precedenta apariție a șirului de căutat"
 
 #: data/ui/help-overlay.ui:134
-#| msgid "Presentation"
 msgctxt "shortcut window"
 msgid "Presentation mode"
 msgstr "Mod de prezentare"
@@ -328,7 +245,6 @@ msgid "Open action menu"
 msgstr "Deschide meniul accțiuni"
 
 #: data/ui/help-overlay.ui:148
-#| msgid "Fullscreen"
 msgctxt "shortcut window"
 msgid "Fullscreen"
 msgstr "Pe tot ecranul"
@@ -343,21 +259,20 @@ msgid "New Collection…"
 msgstr "Colecție nouă…"
 
 #: data/ui/organize-collection-dialog.ui:73
-#: data/ui/organize-collection-dialog.ui:122 src/sharing.js:226
+#: data/ui/organize-collection-dialog.ui:122
 msgid "Add"
 msgstr "Adaugă"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1056 src/search.js:126 src/search.js:132
+#: src/overview.js:1022 src/search.js:121
 msgid "Collections"
 msgstr "Colecții"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:616
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:579
 msgid "Cancel"
 msgstr "Anulează"
 
-#. Label for Done button in Sharing dialog
-#: data/ui/organize-collection-dialog.ui:173 src/sharing.js:112
+#: data/ui/organize-collection-dialog.ui:173
 msgid "Done"
 msgstr "Realizat"
 
@@ -367,7 +282,7 @@ msgstr "_Copiază"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:988
+#: src/selections.js:976
 msgid "Open"
 msgstr "Deschide"
 
@@ -379,7 +294,7 @@ msgstr "Editează"
 msgid "Print…"
 msgstr "Tipărește…"
 
-#: data/ui/preview-menu.ui:21 src/preview.js:462
+#: data/ui/preview-menu.ui:21 src/preview.js:461
 msgid "Fullscreen"
 msgstr "Mod ecran complet"
 
@@ -425,13 +340,10 @@ msgid "View items as a list"
 msgstr "Vedeți elementele ca o listă"
 
 #: data/ui/view-menu.ui:73
-#| msgid "Sort by"
 msgid "Sort"
 msgstr "Sortează"
 
 #: data/ui/view-menu.ui:84
-#| msgctxt "Document Author"
-#| msgid "Author"
 msgid "Author"
 msgstr "Autor"
 
@@ -443,128 +355,46 @@ msgstr "Dată"
 msgid "Name"
 msgstr "Nume"
 
-#: src/application.js:126
+#: src/application.js:114
 msgid "Show the version of the program"
 msgstr "Arată versiunea programului"
 
-#: src/documents.js:794
+#: src/documents.js:776
 msgid "Failed to print document"
 msgstr "Tipărirea documentului a eșuat"
 
 #. Translators: this refers to local documents
-#: src/documents.js:836 src/search.js:459
+#: src/documents.js:818 src/search.js:405
 msgid "Local"
 msgstr "Local"
 
-#. Translators: Documents ships a "Getting Started with Documents"
-#. tutorial PDF. The "GNOME" string below is displayed as the author name
-#. of that document, and doesn't normally need to be translated.
-#: src/documents.js:879
-msgid "GNOME"
-msgstr "GNOME"
-
-#: src/documents.js:880
-msgid "Getting Started with Documents"
-msgstr "Noțiuni de bază despre Documente"
-
-#: src/documents.js:905 src/documents.js:1115 src/documents.js:1218
-#: src/documents.js:1412
+#: src/documents.js:875
 msgid "Collection"
 msgstr "Colecție"
 
-#. overridden
-#: src/documents.js:972
-msgid "Google Docs"
-msgstr "Google Docs"
-
-#: src/documents.js:973
-msgid "Google"
-msgstr "Google"
-
-#: src/documents.js:1117 src/documents.js:1414
-msgid "Spreadsheet"
-msgstr "Foaie de calcul"
-
-#: src/documents.js:1119 src/documents.js:1416 src/presentation.js:43
-msgid "Presentation"
-msgstr "Prezentare"
-
-#: src/documents.js:1121 src/documents.js:1418
-msgid "e-Book"
-msgstr "carte electronică"
-
-#: src/documents.js:1123 src/documents.js:1420
-msgid "Document"
-msgstr "Document"
-
-#. overridden
-#: src/documents.js:1173
-msgid "ownCloud"
-msgstr "ownCloud"
-
-#. overridden
-#: src/documents.js:1307 src/documents.js:1308
-msgid "OneDrive"
-msgstr "OneDrive"
-
-#: src/documents.js:1594
-msgid "Please check the network connection."
-msgstr "Verificați conexiunea la rețea."
-
-#: src/documents.js:1597
-msgid "Please check the network proxy settings."
-msgstr "Verificați configurările proxy ale rețelei."
-
-#: src/documents.js:1600
-msgid "Unable to sign in to the document service."
-msgstr "Autentificarea la serviciului de documente a eșuat."
-
-#: src/documents.js:1603
-msgid "Unable to locate this document."
-msgstr "Nu s-a putut localiza acest document."
-
-#: src/documents.js:1606
-#, javascript-format
-msgid "Hmm, something is fishy (%d)."
-msgstr "Ceva nu este în regulă (%d)."
-
-#: src/documents.js:1613
+#: src/documents.js:1069
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr ""
 "Utilizați o versiune preliminară a aplicației Cărți. Funcționalitatea "
 "completă de redare va sosi în curând!"
 
-#: src/documents.js:1615
-msgid ""
-"LibreOffice support is not available. Please contact your system "
-"administrator."
-msgstr ""
-"Suportul LibreOffice nu este disponibil. Contactați administratorul de "
-"sistem."
-
 #. Translators: %s is the title of a document
-#: src/documents.js:1638
+#: src/documents.js:1092
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Ups! Nu s-a putut încărca „%s”"
 
-#. view button, on the right of the toolbar
-#: src/edit.js:139
-msgid "View"
-msgstr "Vizualizare"
-
-#: src/epubview.js:228
+#: src/epubview.js:245
 #, javascript-format
-#| msgid "Page %u of %u"
 msgid "chapter %s of %s"
 msgstr "capitolul %s din %s"
 
-#: src/evinceview.js:590 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Semne de carte"
 
-#: src/evinceview.js:598
+#: src/evinceview.js:532
 msgid "Bookmark this page"
 msgstr "Pune un semn de carte la pagină"
 
@@ -602,27 +432,28 @@ msgid "Contents"
 msgstr "Conținut"
 
 #: src/lib/gd-utils.c:328
-msgid "A document manager application"
-msgstr "O aplicație de administrare de documente"
-
-#: src/lib/gd-utils.c:333
-msgid "An e-books manager application"
-msgstr "O aplicație pentru gestionarea cărților electronice"
-
-#: src/lib/gd-utils.c:340
 msgid "translator-credits"
 msgstr ""
 "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014\n"
 "Jobava <jobaval10n@gmail.com>, 2015\n"
-"Adelin Șerbănescu <sadelin106@gmail.com>, 2018"
+"Adelin Șerbănescu <sadelin106@gmail.com>, 2018\n"
+"Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019"
 
-#: src/mainToolbar.js:91
-#| msgid "Search"
+#: src/lib/gd-utils.c:329
+msgid "An e-books manager application"
+msgstr "O aplicație pentru gestionarea cărților electronice"
+
+#: src/mainToolbar.js:101
+msgctxt "menu button tooltip"
+msgid "Menu"
+msgstr "Meniu"
+
+#: src/mainToolbar.js:111
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Căută"
 
-#: src/mainToolbar.js:100
+#: src/mainToolbar.js:120
 msgid "Back"
 msgstr "Înapoi"
 
@@ -642,7 +473,7 @@ msgstr[0] "%d element șters"
 msgstr[1] "%d elemente șterse"
 msgstr[2] "%d de elemente șterse"
 
-#: src/notifications.js:61 src/selections.js:387
+#: src/notifications.js:61 src/selections.js:383
 msgid "Undo"
 msgstr "Anulează"
 
@@ -651,73 +482,40 @@ msgstr "Anulează"
 msgid "Printing “%s”: %s"
 msgstr "Se tipărește „%s” : %s"
 
-#: src/notifications.js:215
+#: src/notifications.js:210
 msgid "Your documents are being indexed"
 msgstr "Documentele se indexează"
 
-#: src/notifications.js:216
+#: src/notifications.js:211
 msgid "Some documents might not be available during this process"
 msgstr "Unele documente pot fi indisponibile pe parcursul procesului"
 
-#. Translators: %s refers to an online account provider, e.g.
-#. "Google", or "Windows Live".
-#: src/notifications.js:238
-#, javascript-format
-msgid "Fetching documents from %s"
-msgstr "Se preiau documente de la %s"
-
-#: src/notifications.js:240
-msgid "Fetching documents from online accounts"
-msgstr "Se preiau documente de la conturile online"
-
 #: src/overview.js:275
-#| msgid "No Books Found"
 msgid "No collections found"
 msgstr "Nicio colecție găsită"
 
 #: src/overview.js:277
-#| msgid "No Books Found"
 msgid "No books found"
 msgstr "Nicio carte găsită"
-
-#: src/overview.js:277
-#| msgid "No Documents Found"
-msgid "No documents found"
-msgstr "Niciun document găsit"
 
 #: src/overview.js:286
 msgid "Try a different search"
 msgstr "Încercați o căutare diferită"
 
-#: src/overview.js:293
+#: src/overview.js:292
 msgid "You can create collections from the Books view"
 msgstr "Puteți crea colecții din vizualizarea Cărți"
 
-#: src/overview.js:295
-msgid "You can create collections from the Documents view"
-msgstr "Puteți creea colecții din documentele vizualizate"
-
-#: src/overview.js:305
-#, javascript-format
-msgid ""
-"Documents from your <a href=\"system-settings\">Online Accounts</a> and <a "
-"href=\"file://%s\">Documents folder</a> will appear here."
-msgstr ""
-"Documente din<a href=\"system-settings\">Conturi online</a> și <a "
-"href=\"file://%s\"> dosarul de documente</a> ale Dumneavoastră vor apărea "
-"aici."
-
 #. Translators: this is the menu to change view settings
-#: src/overview.js:562
-#| msgid "View as"
+#: src/overview.js:525
 msgid "View Menu"
 msgstr "Meniul Vizualizare"
 
-#: src/overview.js:590
+#: src/overview.js:553
 msgid "Click on items to select them"
 msgstr "Clic pe elemente pentru a le selecta"
 
-#: src/overview.js:592
+#: src/overview.js:555
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -725,15 +523,15 @@ msgstr[0] "%d selectat"
 msgstr[1] "%d selectate"
 msgstr[2] "%d selectate"
 
-#: src/overview.js:669
+#: src/overview.js:636
 msgid "Select Items"
 msgstr "Selectați elementele"
 
-#: src/overview.js:876
+#: src/overview.js:842
 msgid "Yesterday"
 msgstr "Ieri"
 
-#: src/overview.js:878
+#: src/overview.js:844
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -741,11 +539,11 @@ msgstr[0] "acum %d zi"
 msgstr[1] "acum %d zile"
 msgstr[2] "acum %d de zile"
 
-#: src/overview.js:882
+#: src/overview.js:848
 msgid "Last week"
 msgstr "Săptămâna trecută"
 
-#: src/overview.js:884
+#: src/overview.js:850
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -753,11 +551,11 @@ msgstr[0] "acum %d săptămână"
 msgstr[1] "acum %d săptămâni"
 msgstr[2] "acum %d de săptămâni"
 
-#: src/overview.js:888
+#: src/overview.js:854
 msgid "Last month"
 msgstr "Luna trecută"
 
-#: src/overview.js:890
+#: src/overview.js:856
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -765,11 +563,11 @@ msgstr[0] "acum %d lună"
 msgstr[1] "acum %d luni"
 msgstr[2] "acum %d de luni"
 
-#: src/overview.js:894
+#: src/overview.js:860
 msgid "Last year"
 msgstr "Anul trecut"
 
-#: src/overview.js:896
+#: src/overview.js:862
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -795,42 +593,17 @@ msgstr ""
 msgid "_Password"
 msgstr "_Parola"
 
-#: src/presentation.js:101
-msgid "Running in presentation mode"
-msgstr "Rulează în modul de prezentare"
-
-#: src/presentation.js:129
-msgid "Present On"
-msgstr "Prezentarea este pornită"
-
-#. Translators: "Mirrored" describes when both displays show the same view
-#: src/presentation.js:165
-msgid "Mirrored"
-msgstr "Oglindit"
-
-#: src/presentation.js:167
-msgid "Primary"
-msgstr "Principal"
-
-#: src/presentation.js:169
-msgid "Off"
-msgstr "Dezactivat"
-
-#: src/presentation.js:171
-msgid "Secondary"
-msgstr "Secundar"
-
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:445 src/selections.js:985
+#: src/preview.js:444 src/selections.js:973
 #, javascript-format
 msgid "Open with %s"
 msgstr "Deschide cu %s"
 
-#: src/preview.js:770
+#: src/preview.js:769
 msgid "Find Previous"
 msgstr "Găsește precedentul"
 
-#: src/preview.js:776
+#: src/preview.js:775
 msgid "Find Next"
 msgstr "Găsește următorul"
 
@@ -872,177 +645,299 @@ msgid "Type"
 msgstr "Tip"
 
 #. Translators: "Type" refers to a search filter on the document type
-#. (PDF, spreadsheet, ...)
-#: src/search.js:120
+#. (e-Books, Comics, ...)
+#: src/search.js:116
 msgctxt "Search Filter"
 msgid "Type"
 msgstr "Tip"
 
 #. Translators: this refers to documents
-#: src/search.js:123 src/search.js:260 src/search.js:453
+#: src/search.js:119 src/search.js:225 src/search.js:399
 msgid "All"
 msgstr "Toate"
 
-#: src/search.js:136
-msgid "PDF Documents"
-msgstr "Documente PDF"
-
-#: src/search.js:143
+#: src/search.js:127
 msgid "e-Books"
 msgstr "cărți electronice"
 
-#: src/search.js:147
+#: src/search.js:131
 msgid "Comics"
 msgstr "Benzi desenate"
-
-#: src/search.js:152
-msgid "Presentations"
-msgstr "Prezentări"
-
-#: src/search.js:155
-msgid "Spreadsheets"
-msgstr "Foi de calcul"
-
-#: src/search.js:158
-msgid "Text Documents"
-msgstr "Documente text"
 
 #. Translators: this is a verb that refers to "All", "Title", "Author",
 #. and "Content" as in "Match All", "Match Title", "Match Author", and
 #. "Match Content"
-#: src/search.js:257
+#: src/search.js:222
 msgid "Match"
 msgstr "Potrivire"
 
 #. Translators: "Title" refers to "Match Title" when searching
-#: src/search.js:263
+#: src/search.js:228
 msgctxt "Search Filter"
 msgid "Title"
 msgstr "Titlu"
 
 #. Translators: "Author" refers to "Match Author" when searching
-#: src/search.js:266
+#: src/search.js:231
 msgctxt "Search Filter"
 msgid "Author"
 msgstr "Autor"
 
 #. Translators: "Content" refers to "Match Content" when searching
-#: src/search.js:269
-#| msgid "Contents"
+#: src/search.js:234
 msgctxt "Search Filter"
 msgid "Content"
 msgstr "Conținut"
 
-#: src/search.js:449
+#: src/search.js:395
 msgid "Sources"
 msgstr "Surse"
 
-#. Translators: the first %s is an online account provider name,
-#. e.g. "Google". The second %s is the identity used to log in,
-#. e.g. "foo@gmail.com".
-#: src/search.js:508
-#, javascript-format
-msgid "%s (%s)"
-msgstr "%s (%s)"
-
-#: src/selections.js:360 src/selections.js:362
+#: src/selections.js:356 src/selections.js:358
 msgid "Rename…"
 msgstr "Redenumește…"
 
-#: src/selections.js:366 src/selections.js:368
+#: src/selections.js:362 src/selections.js:364
 msgid "Delete"
 msgstr "Șterge"
 
-#: src/selections.js:382
+#: src/selections.js:378
 #, javascript-format
 msgid "“%s” removed"
 msgstr "„%s” șters"
 
-#: src/selections.js:779
+#: src/selections.js:775
 msgid "Rename"
 msgstr "Redenumește"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:785
+#: src/selections.js:781
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "Colecții"
 
-#: src/sharing.js:108
-msgid "Sharing Settings"
-msgstr "Configurări de partajare"
-
-#. Label for widget group for changing document permissions
-#: src/sharing.js:145
-msgid "Document permissions"
-msgstr "Permisiunile documentului"
-
-#. Label for permission change in Sharing dialog
-#: src/sharing.js:152 src/sharing.js:330
-msgid "Change"
-msgstr "Schimbă"
-
-#. Label for radiobutton that sets doc permission to private
-#: src/sharing.js:176 src/sharing.js:305
-msgid "Private"
-msgstr "Privat"
-
-#: src/sharing.js:186 src/sharing.js:298
-msgid "Public"
-msgstr "Public"
-
-#. Label for checkbutton that sets doc permission to Can edit
-#: src/sharing.js:190 src/sharing.js:300
-msgid "Everyone can edit"
-msgstr "Oricine poate edita"
-
-#. Label for widget group used for adding new contacts
-#: src/sharing.js:197
-msgid "Add people"
-msgstr "Adaugă persoane"
-
-#. Editable text in entry field
-#: src/sharing.js:204
-msgid "Enter an email address"
-msgstr "Introduceți o adresă de e-mail"
-
-#: src/sharing.js:219 src/sharing.js:371
-msgid "Can edit"
-msgstr "Poate edita"
-
-#: src/sharing.js:219 src/sharing.js:374
-msgid "Can view"
-msgstr "Poate vedea"
-
-#: src/sharing.js:302
-msgid "Everyone can read"
-msgstr "Oricine poate citi"
-
-#: src/sharing.js:317
-msgid "Save"
-msgstr "Salvează"
-
-#: src/sharing.js:368
-msgid "Owner"
-msgstr "Proprietar"
-
-#: src/sharing.js:437
-#, javascript-format
-msgid "You can ask %s for access"
-msgstr "Puteți să cereți drepturi de acces lui %s"
-
-#: src/sharing.js:474 src/sharing.js:510 src/sharing.js:567 src/sharing.js:584
-#: src/sharing.js:603
-msgid "The document was not updated"
-msgstr "Documentul nu a fost actualizat"
-
-#: src/shellSearchProvider.js:285
-msgid "Untitled Document"
-msgstr "Document fără titlu"
-
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Nu se poate prelua lista documentelor"
+
+#~ msgid "Documents"
+#~ msgstr "Documente"
+
+#~ msgid "A document manager application for GNOME"
+#~ msgstr "O aplicație de administrat documente pentru GNOME"
+
+#~ msgid ""
+#~ "A simple application to access, organize and share your documents on "
+#~ "GNOME. It is meant to be a simple and elegant replacement for using a "
+#~ "file manager to deal with documents. Seamless cloud integration is "
+#~ "offered through GNOME Online Accounts."
+#~ msgstr ""
+#~ "O aplicație simplă care vă permite să accesați, organizați și să "
+#~ "partajați documentele dumneavoastră în mediul GNOME. Se dorește a fi un "
+#~ "înlocuitor simplu și elegant pentru un gestionar de fișiere în lucrul cu "
+#~ "documentele. Oferă integrare cloud perfectă prin Conturi Online GNOME."
+
+#~ msgid "View recent local and online documents"
+#~ msgstr "Vizualizează documente recente locale și online"
+
+#~ msgid "Access your Google, ownCloud or OneDrive content"
+#~ msgstr ""
+#~ "Accesează conținutul conturilor dumneavoastră Google, OneDrive sau "
+#~ "ownCloud"
+
+#~ msgid "Search through documents"
+#~ msgstr "Căută prin documente"
+
+#~ msgid "See new documents shared by friends"
+#~ msgstr "Vizualizează documente noi partajate de către prieteni"
+
+#~ msgid "View documents fullscreen"
+#~ msgstr "Vezi documente în modul ecran complet"
+
+#~ msgid "Print documents"
+#~ msgstr "Tipăriți documente"
+
+#~ msgid "Select favorites"
+#~ msgstr "Selectează favoritele"
+
+#~ msgid "Allow opening full featured editor for non-trivial changes"
+#~ msgstr ""
+#~ "Permite deschiderea editorului cu opțiuni avansate pentru modificări "
+#~ "importante."
+
+#~ msgid "Access, manage and share documents"
+#~ msgstr "Accesează, administrează și partajează documente"
+
+#~| msgid "Documents"
+#~ msgid "org.gnome.Documents"
+#~ msgstr "org.gnome.Documents"
+
+#~ msgid "Docs;PDF;Document;"
+#~ msgstr "Docs;PDF;Document;Documente;"
+
+#~ msgid "About"
+#~ msgstr "Despre"
+
+#~| msgid "Quit"
+#~ msgctxt "app menu"
+#~ msgid "Quit"
+#~ msgstr "Ieșire"
+
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
+
+#~ msgid "Getting Started with Documents"
+#~ msgstr "Noțiuni de bază despre Documente"
+
+#~ msgid "Google Docs"
+#~ msgstr "Google Docs"
+
+#~ msgid "Google"
+#~ msgstr "Google"
+
+#~ msgid "Spreadsheet"
+#~ msgstr "Foaie de calcul"
+
+#~ msgid "Presentation"
+#~ msgstr "Prezentare"
+
+#~ msgid "e-Book"
+#~ msgstr "carte electronică"
+
+#~ msgid "Document"
+#~ msgstr "Document"
+
+#~ msgid "ownCloud"
+#~ msgstr "ownCloud"
+
+#~ msgid "OneDrive"
+#~ msgstr "OneDrive"
+
+#~ msgid "Please check the network connection."
+#~ msgstr "Verificați conexiunea la rețea."
+
+#~ msgid "Please check the network proxy settings."
+#~ msgstr "Verificați configurările proxy ale rețelei."
+
+#~ msgid "Unable to sign in to the document service."
+#~ msgstr "Autentificarea la serviciului de documente a eșuat."
+
+#~ msgid "Unable to locate this document."
+#~ msgstr "Nu s-a putut localiza acest document."
+
+#~ msgid "Hmm, something is fishy (%d)."
+#~ msgstr "Ceva nu este în regulă (%d)."
+
+#~ msgid ""
+#~ "LibreOffice support is not available. Please contact your system "
+#~ "administrator."
+#~ msgstr ""
+#~ "Suportul LibreOffice nu este disponibil. Contactați administratorul de "
+#~ "sistem."
+
+#~ msgid "View"
+#~ msgstr "Vizualizare"
+
+#~ msgid "A document manager application"
+#~ msgstr "O aplicație de administrare de documente"
+
+#~ msgid "Fetching documents from %s"
+#~ msgstr "Se preiau documente de la %s"
+
+#~ msgid "Fetching documents from online accounts"
+#~ msgstr "Se preiau documente de la conturile online"
+
+#~| msgid "No Documents Found"
+#~ msgid "No documents found"
+#~ msgstr "Niciun document găsit"
+
+#~ msgid "You can create collections from the Documents view"
+#~ msgstr "Puteți creea colecții din documentele vizualizate"
+
+#~ msgid ""
+#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
+#~ msgstr ""
+#~ "Documente din<a href=\"system-settings\">Conturi online</a> și <a href="
+#~ "\"file://%s\"> dosarul de documente</a> ale Dumneavoastră vor apărea aici."
+
+#~ msgid "Running in presentation mode"
+#~ msgstr "Rulează în modul de prezentare"
+
+#~ msgid "Present On"
+#~ msgstr "Prezentarea este pornită"
+
+#~ msgid "Mirrored"
+#~ msgstr "Oglindit"
+
+#~ msgid "Primary"
+#~ msgstr "Principal"
+
+#~ msgid "Off"
+#~ msgstr "Dezactivat"
+
+#~ msgid "Secondary"
+#~ msgstr "Secundar"
+
+#~ msgid "PDF Documents"
+#~ msgstr "Documente PDF"
+
+#~ msgid "Presentations"
+#~ msgstr "Prezentări"
+
+#~ msgid "Spreadsheets"
+#~ msgstr "Foi de calcul"
+
+#~ msgid "%s (%s)"
+#~ msgstr "%s (%s)"
+
+#~ msgid "Sharing Settings"
+#~ msgstr "Configurări de partajare"
+
+#~ msgid "Document permissions"
+#~ msgstr "Permisiunile documentului"
+
+#~ msgid "Change"
+#~ msgstr "Schimbă"
+
+#~ msgid "Private"
+#~ msgstr "Privat"
+
+#~ msgid "Public"
+#~ msgstr "Public"
+
+#~ msgid "Everyone can edit"
+#~ msgstr "Oricine poate edita"
+
+#~ msgid "Add people"
+#~ msgstr "Adaugă persoane"
+
+#~ msgid "Enter an email address"
+#~ msgstr "Introduceți o adresă de e-mail"
+
+#~ msgid "Can edit"
+#~ msgstr "Poate edita"
+
+#~ msgid "Can view"
+#~ msgstr "Poate vedea"
+
+#~ msgid "Everyone can read"
+#~ msgstr "Oricine poate citi"
+
+#~ msgid "Save"
+#~ msgstr "Salvează"
+
+#~ msgid "Owner"
+#~ msgstr "Proprietar"
+
+#~ msgid "You can ask %s for access"
+#~ msgstr "Puteți să cereți drepturi de acces lui %s"
+
+#~ msgid "The document was not updated"
+#~ msgstr "Documentul nu a fost actualizat"
+
+#~ msgid "Untitled Document"
+#~ msgstr "Document fără titlu"
 
 #~ msgid "LibreOffice is required to view this document"
 #~ msgstr "Este necesară suita LibreOffice pentru a vedea acest document"
