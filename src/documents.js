@@ -525,7 +525,10 @@ const DocCommon = new Lang.Class({
         try {
             info = object.query_info_finish(res);
         } catch (e) {
-            logError(e, 'Unable to query info for file at ' + this.uri);
+            if (!e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND))
+                logError(e, 'Unable to query info for file at ' + this.uri);
+            else
+                Utils.debug('Unable to query info for file at ' + this.uri);
             this._failedThumbnailing = true;
             return;
         }
@@ -1086,7 +1089,10 @@ var DocumentManager = new Lang.Class({
             return;
         }
 
-        logError(error, 'Unable to load document');
+        if (!error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND))
+            logError(error, 'Unable to load document');
+        else
+            Utils.debug('Unable to load document' + doc.uri);
 
         // Translators: %s is the title of a document
         let message = _("Oops! Unable to load “%s”").format(doc.name);
