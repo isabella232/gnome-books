@@ -16,8 +16,7 @@
     <ul>
       <li>View recent e-books</li>
       <li>Search through e-books</li>
-      <li>View e-books (PDF and comics) fullscreen</li>
-      <li>Print e-books</li>
+      <li>View e-books (ePubs and comics) fullscreen</li>
     </ul>
   </description>
   <kudos>
@@ -41,7 +40,7 @@
       <image type="source">https://gitlab.gnome.org/GNOME/gnome-books/raw/master/data/screenshots/gnome-books-3.png</image>
     </screenshot>
   </screenshots>
-  <update_contact>debarshir_at_gnome.org</update_contact>
+  <update_contact>hadess_at_gnome.org</update_contact>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
