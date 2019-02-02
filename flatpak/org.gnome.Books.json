@@ -11,6 +11,8 @@
         "--share=ipc", "--socket=x11",
         /* Wayland access */
         "--socket=wayland",
+        /* OpenGL access */
+        "--device=dri",
         /* Read-only access to users documents */
         "--filesystem=xdg-documents:ro", "--filesystem=xdg-download:ro",
         /* Needs to talk to the network: */
