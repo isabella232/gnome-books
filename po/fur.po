@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents gnome-3-6\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-01-26 12:17+0000\n"
-"PO-Revision-Date: 2019-01-31 08:02+0100\n"
+"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"PO-Revision-Date: 2019-02-02 11:06+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Poedit 2.2\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1018
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "Libris"
 
@@ -50,14 +50,10 @@ msgid "Search through e-books"
 msgstr "Cirî tai e-book"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "Viôt a plen visôr e-book (PDF e fumets)"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr "Viôt a plen visôr i e-book (ePubs e fumets)"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "Stampâ e-book"
-
-#: data/org.gnome.Books.appdata.xml.in:32
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
@@ -259,11 +255,11 @@ msgid "Add"
 msgstr "Zonte"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1022 src/search.js:121
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "Colezions"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:579
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "Anule"
 
@@ -354,20 +350,20 @@ msgstr "Non"
 msgid "Show the version of the program"
 msgstr "Mostre la version dal program"
 
-#: src/documents.js:776
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "Impussibil stampâ il document"
 
 #. Translators: this refers to local documents
-#: src/documents.js:818 src/search.js:405
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "Locâl"
 
-#: src/documents.js:875
+#: src/documents.js:878
 msgid "Collection"
 msgstr "Colezion"
 
-#: src/documents.js:1069
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr ""
@@ -375,7 +371,7 @@ msgstr ""
 "vegnaran zontadis chi di pôc!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1092
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Impussibil cjariâ “%s”"
@@ -482,80 +478,80 @@ msgstr ""
 "Cualchi document al podarès no jessi disponibil intant che chest procès al "
 "matee"
 
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "Nissune colezion cjatade"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "Nissun libri cjatât"
 
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "Prove une ricercje diferente"
 
-#: src/overview.js:292
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "Tu puedis creâ colezions da le videade Libris"
 
 #. Translators: this is the menu to change view settings
-#: src/overview.js:525
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "Menù viodude"
 
-#: src/overview.js:553
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "Fâs clic sui elements par selezionaju"
 
-#: src/overview.js:555
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d selezionât"
 msgstr[1] "%d selezionâts"
 
-#: src/overview.js:636
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "Selezione Elements"
 
-#: src/overview.js:842
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "Îr"
 
-#: src/overview.js:844
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dì indaûr"
 msgstr[1] "%d dîs indaûr"
 
-#: src/overview.js:848
+#: src/overview.js:860
 msgid "Last week"
 msgstr "Ultime setemane"
 
-#: src/overview.js:850
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d setemane indaûr"
 msgstr[1] "%d setemanis indaûr"
 
-#: src/overview.js:854
+#: src/overview.js:866
 msgid "Last month"
 msgstr "Ultin mês"
 
-#: src/overview.js:856
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d mês indaûr"
 msgstr[1] "%d mês indaûr"
 
-#: src/overview.js:860
+#: src/overview.js:872
 msgid "Last year"
 msgstr "Ultin an"
 
-#: src/overview.js:862
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -705,6 +701,9 @@ msgstr "Colezions"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Impussibil recuperâ la liste dai documents"
+
+#~ msgid "Print e-books"
+#~ msgstr "Stampâ e-book"
 
 #~ msgid "Documents"
 #~ msgstr "Documents"
