@@ -9,11 +9,11 @@ enum_headers = files(
 )
 
 gnome.mkenums(
-  'org.gnome.Documents.enums.xml',
+  'org.gnome.Books.enums.xml',
   sources: enum_headers,
   comments: '<!-- @comment@ -->',
   fhead: '<schemalist>',
-  vhead: '  <@type@ id="org.gnome.Documents.@EnumName@">',
+  vhead: '  <@type@ id="org.gnome.Books.@EnumName@">',
   vprod: '    <value nick="@valuenick@" value="@valuenum@"/>',
   vtail: '  </@type@>',
   ftail: '</schemalist>',

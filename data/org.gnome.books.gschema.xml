@@ -1,11 +1,11 @@
 <schemalist gettext-domain="gnome-books">
   <schema id="org.gnome.books" path="/org/gnome/books/">
-    <key name="view-as" enum="org.gnome.Documents.GdMainViewType">
+    <key name="view-as" enum="org.gnome.Books.GdMainViewType">
       <default>'icon'</default>
       <summary>View as</summary>
       <description>View as type</description>
     </key>
-    <key name="sort-by" enum="org.gnome.Documents.GdMainColumns">
+    <key name="sort-by" enum="org.gnome.Books.GdMainColumns">
       <default>'mtime'</default>
       <summary>Sort by</summary>
       <description>Sort by type</description>
