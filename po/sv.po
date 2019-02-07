@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-documents/issues\n"
-"POT-Creation-Date: 2019-01-17 18:36+0000\n"
-"PO-Revision-Date: 2019-01-20 21:39+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
+"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"PO-Revision-Date: 2019-02-07 21:24+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Bookmarks: -1,-1,0,-1,-1,-1,-1,-1,-1,-1\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:112 src/overview.js:1055
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "Böcker"
 
@@ -41,7 +41,6 @@ msgstr ""
 "böcker med en filhanterare."
 
 #: data/org.gnome.Books.appdata.xml.in:15
-#: data/org.gnome.Documents.appdata.xml.in:16
 msgid "It lets you:"
 msgstr "Det låter dig:"
 
@@ -54,15 +53,10 @@ msgid "Search through e-books"
 msgstr "Söka genom e-böcker"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "Visa e-böcker (PDF och serier) i helskärmsläge"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr "Visa e-böcker (ePub och serier) i helskärmsläge"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "Skriva ut e-böcker"
-
-#: data/org.gnome.Books.appdata.xml.in:32
-#: data/org.gnome.Documents.appdata.xml.in:39
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -80,121 +74,53 @@ msgstr "org.gnome.Books"
 msgid "Books;Comics;ePub;PDF;"
 msgstr "Böcker;Comics;Serietidningar;ePub;PDF;"
 
-#: data/org.gnome.books.gschema.xml:5 data/org.gnome.documents.gschema.xml:5
+#: data/org.gnome.books.gschema.xml:5
 msgid "View as"
 msgstr "Visa som"
 
-#: data/org.gnome.books.gschema.xml:6 data/org.gnome.documents.gschema.xml:6
+#: data/org.gnome.books.gschema.xml:6
 msgid "View as type"
 msgstr "Visa som typ"
 
-#: data/org.gnome.books.gschema.xml:10 data/org.gnome.documents.gschema.xml:10
+#: data/org.gnome.books.gschema.xml:10
 msgid "Sort by"
 msgstr "Sortera efter"
 
-#: data/org.gnome.books.gschema.xml:11 data/org.gnome.documents.gschema.xml:11
+#: data/org.gnome.books.gschema.xml:11
 msgid "Sort by type"
 msgstr "Sortera efter typ"
 
-#: data/org.gnome.books.gschema.xml:15 data/org.gnome.documents.gschema.xml:15
+#: data/org.gnome.books.gschema.xml:15
 msgid "Window size"
 msgstr "Fönstrets storlek"
 
-#: data/org.gnome.books.gschema.xml:16 data/org.gnome.documents.gschema.xml:16
+#: data/org.gnome.books.gschema.xml:16
 msgid "Window size (width and height)."
 msgstr "Fönsterstorlek (bredd och höjd)."
 
-#: data/org.gnome.books.gschema.xml:20 data/org.gnome.documents.gschema.xml:20
+#: data/org.gnome.books.gschema.xml:20
 msgid "Window position"
 msgstr "Fönstrets position"
 
-#: data/org.gnome.books.gschema.xml:21 data/org.gnome.documents.gschema.xml:21
+#: data/org.gnome.books.gschema.xml:21
 msgid "Window position (x and y)."
 msgstr "Fönstrets position (x och y)."
 
-#: data/org.gnome.books.gschema.xml:25 data/org.gnome.documents.gschema.xml:25
+#: data/org.gnome.books.gschema.xml:25
 msgid "Window maximized"
 msgstr "Fönster maximerat"
 
-#: data/org.gnome.books.gschema.xml:26 data/org.gnome.documents.gschema.xml:26
+#: data/org.gnome.books.gschema.xml:26
 msgid "Window maximized state"
 msgstr "Maximeringstillstånd för fönster"
 
-#: data/org.gnome.books.gschema.xml:30 data/org.gnome.documents.gschema.xml:30
+#: data/org.gnome.books.gschema.xml:30
 msgid "Night mode"
 msgstr "Nattläge"
 
-#: data/org.gnome.books.gschema.xml:31 data/org.gnome.documents.gschema.xml:31
+#: data/org.gnome.books.gschema.xml:31
 msgid "Whether the application is in night mode."
 msgstr "Huruvida programmet är i nattläge."
-
-#: data/org.gnome.Documents.appdata.xml.in:7
-#: data/org.gnome.Documents.desktop.in:3 src/application.js:115
-#: src/overview.js:1055
-msgid "Documents"
-msgstr "Dokument"
-
-#: data/org.gnome.Documents.appdata.xml.in:8
-msgid "A document manager application for GNOME"
-msgstr "Ett program för dokumenthantering för GNOME"
-
-#: data/org.gnome.Documents.appdata.xml.in:10
-msgid ""
-"A simple application to access, organize and share your documents on GNOME. "
-"It is meant to be a simple and elegant replacement for using a file manager "
-"to deal with documents. Seamless cloud integration is offered through GNOME "
-"Online Accounts."
-msgstr ""
-"Ett enkelt program för att komma åt, organisera och dela dina dokument i "
-"GNOME. Det är avsett att vara en enkel och elegant ersättare för att hantera "
-"dokument med en filhanterare. Sömlös molnintegration erbjuds genom GNOME "
-"Nätkonton."
-
-#: data/org.gnome.Documents.appdata.xml.in:18
-msgid "View recent local and online documents"
-msgstr "Visa senaste lokala- och nätdokument"
-
-#: data/org.gnome.Documents.appdata.xml.in:19
-msgid "Access your Google, ownCloud or OneDrive content"
-msgstr "Komma åt ditt Google-, ownCloud- eller OneDrive-innehåll"
-
-#: data/org.gnome.Documents.appdata.xml.in:20
-msgid "Search through documents"
-msgstr "Söka genom dokument"
-
-#: data/org.gnome.Documents.appdata.xml.in:21
-msgid "See new documents shared by friends"
-msgstr "Se nya dokument som delas av vänner"
-
-#: data/org.gnome.Documents.appdata.xml.in:22
-msgid "View documents fullscreen"
-msgstr "Visa dokument i helskärmsläge"
-
-#: data/org.gnome.Documents.appdata.xml.in:23
-msgid "Print documents"
-msgstr "Skriva ut dokument"
-
-#: data/org.gnome.Documents.appdata.xml.in:24
-msgid "Select favorites"
-msgstr "Välja favoriter"
-
-#: data/org.gnome.Documents.appdata.xml.in:25
-msgid "Allow opening full featured editor for non-trivial changes"
-msgstr "Tillåt öppnande av fullfjädrad redigerare för icke-triviala ändringar"
-
-#: data/org.gnome.Documents.desktop.in:4
-msgid "Access, manage and share documents"
-msgstr "Kom åt, hantera och dela dokument"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Documents.desktop.in:7
-msgid "org.gnome.Documents"
-msgstr "org.gnome.Documents"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Documents.desktop.in:15
-msgid "Docs;PDF;Document;"
-msgstr "Dok;PDF;Dokument;"
 
 #: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
 #: src/preview.js:452
@@ -327,21 +253,20 @@ msgid "New Collection…"
 msgstr "Ny samling…"
 
 #: data/ui/organize-collection-dialog.ui:73
-#: data/ui/organize-collection-dialog.ui:122 src/sharing.js:226
+#: data/ui/organize-collection-dialog.ui:122
 msgid "Add"
 msgstr "Lägg till"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1059 src/search.js:126 src/search.js:132
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "Samlingar"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:616
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "Avbryt"
 
-#. Label for Done button in Sharing dialog
-#: data/ui/organize-collection-dialog.ui:173 src/sharing.js:112
+#: data/ui/organize-collection-dialog.ui:173
 msgid "Done"
 msgstr "Färdig"
 
@@ -351,7 +276,7 @@ msgstr "_Kopiera"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:990
+#: src/selections.js:976
 msgid "Open"
 msgstr "Öppna"
 
@@ -424,126 +349,46 @@ msgstr "Datum"
 msgid "Name"
 msgstr "Namn"
 
-#: src/application.js:126
+#: src/application.js:114
 msgid "Show the version of the program"
 msgstr "Visa programmets version"
 
-#: src/documents.js:794
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "Misslyckades med att skriva ut dokument"
 
 #. Translators: this refers to local documents
-#: src/documents.js:836 src/search.js:463
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "Lokala"
 
-#. Translators: Documents ships a "Getting Started with Documents"
-#. tutorial PDF. The "GNOME" string below is displayed as the author name
-#. of that document, and doesn't normally need to be translated.
-#: src/documents.js:879
-msgid "GNOME"
-msgstr "GNOME"
-
-#: src/documents.js:880
-msgid "Getting Started with Documents"
-msgstr "Kom igång med Dokument"
-
-#: src/documents.js:905 src/documents.js:1129 src/documents.js:1232
-#: src/documents.js:1426
+#: src/documents.js:878
 msgid "Collection"
 msgstr "Samling"
 
-#. overridden
-#: src/documents.js:986
-msgid "Google Docs"
-msgstr "Google Docs"
-
-#: src/documents.js:987
-msgid "Google"
-msgstr "Google"
-
-#: src/documents.js:1131 src/documents.js:1428
-msgid "Spreadsheet"
-msgstr "Kalkylark"
-
-#: src/documents.js:1133 src/documents.js:1430 src/presentation.js:43
-msgid "Presentation"
-msgstr "Presentation"
-
-#: src/documents.js:1135 src/documents.js:1432
-msgid "e-Book"
-msgstr "e-bok"
-
-#: src/documents.js:1137 src/documents.js:1434
-msgid "Document"
-msgstr "Dokument"
-
-#. overridden
-#: src/documents.js:1187
-msgid "ownCloud"
-msgstr "ownCloud"
-
-#. overridden
-#: src/documents.js:1321 src/documents.js:1322
-msgid "OneDrive"
-msgstr "OneDrive"
-
-#: src/documents.js:1608
-msgid "Please check the network connection."
-msgstr "Kontrollera din nätverksuppkoppling."
-
-#: src/documents.js:1611
-msgid "Please check the network proxy settings."
-msgstr "Kontrollera nätverksproxy-inställningarna"
-
-#: src/documents.js:1614
-msgid "Unable to sign in to the document service."
-msgstr "Kunde inte logga in på dokumenttjänsten."
-
-#: src/documents.js:1617
-msgid "Unable to locate this document."
-msgstr "Kunde inte hitta detta dokument."
-
-#: src/documents.js:1620
-#, javascript-format
-msgid "Hmm, something is fishy (%d)."
-msgstr "Hmm, något är konstigt (%d)."
-
-#: src/documents.js:1627
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr ""
 "Du använder en förhandsversion av Böcker. Fullständiga visningsfunktioner "
 "kommer snart!"
 
-#: src/documents.js:1629
-msgid ""
-"LibreOffice support is not available. Please contact your system "
-"administrator."
-msgstr ""
-"Stöd för LibreOffice är inte tillgängligt. Kontakta din systemadministratör."
-
 #. Translators: %s is the title of a document
-#: src/documents.js:1652
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Oj! Misslyckades att läsa in ”%s”"
 
-#. view button, on the right of the toolbar
-#: src/edit.js:139
-msgid "View"
-msgstr "Visa"
-
-#: src/epubview.js:228
+#: src/epubview.js:245
 #, javascript-format
 msgid "chapter %s of %s"
 msgstr "kapitel %s av %s"
 
-#: src/evinceview.js:591 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: src/evinceview.js:599
+#: src/evinceview.js:532
 msgid "Bookmark this page"
 msgstr "Bokmärk denna sida"
 
@@ -581,14 +426,6 @@ msgid "Contents"
 msgstr "Innehåll"
 
 #: src/lib/gd-utils.c:328
-msgid "A document manager application"
-msgstr "Ett program för dokumenthantering"
-
-#: src/lib/gd-utils.c:333
-msgid "An e-books manager application"
-msgstr "Ett program för hantering av e-böcker"
-
-#: src/lib/gd-utils.c:340
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -597,6 +434,10 @@ msgstr ""
 "\n"
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
+
+#: src/lib/gd-utils.c:329
+msgid "An e-books manager application"
+msgstr "Ett program för hantering av e-böcker"
 
 #: src/mainToolbar.js:101
 msgctxt "menu button tooltip"
@@ -627,7 +468,7 @@ msgid_plural "%d items deleted"
 msgstr[0] "%d objekt borttaget"
 msgstr[1] "%d objekt borttagna"
 
-#: src/notifications.js:61 src/selections.js:387
+#: src/notifications.js:61 src/selections.js:383
 msgid "Undo"
 msgstr "Ångra"
 
@@ -636,117 +477,89 @@ msgstr "Ångra"
 msgid "Printing “%s”: %s"
 msgstr "Skriver ut ”%s”: %s"
 
-#: src/notifications.js:215
+#: src/notifications.js:210
 msgid "Your documents are being indexed"
 msgstr "Dina dokument håller på att indexeras"
 
-#: src/notifications.js:216
+#: src/notifications.js:211
 msgid "Some documents might not be available during this process"
 msgstr ""
 "Vissa dokument kan komma att inte vara tillgängliga under denna process"
 
-#. Translators: %s refers to an online account provider, e.g.
-#. "Google", or "Windows Live".
-#: src/notifications.js:238
-#, javascript-format
-msgid "Fetching documents from %s"
-msgstr "Hämtar dokument från %s"
-
-#: src/notifications.js:240
-msgid "Fetching documents from online accounts"
-msgstr "Hämtar dokument från nätkonton"
-
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "Inga samlingar hittade"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "Inga böcker hittade"
 
-#: src/overview.js:277
-msgid "No documents found"
-msgstr "Inga dokument hittade"
-
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "Försök med en annan sökning"
 
-#: src/overview.js:293
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "Du kan skapa samlingar från vyn Böcker"
 
-#: src/overview.js:295
-msgid "You can create collections from the Documents view"
-msgstr "Du kan skapa samlingar från vyn Dokument"
-
-#: src/overview.js:305
-#, javascript-format
-msgid ""
-"Documents from your <a href=\"system-settings\">Online Accounts</a> and <a "
-"href=\"file://%s\">Documents folder</a> will appear here."
-msgstr ""
-"Dokument från dina <a href=\"system-settings\">Nätkonton</a> och din <a href="
-"\"file://%s\">Dokumentmapp</a> kommer att dyka upp här."
-
 #. Translators: this is the menu to change view settings
-#: src/overview.js:562
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "Visningsmeny"
 
-#: src/overview.js:590
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "Klicka på objekten för att markera dem"
 
-#: src/overview.js:592
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d markerat"
 msgstr[1] "%d markerade"
 
-#: src/overview.js:673
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "Markera objekt"
 
-#: src/overview.js:879
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "Igår"
 
-#: src/overview.js:881
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dag sedan"
 msgstr[1] "%d dagar sedan"
 
-#: src/overview.js:885
+#: src/overview.js:860
 msgid "Last week"
 msgstr "Förra veckan"
 
-#: src/overview.js:887
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d vecka sedan"
 msgstr[1] "%d veckor sedan"
 
-#: src/overview.js:891
+#: src/overview.js:866
 msgid "Last month"
 msgstr "Förra månaden"
 
-#: src/overview.js:893
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d månad sedan"
 msgstr[1] "%d månader sedan"
 
-#: src/overview.js:897
+#: src/overview.js:872
 msgid "Last year"
 msgstr "Förra året"
 
-#: src/overview.js:899
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -770,33 +583,8 @@ msgstr "Dokumentet %s är låst och kräver ett lösenord för att kunna öppnas
 msgid "_Password"
 msgstr "_Lösenord"
 
-#: src/presentation.js:101
-msgid "Running in presentation mode"
-msgstr "Kör i presentationsläge"
-
-#: src/presentation.js:129
-msgid "Present On"
-msgstr "Presentera på"
-
-#. Translators: "Mirrored" describes when both displays show the same view
-#: src/presentation.js:165
-msgid "Mirrored"
-msgstr "Speglad"
-
-#: src/presentation.js:167
-msgid "Primary"
-msgstr "Primär"
-
-#: src/presentation.js:169
-msgid "Off"
-msgstr "Av"
-
-#: src/presentation.js:171
-msgid "Secondary"
-msgstr "Sekundär"
-
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:444 src/selections.js:987
+#: src/preview.js:444 src/selections.js:973
 #, javascript-format
 msgid "Open with %s"
 msgstr "Öppna med %s"
@@ -847,176 +635,292 @@ msgid "Type"
 msgstr "Typ"
 
 #. Translators: "Type" refers to a search filter on the document type
-#. (PDF, spreadsheet, ...)
-#: src/search.js:120
+#. (e-Books, Comics, ...)
+#: src/search.js:116
 msgctxt "Search Filter"
 msgid "Type"
 msgstr "Typ"
 
 #. Translators: this refers to documents
-#: src/search.js:123 src/search.js:260 src/search.js:457
+#: src/search.js:119 src/search.js:225 src/search.js:399
 msgid "All"
 msgstr "Alla"
 
-#: src/search.js:136
-msgid "PDF Documents"
-msgstr "PDF-dokument"
-
-#: src/search.js:143
+#: src/search.js:127
 msgid "e-Books"
 msgstr "e-böcker"
 
-#: src/search.js:147
+#: src/search.js:131
 msgid "Comics"
 msgstr "Serietidningar"
-
-#: src/search.js:152
-msgid "Presentations"
-msgstr "Presentationer"
-
-#: src/search.js:155
-msgid "Spreadsheets"
-msgstr "Kalkylark"
-
-#: src/search.js:158
-msgid "Text Documents"
-msgstr "Textdokument"
 
 #. Translators: this is a verb that refers to "All", "Title", "Author",
 #. and "Content" as in "Match All", "Match Title", "Match Author", and
 #. "Match Content"
-#: src/search.js:257
+#: src/search.js:222
 msgid "Match"
 msgstr "Matcha"
 
 #. Translators: "Title" refers to "Match Title" when searching
-#: src/search.js:263
+#: src/search.js:228
 msgctxt "Search Filter"
 msgid "Title"
 msgstr "Titel"
 
 #. Translators: "Author" refers to "Match Author" when searching
-#: src/search.js:266
+#: src/search.js:231
 msgctxt "Search Filter"
 msgid "Author"
 msgstr "Författare"
 
 #. Translators: "Content" refers to "Match Content" when searching
-#: src/search.js:269
+#: src/search.js:234
 msgctxt "Search Filter"
 msgid "Content"
 msgstr "Innehåll"
 
-#: src/search.js:453
+#: src/search.js:395
 msgid "Sources"
 msgstr "Källor"
 
-#. Translators: the first %s is an online account provider name,
-#. e.g. "Google". The second %s is the identity used to log in,
-#. e.g. "foo@gmail.com".
-#: src/search.js:512
-#, javascript-format
-msgid "%s (%s)"
-msgstr "%s (%s)"
-
-#: src/selections.js:360 src/selections.js:362
+#: src/selections.js:356 src/selections.js:358
 msgid "Rename…"
 msgstr "Byt namn…"
 
-#: src/selections.js:366 src/selections.js:368
+#: src/selections.js:362 src/selections.js:364
 msgid "Delete"
 msgstr "Ta bort"
 
-#: src/selections.js:382
+#: src/selections.js:378
 #, javascript-format
 msgid "“%s” removed"
 msgstr "”%s” borttagen"
 
-#: src/selections.js:779
+#: src/selections.js:775
 msgid "Rename"
 msgstr "Byt namn"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:785
+#: src/selections.js:781
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "Samlingar"
 
-#: src/sharing.js:108
-msgid "Sharing Settings"
-msgstr "Delningsinställningar"
-
-#. Label for widget group for changing document permissions
-#: src/sharing.js:145
-msgid "Document permissions"
-msgstr "Dokumentbehörigheter"
-
-#. Label for permission change in Sharing dialog
-#: src/sharing.js:152 src/sharing.js:330
-msgid "Change"
-msgstr "Ändra"
-
-#. Label for radiobutton that sets doc permission to private
-#: src/sharing.js:176 src/sharing.js:305
-msgid "Private"
-msgstr "Privat"
-
-#: src/sharing.js:186 src/sharing.js:298
-msgid "Public"
-msgstr "Publikt"
-
-#. Label for checkbutton that sets doc permission to Can edit
-#: src/sharing.js:190 src/sharing.js:300
-msgid "Everyone can edit"
-msgstr "Alla kan redigera"
-
-#. Label for widget group used for adding new contacts
-#: src/sharing.js:197
-msgid "Add people"
-msgstr "Lägg till personer"
-
-#. Editable text in entry field
-#: src/sharing.js:204
-msgid "Enter an email address"
-msgstr "Skriv in en e-postadress"
-
-#: src/sharing.js:219 src/sharing.js:371
-msgid "Can edit"
-msgstr "Kan redigera"
-
-#: src/sharing.js:219 src/sharing.js:374
-msgid "Can view"
-msgstr "Kan läsa"
-
-#: src/sharing.js:302
-msgid "Everyone can read"
-msgstr "Alla kan läsa"
-
-#: src/sharing.js:317
-msgid "Save"
-msgstr "Spara"
-
-#: src/sharing.js:368
-msgid "Owner"
-msgstr "Ägare"
-
-#: src/sharing.js:437
-#, javascript-format
-msgid "You can ask %s for access"
-msgstr "Du kan be %s om behörighet"
-
-#: src/sharing.js:474 src/sharing.js:510 src/sharing.js:567 src/sharing.js:584
-#: src/sharing.js:603
-msgid "The document was not updated"
-msgstr "Dokumentet uppdaterades ej"
-
-#: src/shellSearchProvider.js:285
-msgid "Untitled Document"
-msgstr "Namnlöst dokument"
-
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Kunde inte hämta listan över dokument"
+
+#~ msgid "Print e-books"
+#~ msgstr "Skriva ut e-böcker"
+
+#~ msgid "Documents"
+#~ msgstr "Dokument"
+
+#~ msgid "A document manager application for GNOME"
+#~ msgstr "Ett program för dokumenthantering för GNOME"
+
+#~ msgid ""
+#~ "A simple application to access, organize and share your documents on "
+#~ "GNOME. It is meant to be a simple and elegant replacement for using a "
+#~ "file manager to deal with documents. Seamless cloud integration is "
+#~ "offered through GNOME Online Accounts."
+#~ msgstr ""
+#~ "Ett enkelt program för att komma åt, organisera och dela dina dokument i "
+#~ "GNOME. Det är avsett att vara en enkel och elegant ersättare för att "
+#~ "hantera dokument med en filhanterare. Sömlös molnintegration erbjuds "
+#~ "genom GNOME Nätkonton."
+
+#~ msgid "View recent local and online documents"
+#~ msgstr "Visa senaste lokala- och nätdokument"
+
+#~ msgid "Access your Google, ownCloud or OneDrive content"
+#~ msgstr "Komma åt ditt Google-, ownCloud- eller OneDrive-innehåll"
+
+#~ msgid "Search through documents"
+#~ msgstr "Söka genom dokument"
+
+#~ msgid "See new documents shared by friends"
+#~ msgstr "Se nya dokument som delas av vänner"
+
+#~ msgid "View documents fullscreen"
+#~ msgstr "Visa dokument i helskärmsläge"
+
+#~ msgid "Print documents"
+#~ msgstr "Skriva ut dokument"
+
+#~ msgid "Select favorites"
+#~ msgstr "Välja favoriter"
+
+#~ msgid "Allow opening full featured editor for non-trivial changes"
+#~ msgstr ""
+#~ "Tillåt öppnande av fullfjädrad redigerare för icke-triviala ändringar"
+
+#~ msgid "Access, manage and share documents"
+#~ msgstr "Kom åt, hantera och dela dokument"
+
+#~ msgid "org.gnome.Documents"
+#~ msgstr "org.gnome.Documents"
+
+#~ msgid "Docs;PDF;Document;"
+#~ msgstr "Dok;PDF;Dokument;"
+
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
+
+#~ msgid "Getting Started with Documents"
+#~ msgstr "Kom igång med Dokument"
+
+#~ msgid "Google Docs"
+#~ msgstr "Google Docs"
+
+#~ msgid "Google"
+#~ msgstr "Google"
+
+#~ msgid "Spreadsheet"
+#~ msgstr "Kalkylark"
+
+#~ msgid "Presentation"
+#~ msgstr "Presentation"
+
+#~ msgid "e-Book"
+#~ msgstr "e-bok"
+
+#~ msgid "Document"
+#~ msgstr "Dokument"
+
+#~ msgid "ownCloud"
+#~ msgstr "ownCloud"
+
+#~ msgid "OneDrive"
+#~ msgstr "OneDrive"
+
+#~ msgid "Please check the network connection."
+#~ msgstr "Kontrollera din nätverksuppkoppling."
+
+#~ msgid "Please check the network proxy settings."
+#~ msgstr "Kontrollera nätverksproxy-inställningarna"
+
+#~ msgid "Unable to sign in to the document service."
+#~ msgstr "Kunde inte logga in på dokumenttjänsten."
+
+#~ msgid "Unable to locate this document."
+#~ msgstr "Kunde inte hitta detta dokument."
+
+#~ msgid "Hmm, something is fishy (%d)."
+#~ msgstr "Hmm, något är konstigt (%d)."
+
+#~ msgid ""
+#~ "LibreOffice support is not available. Please contact your system "
+#~ "administrator."
+#~ msgstr ""
+#~ "Stöd för LibreOffice är inte tillgängligt. Kontakta din "
+#~ "systemadministratör."
+
+#~ msgid "View"
+#~ msgstr "Visa"
+
+#~ msgid "A document manager application"
+#~ msgstr "Ett program för dokumenthantering"
+
+#~ msgid "Fetching documents from %s"
+#~ msgstr "Hämtar dokument från %s"
+
+#~ msgid "Fetching documents from online accounts"
+#~ msgstr "Hämtar dokument från nätkonton"
+
+#~ msgid "No documents found"
+#~ msgstr "Inga dokument hittade"
+
+#~ msgid "You can create collections from the Documents view"
+#~ msgstr "Du kan skapa samlingar från vyn Dokument"
+
+#~ msgid ""
+#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
+#~ msgstr ""
+#~ "Dokument från dina <a href=\"system-settings\">Nätkonton</a> och din <a "
+#~ "href=\"file://%s\">Dokumentmapp</a> kommer att dyka upp här."
+
+#~ msgid "Running in presentation mode"
+#~ msgstr "Kör i presentationsläge"
+
+#~ msgid "Present On"
+#~ msgstr "Presentera på"
+
+#~ msgid "Mirrored"
+#~ msgstr "Speglad"
+
+#~ msgid "Primary"
+#~ msgstr "Primär"
+
+#~ msgid "Off"
+#~ msgstr "Av"
+
+#~ msgid "Secondary"
+#~ msgstr "Sekundär"
+
+#~ msgid "PDF Documents"
+#~ msgstr "PDF-dokument"
+
+#~ msgid "Presentations"
+#~ msgstr "Presentationer"
+
+#~ msgid "Spreadsheets"
+#~ msgstr "Kalkylark"
+
+#~ msgid "Text Documents"
+#~ msgstr "Textdokument"
+
+#~ msgid "%s (%s)"
+#~ msgstr "%s (%s)"
+
+#~ msgid "Sharing Settings"
+#~ msgstr "Delningsinställningar"
+
+#~ msgid "Document permissions"
+#~ msgstr "Dokumentbehörigheter"
+
+#~ msgid "Change"
+#~ msgstr "Ändra"
+
+#~ msgid "Private"
+#~ msgstr "Privat"
+
+#~ msgid "Public"
+#~ msgstr "Publikt"
+
+#~ msgid "Everyone can edit"
+#~ msgstr "Alla kan redigera"
+
+#~ msgid "Add people"
+#~ msgstr "Lägg till personer"
+
+#~ msgid "Enter an email address"
+#~ msgstr "Skriv in en e-postadress"
+
+#~ msgid "Can edit"
+#~ msgstr "Kan redigera"
+
+#~ msgid "Can view"
+#~ msgstr "Kan läsa"
+
+#~ msgid "Everyone can read"
+#~ msgstr "Alla kan läsa"
+
+#~ msgid "Save"
+#~ msgstr "Spara"
+
+#~ msgid "Owner"
+#~ msgstr "Ägare"
+
+#~ msgid "You can ask %s for access"
+#~ msgstr "Du kan be %s om behörighet"
+
+#~ msgid "The document was not updated"
+#~ msgstr "Dokumentet uppdaterades ej"
+
+#~ msgid "Untitled Document"
+#~ msgstr "Namnlöst dokument"
 
 #~ msgid "About"
 #~ msgstr "Om"
