@@ -6,25 +6,24 @@
 # Fran Diéguez <frandieguez@gnome.org>, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
 # Fran Dieguez <frandieguez@gnome.org>, 2012-2019.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-01-26 12:17+0000\n"
-"PO-Revision-Date: 2019-01-28 23:42+0100\n"
+"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"PO-Revision-Date: 2019-02-09 16:58+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Galician\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 3.30.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1018
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "Libros"
 
@@ -55,16 +54,14 @@ msgid "Search through e-books"
 msgstr "Buscar entre os libros dixitais"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "Ver os libros dixitais (PDF e bandas deseñadas) a pantalla completa"
+#| msgid "View e-books (PDF and comics) fullscreen"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr "Ver os libros dixitais (ePubs e bandas deseñadas) a pantalla completa"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "Imprimir libros dixitais"
-
-#: data/org.gnome.Books.appdata.xml.in:32
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
-msgstr "O Proxecto GNOME"
+msgstr ""
+"O Proxecto GNOME"
 
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
@@ -142,7 +139,6 @@ msgid "Help"
 msgstr "Axuda"
 
 #: data/ui/books-app-menu.ui:20
-#| msgid "Books"
 msgid "About Books"
 msgstr "Sobre Libros"
 
@@ -265,11 +261,11 @@ msgid "Add"
 msgstr "Engadir"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1022 src/search.js:121
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "Coleccións"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:579
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -360,20 +356,20 @@ msgstr "Nome"
 msgid "Show the version of the program"
 msgstr "Mostra a versión dun programa"
 
-#: src/documents.js:776
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "Non foi posíbel imprimir o documento"
 
 #. Translators: this refers to local documents
-#: src/documents.js:818 src/search.js:405
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "Locais"
 
-#: src/documents.js:875
+#: src/documents.js:878
 msgid "Collection"
 msgstr "Colección"
 
-#: src/documents.js:1069
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr ""
@@ -381,7 +377,7 @@ msgstr ""
 "visualización completas chegarán pronto!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1092
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Oops! Non foi posíbel cargar «%s»"
@@ -443,7 +439,6 @@ msgid "An e-books manager application"
 msgstr "Un aplicativo para xestionar libros dixitais"
 
 #: src/mainToolbar.js:101
-#| msgid "View Menu"
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Menú"
@@ -489,80 +484,80 @@ msgstr "Estanse indexando os seus documentos"
 msgid "Some documents might not be available during this process"
 msgstr "Algúns documentos poderían non estar dispoñíbeis durante este proceso"
 
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "Non se atoparon coleccións"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "Non se atoparon libros"
 
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "Tente unha busca diferente"
 
-#: src/overview.js:292
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "Pode crear coleccións desde a vista de Libros"
 
 #. Translators: this is the menu to change view settings
-#: src/overview.js:525
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "Menú Ver"
 
-#: src/overview.js:553
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "Prema nos elementos para seleccionalos"
 
-#: src/overview.js:555
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionado"
 msgstr[1] "%d seleccionados"
 
-#: src/overview.js:636
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "Seleccionar elementos"
 
-#: src/overview.js:842
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "Onte"
 
-#: src/overview.js:844
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "fai %d día"
 msgstr[1] "fai %d días"
 
-#: src/overview.js:848
+#: src/overview.js:860
 msgid "Last week"
 msgstr "Última semana"
 
-#: src/overview.js:850
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "fai %d semana"
 msgstr[1] "fai %d semanas"
 
-#: src/overview.js:854
+#: src/overview.js:866
 msgid "Last month"
 msgstr "Último mes"
 
-#: src/overview.js:856
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "fai %d mes"
 msgstr[1] "fai %d meses"
 
-#: src/overview.js:860
+#: src/overview.js:872
 msgid "Last year"
 msgstr "Último ano"
 
-#: src/overview.js:862
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -712,6 +707,9 @@ msgstr "Coleccións"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Non foi posíbel obter a lista de documentos"
+
+#~ msgid "Print e-books"
+#~ msgstr "Imprimir libros dixitais"
 
 #~ msgid "Documents"
 #~ msgstr "Documentos"
