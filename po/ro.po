@@ -9,11 +9,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-01-26 12:17+0000\n"
-"PO-Revision-Date: 2019-01-27 01:55+0200\n"
+"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"PO-Revision-Date: 2019-02-13 14:01+0100\n"
 "Last-Translator: Florentina Mușat <florentina.musat.28 [at] gmail [dot] "
 "com>\n"
-"Language-Team: Gnome Romanian Translation Team\n"
+"Language-Team: Gnome Romanian Translation Team <gnomero-list@lists."
+"sourceforge.net>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,9 +23,10 @@ msgstr ""
 "20)) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.1\n"
 "X-Project-Style: gnome\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1018
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "Cărți"
 
@@ -55,14 +57,12 @@ msgid "Search through e-books"
 msgstr "Căutați prin cărțile electronice"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "Vizualizează cărți electronice (PDF și benzi desenate) pe tot ecranul"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr ""
+"Vizualizează cărți electronice (publicații electronice și benzi desenate) pe "
+"tot ecranul"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "Tipăriți cărțile electronice"
-
-#: data/org.gnome.Books.appdata.xml.in:32
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
@@ -264,11 +264,11 @@ msgid "Add"
 msgstr "Adaugă"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1022 src/search.js:121
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "Colecții"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:579
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "Anulează"
 
@@ -359,20 +359,20 @@ msgstr "Nume"
 msgid "Show the version of the program"
 msgstr "Arată versiunea programului"
 
-#: src/documents.js:776
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "Tipărirea documentului a eșuat"
 
 #. Translators: this refers to local documents
-#: src/documents.js:818 src/search.js:405
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "Local"
 
-#: src/documents.js:875
+#: src/documents.js:878
 msgid "Collection"
 msgstr "Colecție"
 
-#: src/documents.js:1069
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr ""
@@ -380,7 +380,7 @@ msgstr ""
 "completă de redare va sosi în curând!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1092
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Ups! Nu s-a putut încărca „%s”"
@@ -437,7 +437,8 @@ msgstr ""
 "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014\n"
 "Jobava <jobaval10n@gmail.com>, 2015\n"
 "Adelin Șerbănescu <sadelin106@gmail.com>, 2018\n"
-"Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019"
+"Florentina Mușat <florentina.musat.28 [at] gmail [dot] com>, 2019\n"
+"Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2019"
 
 #: src/lib/gd-utils.c:329
 msgid "An e-books manager application"
@@ -490,32 +491,32 @@ msgstr "Documentele se indexează"
 msgid "Some documents might not be available during this process"
 msgstr "Unele documente pot fi indisponibile pe parcursul procesului"
 
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "Nicio colecție găsită"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "Nicio carte găsită"
 
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "Încercați o căutare diferită"
 
-#: src/overview.js:292
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "Puteți crea colecții din vizualizarea Cărți"
 
 #. Translators: this is the menu to change view settings
-#: src/overview.js:525
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "Meniul Vizualizare"
 
-#: src/overview.js:553
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "Clic pe elemente pentru a le selecta"
 
-#: src/overview.js:555
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -523,15 +524,15 @@ msgstr[0] "%d selectat"
 msgstr[1] "%d selectate"
 msgstr[2] "%d selectate"
 
-#: src/overview.js:636
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "Selectați elementele"
 
-#: src/overview.js:842
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "Ieri"
 
-#: src/overview.js:844
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -539,11 +540,11 @@ msgstr[0] "acum %d zi"
 msgstr[1] "acum %d zile"
 msgstr[2] "acum %d de zile"
 
-#: src/overview.js:848
+#: src/overview.js:860
 msgid "Last week"
 msgstr "Săptămâna trecută"
 
-#: src/overview.js:850
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -551,11 +552,11 @@ msgstr[0] "acum %d săptămână"
 msgstr[1] "acum %d săptămâni"
 msgstr[2] "acum %d de săptămâni"
 
-#: src/overview.js:854
+#: src/overview.js:866
 msgid "Last month"
 msgstr "Luna trecută"
 
-#: src/overview.js:856
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -563,11 +564,11 @@ msgstr[0] "acum %d lună"
 msgstr[1] "acum %d luni"
 msgstr[2] "acum %d de luni"
 
-#: src/overview.js:860
+#: src/overview.js:872
 msgid "Last year"
 msgstr "Anul trecut"
 
-#: src/overview.js:862
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -719,6 +720,9 @@ msgstr "Colecții"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Nu se poate prelua lista documentelor"
+
+#~ msgid "Print e-books"
+#~ msgstr "Tipăriți cărțile electronice"
 
 #~ msgid "Documents"
 #~ msgstr "Documente"
