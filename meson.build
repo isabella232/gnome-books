@@ -63,7 +63,6 @@ books_deps = [
   dependency('gnome-desktop-3.0'),
   dependency('gobject-introspection-1.0', version: '>= 1.31.6'),
   dependency('gtk+-3.0', version: '>= 3.22.15'),
-  dependency('libsoup-2.4', version: '>= 2.41.3'),
   dependency('tracker-control-2.0', version: tracker_req_version),
   dependency('tracker-sparql-2.0', version: tracker_req_version),
   dependency('webkit2gtk-4.0', version: '>= 2.6.0'),
