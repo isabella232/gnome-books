@@ -104,11 +104,12 @@
         },
         {
             "name": "evince",
+            "buildsystem": "meson",
             "cleanup": [ "/share/GConf", "/share/help" ],
-            "config-opts": [ "--disable-nautilus", "--disable-viewer",
-                             "--disable-previewer", "--disable-dbus",
-                             "--disable-browser-plugin", "--enable-introspection",
-                             "--enable-comics" ],
+            "config-opts": [ "-Dnautilus=false", "-Dviewer=false",
+                             "-Dpreviewer=false", "-Ddbus=false",
+                             "-Dbrowser_plugin=false", "-Dintrospection=true",
+                             "-Dcomics=enabled", "-Dpdf=enabled" ],
             "sources": [
                 {
                     "type": "git",
