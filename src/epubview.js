@@ -259,6 +259,7 @@ const EPUBViewNavControls = new Lang.Class({
         this._level.set_increments(1.0, 1.0);
         this._level.set_draw_value(false);
         this._level.set_digits(0);
+        this._level.set_range(1.0, 1.0);
         barWidget.pack_start(this._level, true, true, 5);
         this._level.connect('value-changed', Lang.bind(this, function() {
             if (this._epubdoc != null)
