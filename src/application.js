@@ -107,8 +107,7 @@ var Application = new Lang.Class({
         // needed by data/ui/view-menu.ui
         GObject.type_ensure(Gio.ThemedIcon);
 
-        this.parent({ application_id: appid,
-                      inactivity_timeout: 12000 });
+        this.parent({ application_id: appid });
 
         this.add_main_option('version', 'v'.charCodeAt(0), GLib.OptionFlags.NONE, GLib.OptionArg.NONE,
                              _("Show the version of the program"), null);
