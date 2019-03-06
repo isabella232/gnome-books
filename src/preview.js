@@ -734,6 +734,7 @@ var PreviewNavControls = new Lang.Class({
         this._prevRevealer.destroy();
         this._nextRevealer.destroy();
         this._tapGesture = null;
+        this._unqueueAutoHide();
     }
 });
 
