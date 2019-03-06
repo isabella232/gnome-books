@@ -1,6 +1,6 @@
 project(
   'gnome-books', 'c',
-  version: '3.31.90',
+  version: '3.31.91',
   license: 'GPL2+',
   default_options: 'buildtype=debugoptimized',
   meson_version: '>= 0.42.0'

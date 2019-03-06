@@ -1,0 +1,7 @@
+New in 3.31.91
+--------------
+
+- Fix ePub books always opening on page 1
+- Fix warnings after reading a file and going back to main view
+- Update appdata and remove more references to gnome-documents
+- Fix the ePub view not working in some cases in Flatpak versions
