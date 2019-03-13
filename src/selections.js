@@ -347,6 +347,7 @@ const CollectionRow = new Lang.Class({
             function(checkButton) {
                 let collId = this.collection.id;
                 let state = checkButton.get_active();
+                checkButton.set_inconsistent(false);
 
                 let job = new SetCollectionForSelectionJob(collId, state);
                 job.run();
