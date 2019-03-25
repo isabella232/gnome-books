@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents gnome-3-24\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-01-26 12:17+0000\n"
-"PO-Revision-Date: 2019-01-26 19:33+0100\n"
+"POT-Creation-Date: 2019-03-25 17:31+0000\n"
+"PO-Revision-Date: 2019-03-25 19:46+0100\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1018
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "Knjige"
 
@@ -51,25 +51,16 @@ msgid "Search through e-books"
 msgstr "Pretragu e-knjiga"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "Pregled e-knjiga (PDF i stripova) u cijelom zaslonu"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr "Pregled e-knjiga (ePubs i stripova) u cijelom zaslonu"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "Ispis e-knjiga"
-
-#: data/org.gnome.Books.appdata.xml.in:32
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
 msgstr "GNOME projekt"
 
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Pristup, upravljanje i dijeljenje e-knjiga"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -260,11 +251,11 @@ msgid "Add"
 msgstr "Dodaj"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1022 src/search.js:121
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "Kolekcije"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:579
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -351,30 +342,30 @@ msgstr "Datum"
 msgid "Name"
 msgstr "Naslov"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Prikaži inačicu programa"
 
-#: src/documents.js:776
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "Neuspješno ispisivanje dokumenta"
 
 #. Translators: this refers to local documents
-#: src/documents.js:818 src/search.js:405
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "Lokalno"
 
-#: src/documents.js:875
+#: src/documents.js:878
 msgid "Collection"
 msgstr "Kolekcija"
 
-#: src/documents.js:1069
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr "Koristite pregled knjiga. Potpuna mogućnost pregleda dolazi uskoro!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1092
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Ups! Nemoguće je učitati “%s”"
@@ -482,32 +473,32 @@ msgstr "Vaši dokumenti se popisuju"
 msgid "Some documents might not be available during this process"
 msgstr "Neki dokumenti možda neće biti dostupni tijekom ovog procesa"
 
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "Nema pronađenih kolekcija"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "Nema pronađenih e-knjiga"
 
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "Pokušajte drugačiju pretragu"
 
-#: src/overview.js:292
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "Možete stvoriti kolekciju iz prikaza e-knjiga"
 
 #. Translators: this is the menu to change view settings
-#: src/overview.js:525
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "Izbornik pogleda"
 
-#: src/overview.js:553
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "Kliknite na stavku za odabir"
 
-#: src/overview.js:555
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -515,15 +506,15 @@ msgstr[0] "%d odabrana"
 msgstr[1] "%d odabrane"
 msgstr[2] "%d odabrano"
 
-#: src/overview.js:636
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "Odaberi stavke"
 
-#: src/overview.js:842
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "od jučer"
 
-#: src/overview.js:844
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -531,11 +522,11 @@ msgstr[0] "prije %d dana"
 msgstr[1] "prije %d dana"
 msgstr[2] "prije %d dana"
 
-#: src/overview.js:848
+#: src/overview.js:860
 msgid "Last week"
 msgstr "od prošlog tjedna"
 
-#: src/overview.js:850
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -543,11 +534,11 @@ msgstr[0] "prije %d tjedna"
 msgstr[1] "prije %d tjedna"
 msgstr[2] "prije %d tjedana"
 
-#: src/overview.js:854
+#: src/overview.js:866
 msgid "Last month"
 msgstr "od prošlog mjeseca"
 
-#: src/overview.js:856
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -555,11 +546,11 @@ msgstr[0] "prije %d mjeseca"
 msgstr[1] "prije %d mjeseca"
 msgstr[2] "prije %d mjeseca"
 
-#: src/overview.js:860
+#: src/overview.js:872
 msgid "Last year"
 msgstr "od prošle godine"
 
-#: src/overview.js:862
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -590,11 +581,11 @@ msgstr "_Lozinka"
 msgid "Open with %s"
 msgstr "Otvori s %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Pretraži prijašnje"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Pretraži sljedeće"
 
@@ -710,6 +701,12 @@ msgstr "Kolekcije"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Nemoguće preuzimanje popisa dokumenata"
+
+#~ msgid "Print e-books"
+#~ msgstr "Ispis e-knjiga"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
 
 #~ msgid "Documents"
 #~ msgstr "Dokumenti"
