@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"POT-Creation-Date: 2019-03-25 17:31+0000\n"
 "PO-Revision-Date: 2019-02-11 19:37+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -65,11 +65,6 @@ msgstr "GNOME-projektet"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Tilgå, håndtér og del bøger"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -351,7 +346,7 @@ msgstr "Dato"
 msgid "Name"
 msgstr "Navn"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Vis programversion"
 
@@ -434,8 +429,9 @@ msgstr ""
 "Ask Hjorth Larsen\n"
 "scootergrisen\n"
 "\n"
-"Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
-"Mere info: http://www.dansk-gruppen.dk"
+"Dansk-gruppen\n"
+"Websted <http://dansk-gruppen.dk>\n"
+"E-mail <dansk@dansk-gruppen.dk>"
 
 #: src/lib/gd-utils.c:329
 msgid "An e-books manager application"
@@ -590,11 +586,11 @@ msgstr "_Adgangskode"
 msgid "Open with %s"
 msgstr "Åbn med %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Find forrige"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Find næste"
 
@@ -711,6 +707,9 @@ msgstr "Samlinger"
 msgid "Unable to fetch the list of documents"
 msgstr "Kunne ikke hente dokumentlisten"
 
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
 #~ msgid "Print e-books"
 #~ msgstr "Udskrive e-bøger"
 
@@ -721,14 +720,14 @@ msgstr "Kunne ikke hente dokumentlisten"
 #~ msgstr "Et program til dokumenthåndtering i GNOME"
 
 #~ msgid ""
-#~ "A simple application to access, organize and share your documents on "
-#~ "GNOME. It is meant to be a simple and elegant replacement for using a "
-#~ "file manager to deal with documents. Seamless cloud integration is "
-#~ "offered through GNOME Online Accounts."
+#~ "A simple application to access, organize and share your documents on GNOME. "
+#~ "It is meant to be a simple and elegant replacement for using a file manager "
+#~ "to deal with documents. Seamless cloud integration is offered through GNOME "
+#~ "Online Accounts."
 #~ msgstr ""
 #~ "En simpel applikation til at tilgå, organisere og dele dine dokumenter i "
-#~ "GNOME. Det er påtænkt at være en simpel og elegant erstatning for at "
-#~ "bruge et filhåndteringsprogram til at håndtere dokumenter. Problemfri "
+#~ "GNOME. Det er påtænkt at være en simpel og elegant erstatning for at bruge "
+#~ "et filhåndteringsprogram til at håndtere dokumenter. Problemfri "
 #~ "cloud-integration tilbydes gennem GNOME online-konti."
 
 #~ msgid "View recent local and online documents"
@@ -844,11 +843,11 @@ msgstr "Kunne ikke hente dokumentlisten"
 #~ msgstr "Du kan oprette samlinger fra visningen Dokumenter"
 
 #~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
+#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and <a "
+#~ "href=\"file://%s\">Documents folder</a> will appear here."
 #~ msgstr ""
-#~ "Dokumenter fra dine <a href=\"system-settings\">onlinekonti</a> og mappen "
-#~ "<a href=\"file://%s\">Dokumenter</a> vil blive vist her."
+#~ "Dokumenter fra dine <a href=\"system-settings\">onlinekonti</a> og mappen <a "
+#~ "href=\"file://%s\">Dokumenter</a> vil blive vist her."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Kører i præsentationstilstand"
@@ -952,3 +951,4 @@ msgstr "Kunne ikke hente dokumentlisten"
 
 #~ msgid "Documents folder"
 #~ msgstr "mappen Dokumenter"
+
