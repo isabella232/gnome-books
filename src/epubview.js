@@ -19,6 +19,7 @@
  *
  */
 
+const Gdk = imports.gi.Gdk;
 const GdPrivate = imports.gi.GdPrivate;
 const Gepub = imports.gi.Gepub;
 const Gio = imports.gi.Gio;
@@ -34,6 +35,11 @@ const Preview = imports.preview;
 const Utils = imports.utils;
 
 const Lang = imports.lang;
+
+const ZOOM_LEVEL_STEP = 0.1;
+const ZOOM_LEVEL_DEFAULT = 1.0;
+const ZOOM_LEVEL_MIN = 0.5;
+const ZOOM_LEVEL_MAX = 2.0;
 
 function isEpub(mimeType) {
     return (mimeType == 'application/epub+zip');
@@ -56,6 +62,15 @@ var EPUBView = new Lang.Class({
             { name: 'find-next',
               callback: Lang.bind(this, this.findNext),
               accels: ['<Primary>g'] },
+            { name: 'reset-zoom',
+              callback: Lang.bind(this, this._resetZoom),
+              accels: ['<Primary>0', '<Primary>KP_0'] },
+            { name: 'zoom-in',
+              callback: Lang.bind(this, this._zoomIn),
+              accels: ['<Primary>plus', '<Primary>equal', '<Primary>KP_Add'] },
+              { name: 'zoom-out',
+              callback: Lang.bind(this, this._zoomOut),
+              accels: ['<Primary>minus', '<Primary>KP_Subtract'] },
         ];
     },
 
@@ -87,6 +102,7 @@ var EPUBView = new Lang.Class({
 
         view.connect('button-release-event', Lang.bind(this,
             this._onButtonReleaseEvent));
+        view.connect('scroll-event', Lang.bind(this, this._zoomContent));
 
         return view;
     },
@@ -203,6 +219,48 @@ var EPUBView = new Lang.Class({
     findPrev: function() {
         let fc = this.view.get_find_controller();
         fc.search_previous();
+    },
+
+    _zoomContent: function(view, event) {
+        let accel_mask = Gtk.accelerator_get_default_mod_mask();
+        if ((event.get_state()[1] & accel_mask) == Gdk.ModifierType.CONTROL_MASK) {
+            let direction = event.get_scroll_deltas()[2];
+            if (direction > 0) {
+                this._zoomOut();
+            } else {
+                this._zoomIn();
+            }
+        }
+    },
+
+    _updateZoomActions: function() {
+        let level = this.view.get_zoom_level()
+        let canZoomOut = (level > ZOOM_LEVEL_MIN);
+        let canZoomIn = (level < ZOOM_LEVEL_MAX);
+
+        this.getAction('zoom-out').enabled = canZoomOut;
+        this.getAction('zoom-in').enabled = canZoomIn;
+    },
+
+    _zoomOut: function() {
+        let level = this.view.get_zoom_level();
+        if (level <= ZOOM_LEVEL_MIN)
+            return;
+        this.view.set_zoom_level(Math.max(level - ZOOM_LEVEL_STEP, ZOOM_LEVEL_MIN));
+        this._updateZoomActions();
+    },
+
+    _zoomIn: function() {
+        let level = this.view.get_zoom_level();
+        if (level >= ZOOM_LEVEL_MAX)
+            return;
+        this.view.set_zoom_level(Math.min(level + ZOOM_LEVEL_STEP, ZOOM_LEVEL_MAX));
+        this._updateZoomActions();
+    },
+
+    _resetZoom: function() {
+        this.view.set_zoom_level(ZOOM_LEVEL_DEFAULT);
+        this._updateZoomActions();
     }
 });
 
