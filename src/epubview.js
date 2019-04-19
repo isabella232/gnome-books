@@ -138,6 +138,12 @@ var EPUBView = new Lang.Class({
         if (res)
             this._epubdoc.chapter = val;
 
+        [res, val] = metadata.get_double('zoom');
+        if (res) {
+            this._setZoomLevel(val);
+            this._updateZoomActions();
+        }
+
         return metadata;
     },
 
@@ -246,7 +252,7 @@ var EPUBView = new Lang.Class({
         let level = this.view.get_zoom_level();
         if (level <= ZOOM_LEVEL_MIN)
             return;
-        this.view.set_zoom_level(Math.max(level - ZOOM_LEVEL_STEP, ZOOM_LEVEL_MIN));
+        this._setZoomLevel(Math.max(level - ZOOM_LEVEL_STEP, ZOOM_LEVEL_MIN));
         this._updateZoomActions();
     },
 
@@ -254,13 +260,19 @@ var EPUBView = new Lang.Class({
         let level = this.view.get_zoom_level();
         if (level >= ZOOM_LEVEL_MAX)
             return;
-        this.view.set_zoom_level(Math.min(level + ZOOM_LEVEL_STEP, ZOOM_LEVEL_MAX));
+        this._setZoomLevel(Math.min(level + ZOOM_LEVEL_STEP, ZOOM_LEVEL_MAX));
         this._updateZoomActions();
     },
 
     _resetZoom: function() {
-        this.view.set_zoom_level(ZOOM_LEVEL_DEFAULT);
+        this._setZoomLevel(ZOOM_LEVEL_DEFAULT);
         this._updateZoomActions();
+    },
+
+    _setZoomLevel: function(val) {
+        this.view.set_zoom_level(val);
+        if (this._metadata)
+            this._metadata.set_double('zoom', val);
     }
 });
 
