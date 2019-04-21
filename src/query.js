@@ -162,7 +162,7 @@ var QueryBuilder = new Lang.Class({
 
             switch (sortBy) {
             case Gd.MainColumns.PRIMARY_TEXT:
-                tailSparql += 'ASC(?title) ASC(?filename)';
+                tailSparql += 'ASC(tracker:coalesce(?title, ?filename))';
                 break;
             case Gd.MainColumns.SECONDARY_TEXT:
                 tailSparql += 'ASC(?author)';
