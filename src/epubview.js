@@ -71,7 +71,7 @@ var EPUBView = new Lang.Class({
         let view = new Gepub.Widget();
 
         this.invertedStyle = new WebKit2.UserStyleSheet(
-            'body { background: black; filter: invert(100%); }',
+            'body { background: black !important; filter: invert(100%); }',
             WebKit2.UserContentInjectedFrames.ALL_FRAMES,
             WebKit2.UserStyleLevel.USER,
             null, null,
