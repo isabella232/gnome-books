@@ -1,6 +1,6 @@
-# Chinese (China) translation for gnome-documents.
-# Copyright (C) 2011 Free Software Foundation, Inc.
-# This file is distributed under the same license as the gnome-documents package.
+# Chinese (China) translation for gnome-books.
+# Copyright (C) 2011-2019 gnome-books's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-books package.
 # 甘 露 <rhythm.gan@gmail.com>, 2011.
 # Wylmer Wang <wantinghard@gmail.com>, 2011.
 # EL8LatSPQ <el8latspq@hotmail.com>, 2012.
@@ -10,14 +10,14 @@
 # Tong Hui <tonghuix@gmail.com>, 2013, 2014.
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
 # Bin Li <binli@gnome.org>, 2016.
+# Dingzhong Chen <wsxy162@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-documents master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"documents&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2018-02-02 05:13+0000\n"
-"PO-Revision-Date: 2018-03-25 02:31+0800\n"
+"Project-Id-Version: gnome-books master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
+"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"PO-Revision-Date: 2019-03-15 20:55+0800\n"
 "Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -25,10 +25,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:112 src/overview.js:1052
+#: src/application.js:104 src/overview.js:1030
 msgid "Books"
 msgstr "图书"
 
@@ -46,7 +46,6 @@ msgstr ""
 "器来处理电子书的优雅工具。"
 
 #: data/org.gnome.Books.appdata.xml.in:15
-#: data/org.gnome.Documents.appdata.xml.in:16
 msgid "It lets you:"
 msgstr "它允许您："
 
@@ -59,15 +58,10 @@ msgid "Search through e-books"
 msgstr "从电子书中搜索"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-msgid "View e-books (PDF and comics) fullscreen"
-msgstr "全屏查看电子书（PDF 和漫画）"
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr "全屏查看电子书（ePub 和漫画）"
 
-#: data/org.gnome.Books.appdata.xml.in:20
-msgid "Print e-books"
-msgstr "打印电子书"
-
-#: data/org.gnome.Books.appdata.xml.in:32
-#: data/org.gnome.Documents.appdata.xml.in:39
+#: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -85,140 +79,74 @@ msgstr "org.gnome.Books"
 msgid "Books;Comics;ePub;PDF;"
 msgstr "Books;Comics;ePub;PDF;图书;漫画;"
 
-#: data/org.gnome.books.gschema.xml:5 data/org.gnome.documents.gschema.xml:5
+#: data/org.gnome.books.gschema.xml:5
 msgid "View as"
 msgstr "查看方式"
 
-#: data/org.gnome.books.gschema.xml:6 data/org.gnome.documents.gschema.xml:6
+#: data/org.gnome.books.gschema.xml:6
 msgid "View as type"
 msgstr "查看为类型"
 
-#: data/org.gnome.books.gschema.xml:10 data/org.gnome.documents.gschema.xml:10
+#: data/org.gnome.books.gschema.xml:10
 msgid "Sort by"
 msgstr "排序依据"
 
-#: data/org.gnome.books.gschema.xml:11 data/org.gnome.documents.gschema.xml:11
+#: data/org.gnome.books.gschema.xml:11
 msgid "Sort by type"
 msgstr "根据类型排序"
 
-#: data/org.gnome.books.gschema.xml:15 data/org.gnome.documents.gschema.xml:15
+#: data/org.gnome.books.gschema.xml:15
 msgid "Window size"
 msgstr "窗口大小"
 
-#: data/org.gnome.books.gschema.xml:16 data/org.gnome.documents.gschema.xml:16
+#: data/org.gnome.books.gschema.xml:16
 msgid "Window size (width and height)."
 msgstr "窗口大小（宽度和高度）。"
 
-#: data/org.gnome.books.gschema.xml:20 data/org.gnome.documents.gschema.xml:20
+#: data/org.gnome.books.gschema.xml:20
 msgid "Window position"
 msgstr "窗口位置"
 
-#: data/org.gnome.books.gschema.xml:21 data/org.gnome.documents.gschema.xml:21
+#: data/org.gnome.books.gschema.xml:21
 msgid "Window position (x and y)."
 msgstr "窗口位置（水平和竖直）。"
 
-#: data/org.gnome.books.gschema.xml:25 data/org.gnome.documents.gschema.xml:25
+#: data/org.gnome.books.gschema.xml:25
 msgid "Window maximized"
 msgstr "窗口已最大化"
 
-#: data/org.gnome.books.gschema.xml:26 data/org.gnome.documents.gschema.xml:26
+#: data/org.gnome.books.gschema.xml:26
 msgid "Window maximized state"
 msgstr "窗口最大化状态"
 
-#: data/org.gnome.books.gschema.xml:30 data/org.gnome.documents.gschema.xml:30
+#: data/org.gnome.books.gschema.xml:30
 msgid "Night mode"
 msgstr "夜间模式"
 
-#: data/org.gnome.books.gschema.xml:31 data/org.gnome.documents.gschema.xml:31
+#: data/org.gnome.books.gschema.xml:31
 msgid "Whether the application is in night mode."
 msgstr "应用程序是否进入夜间模式。"
 
-#: data/org.gnome.Documents.appdata.xml.in:7
-#: data/org.gnome.Documents.desktop.in:3 src/application.js:115
-#: src/overview.js:1052
-msgid "Documents"
-msgstr "文档"
-
-#: data/org.gnome.Documents.appdata.xml.in:8
-msgid "A document manager application for GNOME"
-msgstr "GNOME 下的一款文档管理应用程序"
-
-#: data/org.gnome.Documents.appdata.xml.in:10
-msgid ""
-"A simple application to access, organize and share your documents on GNOME. "
-"It is meant to be a simple and elegant replacement for using a file manager "
-"to deal with documents. Seamless cloud integration is offered through GNOME "
-"Online Accounts."
-msgstr ""
-"GNOME 下一款可访问、管理以及分享文档的简洁应用。它的目标是成为一款替代文件管"
-"理器来处理文档的优雅工具。通过 GNOME 在线帐号，提供了无缝云集成功能。"
-
-#: data/org.gnome.Documents.appdata.xml.in:18
-msgid "View recent local and online documents"
-msgstr "查看最近本地和在线的文档"
-
-#: data/org.gnome.Documents.appdata.xml.in:19
-msgid "Access your Google, ownCloud or OneDrive content"
-msgstr "获取你的 Google、ownCloud 或 OneDrive 的内容"
-
-#: data/org.gnome.Documents.appdata.xml.in:20
-msgid "Search through documents"
-msgstr "从文档中搜索"
-
-#: data/org.gnome.Documents.appdata.xml.in:21
-msgid "See new documents shared by friends"
-msgstr "查看朋友分享的新文档"
-
-#: data/org.gnome.Documents.appdata.xml.in:22
-msgid "View documents fullscreen"
-msgstr "全屏查看文档"
-
-#: data/org.gnome.Documents.appdata.xml.in:23
-msgid "Print documents"
-msgstr "打印文档"
-
-#: data/org.gnome.Documents.appdata.xml.in:24
-msgid "Select favorites"
-msgstr "选择最喜爱的"
-
-#: data/org.gnome.Documents.appdata.xml.in:25
-msgid "Allow opening full featured editor for non-trivial changes"
-msgstr "允许打开全功能编辑器进行比较重大的修改"
-
-#: data/org.gnome.Documents.desktop.in:4
-msgid "Access, manage and share documents"
-msgstr "访问、管理以及分享文档"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Documents.desktop.in:7
-msgid "org.gnome.Documents"
-msgstr "org.gnome.Documents"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Documents.desktop.in:15
-msgid "Docs;PDF;Document;"
-msgstr "Docs;PDF;Document;文件;文档;"
-
-#: data/ui/app-menu.ui:6 src/preview.js:453
+#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
+#: src/preview.js:452
 msgid "Night Mode"
 msgstr "夜间模式"
 
-#: data/ui/app-menu.ui:12
+#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
-#: data/ui/app-menu.ui:16
+#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
 msgid "Help"
 msgstr "帮助"
 
-#: data/ui/app-menu.ui:20
-msgid "About"
-msgstr "关于"
+#: data/ui/books-app-menu.ui:20
+msgid "About Books"
+msgstr "关于图书"
 
-#: data/ui/app-menu.ui:24
-msgctxt "app menu"
-msgid "Quit"
-msgstr "退出"
+#: data/ui/documents-app-menu.ui:20
+msgid "About Documents"
+msgstr "关于文档"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -330,21 +258,20 @@ msgid "New Collection…"
 msgstr "新建合集…"
 
 #: data/ui/organize-collection-dialog.ui:73
-#: data/ui/organize-collection-dialog.ui:122 src/sharing.js:226
+#: data/ui/organize-collection-dialog.ui:122
 msgid "Add"
 msgstr "添加"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1056 src/search.js:126 src/search.js:132
+#: src/overview.js:1034 src/search.js:121
 msgid "Collections"
 msgstr "合集"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:616
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
 msgid "Cancel"
 msgstr "取消"
 
-#. Label for Done button in Sharing dialog
-#: data/ui/organize-collection-dialog.ui:173 src/sharing.js:112
+#: data/ui/organize-collection-dialog.ui:173
 msgid "Done"
 msgstr "完成"
 
@@ -354,7 +281,7 @@ msgstr "复制(_C)"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:988
+#: src/selections.js:976
 msgid "Open"
 msgstr "打开"
 
@@ -366,7 +293,7 @@ msgstr "编辑"
 msgid "Print…"
 msgstr "打印…"
 
-#: data/ui/preview-menu.ui:21 src/preview.js:462
+#: data/ui/preview-menu.ui:21 src/preview.js:461
 msgid "Fullscreen"
 msgstr "全屏"
 
@@ -427,123 +354,44 @@ msgstr "日期"
 msgid "Name"
 msgstr "名称"
 
-#: src/application.js:126
+#: src/application.js:114
 msgid "Show the version of the program"
 msgstr "显示程序版本"
 
-#: src/documents.js:794
+#: src/documents.js:779
 msgid "Failed to print document"
 msgstr "无法打印文档"
 
 #. Translators: this refers to local documents
-#: src/documents.js:836 src/search.js:459
+#: src/documents.js:821 src/search.js:405
 msgid "Local"
 msgstr "本地"
 
-#. Translators: Documents ships a "Getting Started with Documents"
-#. tutorial PDF. The "GNOME" string below is displayed as the author name
-#. of that document, and doesn't normally need to be translated.
-#: src/documents.js:879
-msgid "GNOME"
-msgstr "GNOME"
-
-#: src/documents.js:880
-msgid "Getting Started with Documents"
-msgstr "“文档”使用入门"
-
-#: src/documents.js:905 src/documents.js:1115 src/documents.js:1218
-#: src/documents.js:1412
+#: src/documents.js:878
 msgid "Collection"
 msgstr "合集"
 
-#. overridden
-#: src/documents.js:972
-msgid "Google Docs"
-msgstr "谷歌文档"
-
-#: src/documents.js:973
-msgid "Google"
-msgstr "谷歌"
-
-#: src/documents.js:1117 src/documents.js:1414
-msgid "Spreadsheet"
-msgstr "电子表格"
-
-#: src/documents.js:1119 src/documents.js:1416 src/presentation.js:43
-msgid "Presentation"
-msgstr "演示文档"
-
-#: src/documents.js:1121 src/documents.js:1418
-msgid "e-Book"
-msgstr "电子书"
-
-#: src/documents.js:1123 src/documents.js:1420
-msgid "Document"
-msgstr "文档"
-
-#. overridden
-#: src/documents.js:1173
-msgid "ownCloud"
-msgstr "ownCloud"
-
-#. overridden
-#: src/documents.js:1307 src/documents.js:1308
-msgid "OneDrive"
-msgstr "OneDrive"
-
-#: src/documents.js:1594
-msgid "Please check the network connection."
-msgstr "请检查网络连接。"
-
-#: src/documents.js:1597
-msgid "Please check the network proxy settings."
-msgstr "请检查网络的代理设置。"
-
-#: src/documents.js:1600
-msgid "Unable to sign in to the document service."
-msgstr "无法登入文档服务。"
-
-#: src/documents.js:1603
-msgid "Unable to locate this document."
-msgstr "无法定位文档。"
-
-#: src/documents.js:1606
-#, javascript-format
-msgid "Hmm, something is fishy (%d)."
-msgstr "有些东西不太对劲 (%d)。"
-
-#: src/documents.js:1613
+#: src/documents.js:1072
 msgid ""
 "You are using a preview of Books. Full viewing capabilities are coming soon!"
 msgstr "您正在使用 图书 的预览版本。完整的浏览功能即将推出！"
 
-#: src/documents.js:1615
-msgid ""
-"LibreOffice support is not available. Please contact your system "
-"administrator."
-msgstr "LibreOffice 支持不可用。请联系系统管理员。"
-
 #. Translators: %s is the title of a document
-#: src/documents.js:1638
+#: src/documents.js:1098
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "糟糕！无法载入“%s”"
 
-#. view button, on the right of the toolbar
-#: src/edit.js:139
-msgid "View"
-msgstr "查看"
-
-#: src/epubview.js:228
+#: src/epubview.js:245
 #, javascript-format
 msgid "chapter %s of %s"
 msgstr "第 %s/%s 章"
 
-#: src/evinceview.js:590 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "书签"
 
-#: src/evinceview.js:598
+#: src/evinceview.js:532
 msgid "Bookmark this page"
 msgstr "将该页添加至书签"
 
@@ -581,14 +429,6 @@ msgid "Contents"
 msgstr "目录"
 
 #: src/lib/gd-utils.c:328
-msgid "A document manager application"
-msgstr "文档管理程序"
-
-#: src/lib/gd-utils.c:333
-msgid "An e-books manager application"
-msgstr "电子书管理程序"
-
-#: src/lib/gd-utils.c:340
 msgid "translator-credits"
 msgstr ""
 "甘 露 <rhythm.gan@gmail.com>, 2011\n"
@@ -600,12 +440,21 @@ msgstr ""
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016\n"
 "Bin Li <binli@gnome.org>, 2016"
 
-#: src/mainToolbar.js:91
+#: src/lib/gd-utils.c:329
+msgid "An e-books manager application"
+msgstr "电子书管理程序"
+
+#: src/mainToolbar.js:101
+msgctxt "menu button tooltip"
+msgid "Menu"
+msgstr "菜单"
+
+#: src/mainToolbar.js:111
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "搜索"
 
-#: src/mainToolbar.js:100
+#: src/mainToolbar.js:120
 msgid "Back"
 msgstr "返回"
 
@@ -623,7 +472,7 @@ msgid "%d item deleted"
 msgid_plural "%d items deleted"
 msgstr[0] "%d 个项目已经删除"
 
-#: src/notifications.js:61 src/selections.js:387
+#: src/notifications.js:61 src/selections.js:383
 msgid "Undo"
 msgstr "撤销"
 
@@ -632,112 +481,84 @@ msgstr "撤销"
 msgid "Printing “%s”: %s"
 msgstr "正在打印“%s”：%s"
 
-#: src/notifications.js:215
+#: src/notifications.js:210
 msgid "Your documents are being indexed"
 msgstr "您的文档正被索引"
 
-#: src/notifications.js:216
+#: src/notifications.js:211
 msgid "Some documents might not be available during this process"
 msgstr "在该过程中部分文档可能不可用"
 
-#. Translators: %s refers to an online account provider, e.g.
-#. "Google", or "Windows Live".
-#: src/notifications.js:238
-#, javascript-format
-msgid "Fetching documents from %s"
-msgstr "从 %s 获取文档"
-
-#: src/notifications.js:240
-msgid "Fetching documents from online accounts"
-msgstr "从在线账户获取文档"
-
-#: src/overview.js:275
+#: src/overview.js:287
 msgid "No collections found"
 msgstr "未发现合集"
 
-#: src/overview.js:277
+#: src/overview.js:289
 msgid "No books found"
 msgstr "未发现图书"
 
-#: src/overview.js:277
-msgid "No documents found"
-msgstr "未发现文档"
-
-#: src/overview.js:286
+#: src/overview.js:298
 msgid "Try a different search"
 msgstr "尝试不同的搜索"
 
-#: src/overview.js:293
+#: src/overview.js:304
 msgid "You can create collections from the Books view"
 msgstr "你可以从图书视图创建合集"
 
-#: src/overview.js:295
-msgid "You can create collections from the Documents view"
-msgstr "你可以从文档视图创建合集"
-
-#: src/overview.js:305
-#, javascript-format
-msgid ""
-"Documents from your <a href=\"system-settings\">Online Accounts</a> and <a "
-"href=\"file://%s\">Documents folder</a> will appear here."
-msgstr ""
-"这里会显示您 <a href=\"system-settings\">在线帐号</a> 和 <a href=\"file://%s"
-"\">文档文件夹</a> 中的文件。"
-
 #. Translators: this is the menu to change view settings
-#: src/overview.js:562
+#: src/overview.js:537
 msgid "View Menu"
 msgstr "视图菜单"
 
-#: src/overview.js:590
+#: src/overview.js:565
 msgid "Click on items to select them"
 msgstr "点击项目来选择它们"
 
-#: src/overview.js:592
+#: src/overview.js:567
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "已选 %d 项"
 
-#: src/overview.js:669
+#: src/overview.js:648
 msgid "Select Items"
 msgstr "选择项目"
 
-#: src/overview.js:876
+#: src/overview.js:854
 msgid "Yesterday"
 msgstr "昨天"
 
-#: src/overview.js:878
+#: src/overview.js:856
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 天前"
 
-#: src/overview.js:882
+#: src/overview.js:860
 msgid "Last week"
 msgstr "上周"
 
-#: src/overview.js:884
+#: src/overview.js:862
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 周前"
 
-#: src/overview.js:888
+#: src/overview.js:866
 msgid "Last month"
 msgstr "上个月"
 
-#: src/overview.js:890
+#: src/overview.js:868
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d 个月前"
 
-#: src/overview.js:894
+#: src/overview.js:872
 msgid "Last year"
 msgstr "去年"
 
-#: src/overview.js:896
+#: src/overview.js:874
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -760,43 +581,18 @@ msgstr "文档 %s 已被锁定，打开需要密码。"
 msgid "_Password"
 msgstr "密码(_P)"
 
-#: src/presentation.js:101
-msgid "Running in presentation mode"
-msgstr "正在演示模式下运行"
-
-#: src/presentation.js:129
-msgid "Present On"
-msgstr "演示时间"
-
-#. Translators: "Mirrored" describes when both displays show the same view
-#: src/presentation.js:165
-msgid "Mirrored"
-msgstr "镜像"
-
-#: src/presentation.js:167
-msgid "Primary"
-msgstr "主要"
-
-#: src/presentation.js:169
-msgid "Off"
-msgstr "关闭"
-
-#: src/presentation.js:171
-msgid "Secondary"
-msgstr "次要"
-
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:445 src/selections.js:985
+#: src/preview.js:444 src/selections.js:973
 #, javascript-format
 msgid "Open with %s"
 msgstr "使用 %s 打开"
 
-#: src/preview.js:770
+#: src/preview.js:769
 msgid "Find Previous"
 msgstr "查找上一个"
 
 # 后一个，怪怪的
-#: src/preview.js:776
+#: src/preview.js:775
 msgid "Find Next"
 msgstr "查找下一个"
 
@@ -838,176 +634,291 @@ msgid "Type"
 msgstr "类型"
 
 #. Translators: "Type" refers to a search filter on the document type
-#. (PDF, spreadsheet, ...)
-#: src/search.js:120
+#. (e-Books, Comics, ...)
+#: src/search.js:116
 msgctxt "Search Filter"
 msgid "Type"
 msgstr "类型"
 
 #. Translators: this refers to documents
-#: src/search.js:123 src/search.js:260 src/search.js:453
+#: src/search.js:119 src/search.js:225 src/search.js:399
 msgid "All"
 msgstr "全部"
 
-#: src/search.js:136
-msgid "PDF Documents"
-msgstr "PDF 文档"
-
-#: src/search.js:143
+#: src/search.js:127
 msgid "e-Books"
 msgstr "电子书"
 
-#: src/search.js:147
+#: src/search.js:131
 msgid "Comics"
 msgstr "漫画"
-
-#: src/search.js:152
-msgid "Presentations"
-msgstr "演示文档"
-
-#: src/search.js:155
-msgid "Spreadsheets"
-msgstr "电子表格"
-
-#: src/search.js:158
-msgid "Text Documents"
-msgstr "文本文档"
 
 #. Translators: this is a verb that refers to "All", "Title", "Author",
 #. and "Content" as in "Match All", "Match Title", "Match Author", and
 #. "Match Content"
-#: src/search.js:257
+#: src/search.js:222
 msgid "Match"
 msgstr "匹配"
 
 #. Translators: "Title" refers to "Match Title" when searching
-#: src/search.js:263
+#: src/search.js:228
 msgctxt "Search Filter"
 msgid "Title"
 msgstr "标题"
 
 #. Translators: "Author" refers to "Match Author" when searching
-#: src/search.js:266
+#: src/search.js:231
 msgctxt "Search Filter"
 msgid "Author"
 msgstr "作者"
 
 #. Translators: "Content" refers to "Match Content" when searching
-#: src/search.js:269
+#: src/search.js:234
 msgctxt "Search Filter"
 msgid "Content"
 msgstr "内容"
 
-#: src/search.js:449
+#: src/search.js:395
 msgid "Sources"
 msgstr "源"
 
-#. Translators: the first %s is an online account provider name,
-#. e.g. "Google". The second %s is the identity used to log in,
-#. e.g. "foo@gmail.com".
-#: src/search.js:508
-#, javascript-format
-msgid "%s (%s)"
-msgstr "%s (%s)"
-
-#: src/selections.js:360 src/selections.js:362
+#: src/selections.js:356 src/selections.js:358
 msgid "Rename…"
 msgstr "重命名…"
 
-#: src/selections.js:366 src/selections.js:368
+#: src/selections.js:362 src/selections.js:364
 msgid "Delete"
 msgstr "删除"
 
-#: src/selections.js:382
+#: src/selections.js:378
 #, javascript-format
 msgid "“%s” removed"
-msgstr "“%s” 已移除"
+msgstr "“%s”已移除"
 
-#: src/selections.js:779
+#: src/selections.js:775
 msgid "Rename"
 msgstr "重命名"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:785
+#: src/selections.js:781
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "合集"
 
-#: src/sharing.js:108
-msgid "Sharing Settings"
-msgstr "分享设置"
-
-#. Label for widget group for changing document permissions
-#: src/sharing.js:145
-msgid "Document permissions"
-msgstr "文档权限"
-
-#. Label for permission change in Sharing dialog
-#: src/sharing.js:152 src/sharing.js:330
-msgid "Change"
-msgstr "更改"
-
-#. Label for radiobutton that sets doc permission to private
-#: src/sharing.js:176 src/sharing.js:305
-msgid "Private"
-msgstr "私有"
-
-#: src/sharing.js:186 src/sharing.js:298
-msgid "Public"
-msgstr "公开"
-
-#. Label for checkbutton that sets doc permission to Can edit
-#: src/sharing.js:190 src/sharing.js:300
-msgid "Everyone can edit"
-msgstr "任何人都可以编辑"
-
-#. Label for widget group used for adding new contacts
-#: src/sharing.js:197
-msgid "Add people"
-msgstr "添加联系人"
-
-#. Editable text in entry field
-#: src/sharing.js:204
-msgid "Enter an email address"
-msgstr "输入电子邮件地址"
-
-#: src/sharing.js:219 src/sharing.js:371
-msgid "Can edit"
-msgstr "可以编辑"
-
-#: src/sharing.js:219 src/sharing.js:374
-msgid "Can view"
-msgstr "可以查看"
-
-#: src/sharing.js:302
-msgid "Everyone can read"
-msgstr "任何人都可以阅读"
-
-#: src/sharing.js:317
-msgid "Save"
-msgstr "保存"
-
-#: src/sharing.js:368
-msgid "Owner"
-msgstr "所有者"
-
-#: src/sharing.js:437
-#, javascript-format
-msgid "You can ask %s for access"
-msgstr "您可以向 %s 请求访问权限"
-
-#: src/sharing.js:474 src/sharing.js:510 src/sharing.js:567 src/sharing.js:584
-#: src/sharing.js:603
-msgid "The document was not updated"
-msgstr "文档没有被更新"
-
-#: src/shellSearchProvider.js:285
-msgid "Untitled Document"
-msgstr "无标题文档"
-
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "无法获取文档列表"
+
+#~ msgid "Print e-books"
+#~ msgstr "打印电子书"
+
+#~ msgid "Documents"
+#~ msgstr "文档"
+
+#~ msgid "A document manager application for GNOME"
+#~ msgstr "GNOME 下的一款文档管理应用程序"
+
+#~ msgid ""
+#~ "A simple application to access, organize and share your documents on "
+#~ "GNOME. It is meant to be a simple and elegant replacement for using a "
+#~ "file manager to deal with documents. Seamless cloud integration is "
+#~ "offered through GNOME Online Accounts."
+#~ msgstr ""
+#~ "GNOME 下一款可访问、管理以及分享文档的简洁应用。它的目标是成为一款替代文件"
+#~ "管理器来处理文档的优雅工具。通过 GNOME 在线帐号，提供了无缝云集成功能。"
+
+#~ msgid "View recent local and online documents"
+#~ msgstr "查看最近本地和在线的文档"
+
+#~ msgid "Access your Google, ownCloud or OneDrive content"
+#~ msgstr "获取你的 Google、ownCloud 或 OneDrive 的内容"
+
+#~ msgid "Search through documents"
+#~ msgstr "从文档中搜索"
+
+#~ msgid "See new documents shared by friends"
+#~ msgstr "查看朋友分享的新文档"
+
+#~ msgid "View documents fullscreen"
+#~ msgstr "全屏查看文档"
+
+#~ msgid "Print documents"
+#~ msgstr "打印文档"
+
+#~ msgid "Select favorites"
+#~ msgstr "选择最喜爱的"
+
+#~ msgid "Allow opening full featured editor for non-trivial changes"
+#~ msgstr "允许打开全功能编辑器进行比较重大的修改"
+
+#~ msgid "Access, manage and share documents"
+#~ msgstr "访问、管理以及分享文档"
+
+#~ msgid "org.gnome.Documents"
+#~ msgstr "org.gnome.Documents"
+
+#~ msgid "Docs;PDF;Document;"
+#~ msgstr "Docs;PDF;Document;文件;文档;"
+
+#~ msgid "About"
+#~ msgstr "关于"
+
+#~ msgctxt "app menu"
+#~ msgid "Quit"
+#~ msgstr "退出"
+
+#~ msgid "GNOME"
+#~ msgstr "GNOME"
+
+#~ msgid "Getting Started with Documents"
+#~ msgstr "“文档”使用入门"
+
+#~ msgid "Google Docs"
+#~ msgstr "谷歌文档"
+
+#~ msgid "Google"
+#~ msgstr "谷歌"
+
+#~ msgid "Spreadsheet"
+#~ msgstr "电子表格"
+
+#~ msgid "Presentation"
+#~ msgstr "演示文档"
+
+#~ msgid "e-Book"
+#~ msgstr "电子书"
+
+#~ msgid "Document"
+#~ msgstr "文档"
+
+#~ msgid "ownCloud"
+#~ msgstr "ownCloud"
+
+#~ msgid "OneDrive"
+#~ msgstr "OneDrive"
+
+#~ msgid "Please check the network connection."
+#~ msgstr "请检查网络连接。"
+
+#~ msgid "Please check the network proxy settings."
+#~ msgstr "请检查网络的代理设置。"
+
+#~ msgid "Unable to sign in to the document service."
+#~ msgstr "无法登入文档服务。"
+
+#~ msgid "Unable to locate this document."
+#~ msgstr "无法定位文档。"
+
+#~ msgid "Hmm, something is fishy (%d)."
+#~ msgstr "有些东西不太对劲 (%d)。"
+
+#~ msgid ""
+#~ "LibreOffice support is not available. Please contact your system "
+#~ "administrator."
+#~ msgstr "LibreOffice 支持不可用。请联系系统管理员。"
+
+#~ msgid "View"
+#~ msgstr "查看"
+
+#~ msgid "A document manager application"
+#~ msgstr "文档管理程序"
+
+#~ msgid "Fetching documents from %s"
+#~ msgstr "从 %s 获取文档"
+
+#~ msgid "Fetching documents from online accounts"
+#~ msgstr "从在线账户获取文档"
+
+#~ msgid "No documents found"
+#~ msgstr "未发现文档"
+
+#~ msgid "You can create collections from the Documents view"
+#~ msgstr "你可以从文档视图创建合集"
+
+#~ msgid ""
+#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
+#~ msgstr ""
+#~ "这里会显示您 <a href=\"system-settings\">在线帐号</a> 和 <a href=\"file://"
+#~ "%s\">文档文件夹</a> 中的文件。"
+
+#~ msgid "Running in presentation mode"
+#~ msgstr "正在演示模式下运行"
+
+#~ msgid "Present On"
+#~ msgstr "演示时间"
+
+#~ msgid "Mirrored"
+#~ msgstr "镜像"
+
+#~ msgid "Primary"
+#~ msgstr "主要"
+
+#~ msgid "Off"
+#~ msgstr "关闭"
+
+#~ msgid "Secondary"
+#~ msgstr "次要"
+
+#~ msgid "PDF Documents"
+#~ msgstr "PDF 文档"
+
+#~ msgid "Presentations"
+#~ msgstr "演示文档"
+
+#~ msgid "Spreadsheets"
+#~ msgstr "电子表格"
+
+#~ msgid "%s (%s)"
+#~ msgstr "%s (%s)"
+
+#~ msgid "Sharing Settings"
+#~ msgstr "分享设置"
+
+#~ msgid "Document permissions"
+#~ msgstr "文档权限"
+
+#~ msgid "Change"
+#~ msgstr "更改"
+
+#~ msgid "Private"
+#~ msgstr "私有"
+
+#~ msgid "Public"
+#~ msgstr "公开"
+
+#~ msgid "Everyone can edit"
+#~ msgstr "任何人都可以编辑"
+
+#~ msgid "Add people"
+#~ msgstr "添加联系人"
+
+#~ msgid "Enter an email address"
+#~ msgstr "输入电子邮件地址"
+
+#~ msgid "Can edit"
+#~ msgstr "可以编辑"
+
+#~ msgid "Can view"
+#~ msgstr "可以查看"
+
+#~ msgid "Everyone can read"
+#~ msgstr "任何人都可以阅读"
+
+#~ msgid "Save"
+#~ msgstr "保存"
+
+#~ msgid "Owner"
+#~ msgstr "所有者"
+
+#~ msgid "You can ask %s for access"
+#~ msgstr "您可以向 %s 请求访问权限"
+
+#~ msgid "The document was not updated"
+#~ msgstr "文档没有被更新"
+
+#~ msgid "Untitled Document"
+#~ msgstr "无标题文档"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Rotate anti-clockwise"
