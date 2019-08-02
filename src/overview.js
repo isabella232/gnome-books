@@ -295,16 +295,24 @@ const EmptyResultsBox = new Lang.Class({
 
     _addSecondaryLabel: function() {
         let label;
+        let useMarkup = false;
 
         if (this._mode == WindowMode.WindowMode.SEARCH) {
             label = _("Try a different search");
         } else if (this._mode == WindowMode.WindowMode.COLLECTIONS) {
             label = _("You can create collections from the Books view");
         } else {
-            return;
+            let docsPath, docsUrl;
+
+            docsPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS);
+            docsUrl = Gio.file_new_for_path(docsPath).get_uri();
+            useMarkup = true;
+            /* translators: %s is the location of the Documents folder.*/
+            label = _('Books from your <a href="%s">Documents</a> folder will appear here').format(docsUrl);
         }
 
-        this.add(new Gtk.Label({ label: label }));
+        this.add(new Gtk.Label({ label: label,
+                                 use_markup: useMarkup }));
     }
 });
 
