@@ -268,9 +268,11 @@ thumbnail_job_completed_cb (EvJobThumbnail *job,
         PreviewItem *item;
 
 #ifdef HAVE_CAIRO_SURFACE_SET_DEVICE_SCALE
-        gint device_scale;
-        device_scale = gtk_widget_get_scale_factor (GTK_WIDGET (self));
-        cairo_surface_set_device_scale (job->thumbnail_surface, device_scale, device_scale);
+        if (job->thumbnail_surface != NULL) {
+                gint device_scale;
+                device_scale = gtk_widget_get_scale_factor (GTK_WIDGET (self));
+                cairo_surface_set_device_scale (job->thumbnail_surface, device_scale, device_scale);
+        }
 #endif
         surface = ev_document_misc_render_thumbnail_surface_with_frame (GTK_WIDGET (self),
                                                                         job->thumbnail_surface,
