@@ -93,6 +93,7 @@ var MainToolbar = new Lang.Class({
       let model = builder.get_object('app-menu');
       let menuButton = new Gtk.MenuButton({ image: new Gtk.Image ({ icon_name: 'open-menu-symbolic' }),
                                             tooltip_text: Gettext.pgettext("menu button tooltip", "Menu"),
+                                            name: 'menu-button',
                                             visible: true });
       menuButton.set_menu_model(model);
 
@@ -104,6 +105,7 @@ var MainToolbar = new Lang.Class({
         let searchButton = new Gtk.ToggleButton({ image: new Gtk.Image ({ icon_name: 'edit-find-symbolic' }),
                                                   tooltip_text: Gettext.pgettext("toolbar button tooltip", "Search"),
                                                   action_name: actionName,
+                                                  name: 'find-button',
                                                   visible: true });
         this.toolbar.pack_start(searchButton);
         return searchButton;
@@ -112,6 +114,7 @@ var MainToolbar = new Lang.Class({
     addBackButton: function() {
         let backButton = new Gtk.Button({ image: new Gtk.Image({ icon_name: 'go-previous-symbolic' }),
                                           tooltip_text: _("Back"),
+                                          name: 'back-button',
                                           action_name: 'view.go-back' });
         this.toolbar.pack_start(backButton);
         return backButton;
