@@ -126,11 +126,11 @@ const SearchTypeManager = new Lang.Class({
         this.addItem(new SearchType({ id: SearchTypeStock.EBOOKS,
                                       name: _("e-Books"),
                                       filter: '(nie:mimeType(?urn) IN (\"application/epub+zip\", \"application/x-mobipocket-ebook\", \"application/x-fictionbook+xml\", \"application/x-zip-compressed-fb2\", \"image/vnd.djvu+multipage\"))',
-                                      where: '?urn rdf:type nfo:EBook .' }));
+                                      where: '?urn rdf:type nfo:FileDataObject .' }));
         this.addItem(new SearchType({ id: SearchTypeStock.COMICS,
                                       name: _("Comics"),
                                       filter: '(nie:mimeType(?urn) IN (\"application/x-cbr\", \"application/vnd.comicbook-rar\", \"application/x-cbz\", \"application/vnd.comicbook+zip\", \"application/x-cbt\", \"application/x-cb7\"))',
-                                      where: '?urn rdf:type nfo:EBook .' }));
+                                      where: '?urn rdf:type nfo:FileDataObject .' }));
 
 
         this.setActiveItemById(SearchTypeStock.ALL);
