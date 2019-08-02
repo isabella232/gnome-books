@@ -276,7 +276,7 @@ const EmptyResultsBox = new Lang.Class({
         else if (this._mode == WindowMode.WindowMode.COLLECTIONS)
             iconName = 'emblem-documents-symbolic';
         else
-            iconName = 'x-office-document-symbolic';
+            iconName = 'org.gnome.Books-symbolic';
 
         this.add(new Gtk.Image({ pixel_size: 128, icon_name: iconName, margin_bottom: 9 }));
     },
