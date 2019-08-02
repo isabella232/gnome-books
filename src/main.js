@@ -41,6 +41,6 @@ const Application = imports.application;
 const GLib = imports.gi.GLib;
 
 function main(args) {
-    let application = new Application.Application(pkg.name == 'org.gnome.Books');
+    let application = new Application.Application();
     return application.run(args);
 }
