@@ -294,18 +294,17 @@ const EmptyResultsBox = new Lang.Class({
     },
 
     _addSecondaryLabel: function() {
+        let label;
+
         if (this._mode == WindowMode.WindowMode.SEARCH) {
-            this.add(new Gtk.Label({ label: _("Try a different search") }));
-            return;
-        }
-
-        if (this._mode == WindowMode.WindowMode.COLLECTIONS) {
-            let label;
+            label = _("Try a different search");
+        } else if (this._mode == WindowMode.WindowMode.COLLECTIONS) {
             label = _("You can create collections from the Books view");
-
-            this.add(new Gtk.Label({ label: label }));
+        } else {
             return;
         }
+
+        this.add(new Gtk.Label({ label: label }));
     }
 });
 
