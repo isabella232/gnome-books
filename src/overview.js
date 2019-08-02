@@ -708,7 +708,8 @@ const OverviewToolbar = new Lang.Class({
             function(controller, count) {
                 this.toolbar.foreach(Lang.bind(this,
                     function(child) {
-                        child.set_sensitive(count != 0);
+                        if (child.name != 'menu-button')
+                            child.set_sensitive(count != 0);
                     }));
             }));
 
