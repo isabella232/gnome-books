@@ -1,3 +1,16 @@
+New in 3.33.90
+--------------
+
+- Update application icon
+- Fix CBR comic book files not appearing
+- Better empty state filler (better icon, link to where files
+  should be put, keep app menu sensitive)
+- Add Zoom to the ePub view
+- Better library ordering for books and comics without a title
+- Make night mode work better for some ePub files
+- Fix "Open" menu item not appearing for Foliate and Bookworm
+- Fix "inconsistent" toggle in selection mode
+
 New in 3.32.0
 -------------
 
