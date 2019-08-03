@@ -1089,7 +1089,8 @@ var DocumentManager = new Lang.Class({
             return;
         }
 
-        if (!error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND))
+        if (!error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND) &&
+            !error.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_SUPPORTED))
             logError(error, 'Unable to load document');
         else
             Utils.debug('Unable to load document' + doc.uri);
