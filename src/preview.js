@@ -588,10 +588,11 @@ var PreviewNavControls = new Lang.Class({
         this._overlay.add_overlay(this._prevRevealer);
 
         let prevButton = new Gtk.Button({ image: new Gtk.Image ({ icon_name: 'go-previous-symbolic',
-                                                                  pixel_size: 16 }), });
+                                                                  pixel_size: 16 }),
+                                          action_name: 'view.prev-page' });
+
         prevButton.get_style_context().add_class('osd');
         this._prevRevealer.add(prevButton);
-        prevButton.connect('clicked', Lang.bind(this, this._onPrevClicked));
         prevButton.connect('enter-notify-event', Lang.bind(this, this._onEnterNotify));
         prevButton.connect('leave-notify-event', Lang.bind(this, this._onLeaveNotify));
 
@@ -603,10 +604,11 @@ var PreviewNavControls = new Lang.Class({
         this._overlay.add_overlay(this._nextRevealer);
 
         let nextButton = new Gtk.Button({ image: new Gtk.Image ({ icon_name: 'go-next-symbolic',
-                                                                  pixel_size: 16 }) });
+                                                                  pixel_size: 16 }),
+                                          action_name: 'view.next-page' });
+
         nextButton.get_style_context().add_class('osd');
         this._nextRevealer.add(nextButton);
-        nextButton.connect('clicked', Lang.bind(this, this._onNextClicked));
         nextButton.connect('enter-notify-event', Lang.bind(this, this._onEnterNotify));
         nextButton.connect('leave-notify-event', Lang.bind(this, this._onLeaveNotify));
 
@@ -674,14 +676,6 @@ var PreviewNavControls = new Lang.Class({
 
     _onMultiPressStopped: function() {
         this._tapGesture.set_state(Gtk.EventSequenceState.DENIED);
-    },
-
-    _onPrevClicked: function() {
-        this.preview.goPrev();
-    },
-
-    _onNextClicked: function() {
-        this.preview.goNext();
     },
 
     _autoHide: function() {
