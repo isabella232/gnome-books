@@ -138,10 +138,10 @@ var EvinceView = new Lang.Class({
         let actions = [
             { name: 'zoom-in',
               callback: Lang.bind(this, this._zoomIn),
-              accels: ['<Primary>plus', '<Primary>equal'] },
+              accels: ['<Primary>plus', '<Primary>equal', '<Primary>KP_Add'] },
             { name: 'zoom-out',
               callback: Lang.bind(this, this._zoomOut),
-              accels: ['<Primary>minus'] },
+              accels: ['<Primary>minus', '<Primary>KP_Subtract'] },
             { name: 'copy',
               callback: Lang.bind(this, this._copy),
               accels: ['<Primary>c'] },
