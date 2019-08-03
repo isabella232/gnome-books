@@ -826,20 +826,20 @@ var LocalDocument = new Lang.Class({
 
             let apps = Gio.app_info_get_recommended_for_type (this.mimeType);
             for (let i = 0; i < apps.length; i++) {
-                if (apps[i].supports_uris ()) {
-                    // Never offer to open in an archive handler
-                    if (apps[i].get_id() == 'org.gnome.FileRoller.desktop')
-                        continue;
-                    if (defaultApp && apps[i].equal (defaultApp)) {
-                        // Found the recommended app that's also the default
-                        recommendedApp = apps[i];
-                        break;
-                    }
-                    // Set the first recommendedApp as the default if
-                    // they don't match
-                    if (!recommendedApp)
-                        recommendedApp = apps[i];
+                if (!apps[i].supports_uris ())
+                    continue;
+                // Never offer to open in an archive handler
+                if (apps[i].get_id() == 'org.gnome.FileRoller.desktop')
+                    continue;
+                if (defaultApp && apps[i].equal (defaultApp)) {
+                    // Found the recommended app that's also the default
+                    recommendedApp = apps[i];
+                    break;
                 }
+                // Set the first recommendedApp as the default if
+                // they don't match
+                if (!recommendedApp)
+                    recommendedApp = apps[i];
             }
 
             this.defaultApp = recommendedApp;
