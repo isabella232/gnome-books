@@ -826,7 +826,7 @@ var LocalDocument = new Lang.Class({
 
             let apps = Gio.app_info_get_recommended_for_type (this.mimeType);
             for (let i = 0; i < apps.length; i++) {
-                if (!apps[i].supports_uris ())
+                if (!apps[i].supports_files ())
                     continue;
                 // Never offer to open in an archive handler
                 if (apps[i].get_id() == 'org.gnome.FileRoller.desktop')
