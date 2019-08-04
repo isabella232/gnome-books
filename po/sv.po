@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-07 21:24+0100\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-08-04 21:15+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Bookmarks: -1,-1,0,-1,-1,-1,-1,-1,-1,-1\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Böcker"
 
@@ -63,11 +63,6 @@ msgstr "GNOME-projektet"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Kom åt, hantera och dela böcker"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -122,26 +117,21 @@ msgstr "Nattläge"
 msgid "Whether the application is in night mode."
 msgstr "Huruvida programmet är i nattläge."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Nattläge"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Tangentbordsgenvägar"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Hjälp"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "Om Böcker"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "Om Dokument"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -258,11 +248,11 @@ msgid "Add"
 msgstr "Lägg till"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Samlingar"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Avbryt"
 
@@ -349,7 +339,7 @@ msgstr "Datum"
 msgid "Name"
 msgstr "Namn"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Visa programmets version"
 
@@ -384,11 +374,11 @@ msgstr "Oj! Misslyckades att läsa in ”%s”"
 msgid "chapter %s of %s"
 msgstr "kapitel %s av %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Bokmärken"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Bokmärk denna sida"
 
@@ -425,7 +415,7 @@ msgstr "Ingen innehållsförteckning"
 msgid "Contents"
 msgstr "Innehåll"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -435,21 +425,21 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Ett program för hantering av e-böcker"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Meny"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Sök"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Bakåt"
 
@@ -494,72 +484,79 @@ msgstr "Inga samlingar hittade"
 msgid "No books found"
 msgstr "Inga böcker hittade"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Försök med en annan sökning"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Du kan skapa samlingar från vyn Böcker"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+"Dokument från din mapp <a href=\"%s\">Dokument</a> kommer att dyka upp här"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Visningsmeny"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Klicka på objekten för att markera dem"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d markerat"
 msgstr[1] "%d markerade"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Markera objekt"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Igår"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dag sedan"
 msgstr[1] "%d dagar sedan"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Förra veckan"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d vecka sedan"
 msgstr[1] "%d veckor sedan"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Förra månaden"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d månad sedan"
 msgstr[1] "%d månader sedan"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Förra året"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -589,11 +586,11 @@ msgstr "_Lösenord"
 msgid "Open with %s"
 msgstr "Öppna med %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Hitta föregående"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Hitta nästa"
 
@@ -709,6 +706,12 @@ msgstr "Samlingar"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Kunde inte hämta listan över dokument"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "Om Dokument"
 
 #~ msgid "Print e-books"
 #~ msgstr "Skriva ut e-böcker"
@@ -833,13 +836,6 @@ msgstr "Kunde inte hämta listan över dokument"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Du kan skapa samlingar från vyn Dokument"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Dokument från dina <a href=\"system-settings\">Nätkonton</a> och din <a "
-#~ "href=\"file://%s\">Dokumentmapp</a> kommer att dyka upp här."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Kör i presentationsläge"
