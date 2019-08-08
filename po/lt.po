@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-09 17:16+0200\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-08-08 22:19+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 3.30.1\n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 3.32.1\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Knygos"
 
@@ -51,7 +51,6 @@ msgid "Search through e-books"
 msgstr "Ieškokite el. knygose"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-#| msgid "View e-books (PDF and comics) fullscreen"
 msgid "View e-books (ePubs and comics) fullscreen"
 msgstr "Rodyti el. knygas (ePub ir komiksus) visame ekrane"
 
@@ -62,11 +61,6 @@ msgstr "GNOME projektas"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Prieikite, tvarkykite ir bendrinkite knygas"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -121,28 +115,21 @@ msgstr "Nakties veiksena"
 msgid "Whether the application is in night mode."
 msgstr "Ar programa yra nakties veiksenoje."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Nakties veiksena"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Klaviatūros trumpiniai"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Žinynas"
 
 #: data/ui/books-app-menu.ui:20
-#| msgid "Books"
 msgid "About Books"
 msgstr "Apie knygas"
-
-#: data/ui/documents-app-menu.ui:20
-#| msgid "Text Documents"
-msgid "About Documents"
-msgstr "Apie dokumentus"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -259,11 +246,11 @@ msgid "Add"
 msgstr "Pridėti"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Kolekcijos"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Atsisakyti"
 
@@ -350,7 +337,7 @@ msgstr "Data"
 msgid "Name"
 msgstr "Pavadinimas"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Rodyti programos versiją"
 
@@ -383,11 +370,11 @@ msgstr "Oi! Nepavyksta įkelti „%s“"
 msgid "chapter %s of %s"
 msgstr "skyrius %s iš %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Žymelės"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Pažymėti šį puslapį"
 
@@ -424,28 +411,27 @@ msgstr "Nėra turinio"
 msgid "Contents"
 msgstr "Turinys"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "El. knygų tvarkymo programa"
 
-#: src/mainToolbar.js:101
-#| msgid "View Menu"
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Meniu"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Ieškoti"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Grįžti"
 
@@ -490,24 +476,33 @@ msgstr "Kolekcijų nerasta"
 msgid "No books found"
 msgstr "Knygų nerasta"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Bandykite kitokią paiešką"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Jūs galite kurti kolekcijas iš knygų rodinio"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+#| msgid ""
+#| "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#| "<a href=\"file://%s\">Documents folder</a> will appear here."
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "Knygos iš jūsų <a href=\"%s\">dokumentų aplanko</a> bus matomos čia."
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Rodyti meniu"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Spauskite ant elementų juos pažymėti"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -515,15 +510,15 @@ msgstr[0] "%d pažymėtas"
 msgstr[1] "%d pažymėti"
 msgstr[2] "%d pažymėta"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Pasirinkite elementus"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Vakar"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -531,11 +526,11 @@ msgstr[0] "Prieš %d dieną"
 msgstr[1] "Prieš %d dienas"
 msgstr[2] "Prieš %d dienų"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Praeitą savaitę"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -543,11 +538,11 @@ msgstr[0] "Prieš %d savaitę"
 msgstr[1] "Prieš %d savaites"
 msgstr[2] "Prieš %d savaičių"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Praeitą mėnesį"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -555,11 +550,11 @@ msgstr[0] "Prieš %d mėnesį"
 msgstr[1] "Prieš %d mėnesius"
 msgstr[2] "Prieš %d mėnesių"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Praeitais metais"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -590,11 +585,11 @@ msgstr "Sla_ptažodis"
 msgid "Open with %s"
 msgstr "Atverti su %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Rasti ankstesnį"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Rasti kitą"
 
@@ -710,6 +705,13 @@ msgstr "Kolekcijos"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Nepavyksta gauti dokumentų sąrašo"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~| msgid "Text Documents"
+#~ msgid "About Documents"
+#~ msgstr "Apie dokumentus"
 
 #~ msgid "Print e-books"
 #~ msgstr "Spausdinti el. knygas"
@@ -840,13 +842,6 @@ msgstr "Nepavyksta gauti dokumentų sąrašo"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Jūs galite kurti kolekcijas iš dokumentų rodinio"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Dokumentai iš jūsų <a href=\"system-settings\">internetinių paskyrų</a> "
-#~ "bei <a href=\"file://%s\">dokumentų aplanko</a> bus matomi čia."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Veikia pateikties veiksena"
