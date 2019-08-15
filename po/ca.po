@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
 "PO-Revision-Date: 2018-01-22 00:10+0100\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Llibres"
 
@@ -55,7 +55,8 @@ msgstr "Cerqueu als llibres"
 
 #: data/org.gnome.Books.appdata.xml.in:19
 msgid "View e-books (ePubs and comics) fullscreen"
-msgstr "Visualitzeu els llibres electrònics (ePubs i còmics) a pantalla completa"
+msgstr ""
+"Visualitzeu els llibres electrònics (ePubs i còmics) a pantalla completa"
 
 #: data/org.gnome.Books.appdata.xml.in:31
 msgid "The GNOME Project"
@@ -64,11 +65,6 @@ msgstr "El projecte GNOME"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Accediu, gestioneu i compartiu llibres electrònics"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -123,26 +119,21 @@ msgstr "Mode nocturn"
 msgid "Whether the application is in night mode."
 msgstr "Si l'aplicació està en mode nocturn."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Mode nocturn"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Dreceres de teclat"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Ajuda"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "Quant al Llibres"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "Quant al Documents"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -259,11 +250,11 @@ msgid "Add"
 msgstr "Addició"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Col·leccions"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Cancel·la"
 
@@ -350,7 +341,7 @@ msgstr "Data"
 msgid "Name"
 msgstr "Nom"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Mostra la versió del programa."
 
@@ -385,11 +376,11 @@ msgstr "No s'ha pogut carregar «%s»"
 msgid "chapter %s of %s"
 msgstr "capítol %s de %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Adreces d'interès"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Afegeix la pàgina a les adreces d'interès"
 
@@ -426,25 +417,25 @@ msgstr "No hi ha cap taula de continguts"
 msgid "Contents"
 msgstr "Continguts"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr "Pau Iranzo <paugnu@gmail.com>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Una aplicació per gestionar llibres electrònics"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Menú"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Cerca"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Enrere"
 
@@ -488,72 +479,78 @@ msgstr "No s'ha trobat cap col·lecció"
 msgid "No books found"
 msgstr "No s'ha trobat cap llibre"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Intenta una cerca diferent"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Podeu crear col·leccions a partir de les vistes dels llibres"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "Els llibres de la carpeta <a href=\"%s\">Documents</a> apareixeran aquí"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Mostra el menú"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Feu clic als elements per seleccionar-los"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionat"
 msgstr[1] "%d seleccionats"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Selecciona els elements"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Ahir"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "fa %d dia"
 msgstr[1] "fa %d dies"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Darrera setmana"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "Fa %d setmana"
 msgstr[1] "Fa %d setmanes"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Darrer mes"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "Fa %d mes"
 msgstr[1] "Fa %d mesos"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Darrer any"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -583,11 +580,11 @@ msgstr "Contrase_nya"
 msgid "Open with %s"
 msgstr "Obre amb %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Cerca l'anterior"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Cerca el següent"
 
@@ -703,6 +700,12 @@ msgstr "Col·leccions"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "No es pot obtenir el llistat de documents"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "Quant al Documents"
 
 #~ msgid "Print e-books"
 #~ msgstr "Imprimeix els llibres electrònics"
@@ -834,14 +837,6 @@ msgstr "No es pot obtenir el llistat de documents"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Podeu crear col·leccions a partir de les vistes dels documents"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Apareixeran aquí els documents des dels <a href=\"system-settings"
-#~ "\">comptes en línia </a> i des de la <a href=\"file://%s\">carpeta "
-#~ "documents</a>."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "S'utilitza el mode de presentació"
