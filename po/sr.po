@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-28 15:16+0100\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-08-21 21:22+0200\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: српски <gnome-sr@googlegroups.org>\n"
 "Language: sr\n"
@@ -20,10 +20,10 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Књиге"
 
@@ -64,11 +64,6 @@ msgstr "Гномов пројекат"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Приступите, управљајте и делите књиге"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -125,26 +120,21 @@ msgstr "Ноћни режим"
 msgid "Whether the application is in night mode."
 msgstr "Да ли је програм у ноћном режиму."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Ноћни режим"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Пречице на тастатури"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Помоћ"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "О Књигама"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "О Документима"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -261,11 +251,11 @@ msgid "Add"
 msgstr "Додај"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Збирке"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Откажи"
 
@@ -352,7 +342,7 @@ msgstr "Датум"
 msgid "Name"
 msgstr "Назив"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Приказује издање програма"
 
@@ -387,11 +377,11 @@ msgstr "Упс! Не могу да учитам „%s“"
 msgid "chapter %s of %s"
 msgstr "%s. поглавље од %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Обележивачи"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Обележите ову страницу"
 
@@ -428,7 +418,7 @@ msgstr "Нема табеле садржаја"
 msgid "Contents"
 msgstr "Садржај"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
@@ -436,21 +426,21 @@ msgstr ""
 "\n"
 "http://prevod.org — превод на српски језик"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Програм за управљање електронским књигама"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Изборник"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Потражи"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Назад"
 
@@ -496,24 +486,31 @@ msgstr "Нисам пронашао збирке"
 msgid "No books found"
 msgstr "Нисам пронашао књиге"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Пробајте са другачијом претрагом"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Можете правити збирке из прегледа за књиге"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+"Књиге из ваше фасцикле <a href=\"%s\">Документи</a> ће се појавити овде"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Изборник прегледа"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Кликните на ставке да их изаберете"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -522,15 +519,15 @@ msgstr[1] "%d изабрана"
 msgstr[2] "%d изабраних"
 msgstr[3] "%d изабран"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Изаберите ставке"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Јуче"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -539,11 +536,11 @@ msgstr[1] "Пре %d дана"
 msgstr[2] "Пре %d дана"
 msgstr[3] "Пре %d дана"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Прошле седмице"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -552,11 +549,11 @@ msgstr[1] "Пре %d недеље"
 msgstr[2] "Пре %d недеља"
 msgstr[3] "Пре %d недеље"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Прошлог месеца"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -565,11 +562,11 @@ msgstr[1] "Пре %d месеца"
 msgstr[2] "Пре %d месеци"
 msgstr[3] "Пре %d месеца"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Прошле године"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -601,11 +598,11 @@ msgstr "_Лозинка"
 msgid "Open with %s"
 msgstr "Отвори програмом %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Нађи претходно"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Нађи следеће"
 
@@ -721,6 +718,12 @@ msgstr "Збирке"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Не могу да довучем списак докумената"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "О Документима"
 
 #~ msgid "Print e-books"
 #~ msgstr "Штампате е-књиге"
@@ -852,13 +855,6 @@ msgstr "Не могу да довучем списак докумената"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Можете правити збирке из прегледа за документе"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Документи из ваших <a href=\"system-settings\">налога на мрежи</a> и из "
-#~ "фасцикле <a href=\"file://%s\">Документа</a> ће се појавити овде."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Покретање у режиму презентације"
