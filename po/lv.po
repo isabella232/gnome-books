@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-03-03 13:10+0200\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-08-24 16:36+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Grāmatas"
 
@@ -53,7 +53,6 @@ msgid "Search through e-books"
 msgstr "Meklēt e-grāmatās"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-#| msgid "View e-books (PDF and comics) fullscreen"
 msgid "View e-books (ePubs and comics) fullscreen"
 msgstr "Skatīt e-grāmatas (ePub un komiksus) pilnekrāna režīmā"
 
@@ -64,11 +63,6 @@ msgstr "GNOME projekts"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Piekļūt, pārvaldīt un koplietot e-grāmatas"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -123,28 +117,21 @@ msgstr "Nakts režīms"
 msgid "Whether the application is in night mode."
 msgstr "Vai lietotne ir nakts režīmā."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Nakts režīms"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Tastatūras saīsnes"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Palīdzība"
 
 #: data/ui/books-app-menu.ui:20
-#| msgid "Books"
 msgid "About Books"
 msgstr "Par grāmatām"
-
-#: data/ui/documents-app-menu.ui:20
-#| msgid "Text Documents"
-msgid "About Documents"
-msgstr "Par dokumentiem"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -261,11 +248,11 @@ msgid "Add"
 msgstr "Pievienot"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Kolekcijas"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Atcelt"
 
@@ -352,7 +339,7 @@ msgstr "Datums"
 msgid "Name"
 msgstr "Nosaukums"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Rādīt programmas versiju"
 
@@ -386,11 +373,11 @@ msgstr "Ak vai! Neizdevās ielādēt “%s”"
 msgid "chapter %s of %s"
 msgstr "nodaļa %s no %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Grāmatzīmes"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Pievienot lappusi grāmatzīmēm"
 
@@ -427,28 +414,27 @@ msgstr "Nav satura rādītāja"
 msgid "Contents"
 msgstr "Saturs"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Anita Reitere <nitalynx@gmail.com>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "E-grāmatu pārvaldības lietotne"
 
-#: src/mainToolbar.js:101
-#| msgid "View Menu"
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Izvēlne"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Meklēt"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Atpakaļ"
 
@@ -493,24 +479,33 @@ msgstr "Nav atrastu kolekciju"
 msgid "No books found"
 msgstr "Nav atrastu grāmatu"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Mēģiniet ar citu meklējamo vārdu"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Varat izveidot kolekcijas no grāmatu skata"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+#| msgid ""
+#| "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#| "<a href=\"file://%s\">Documents folder</a> will appear here."
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "Grāmatas no jūsu <a href=\"%s\">Dokumentu</a> mapes parādīsies šeit"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Skata izvēlne"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Spiediet uz vienumiem, lai tos izvēlētos"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -518,15 +513,15 @@ msgstr[0] "%d izvēlēts"
 msgstr[1] "%d izvēlēti"
 msgstr[2] "%d izvēlētu"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Izvēlēties vienumus"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Vakar"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -534,11 +529,11 @@ msgstr[0] "Pirms %d dienas"
 msgstr[1] "Pirms %d dienām"
 msgstr[2] "Pirms %d dienām"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Pagājušajā nedēļā"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -546,11 +541,11 @@ msgstr[0] "Pirms %d nedēļas"
 msgstr[1] "Pirms %d nedēļām"
 msgstr[2] "Pirms %d nedēļām"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Pagājušajā mēnesī"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -558,11 +553,11 @@ msgstr[0] "Pirms %d mēneša"
 msgstr[1] "Pirms %d mēnešiem"
 msgstr[2] "Pirms %d mēnešiem"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Pagājušajā gadā"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -593,11 +588,11 @@ msgstr "_Parole"
 msgid "Open with %s"
 msgstr "Atvērt ar %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Meklēt iepriekšējo"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Meklēt nākamo"
 
@@ -713,6 +708,13 @@ msgstr "Kolekcijas"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Neizdevās saņemt dokumentu sarakstu"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~| msgid "Text Documents"
+#~ msgid "About Documents"
+#~ msgstr "Par dokumentiem"
 
 #~ msgid "Print e-books"
 #~ msgstr "Drukāt e-grāmatas"
@@ -842,13 +844,6 @@ msgstr "Neizdevās saņemt dokumentu sarakstu"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Varat izveidot kolekcijas no dokumentu skata"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Dokumenti no <a href=\"system-settings\">tiešsaistes kontiem</a> un <a "
-#~ "href=\"file://%s\">dokumentu mapes</a> parādīsies šeit."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Darbojas prezentācijas režīmā"
