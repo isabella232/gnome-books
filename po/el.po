@@ -4,26 +4,26 @@
 # Tom Tryfonidis <tomtryf@gmail.com>, 2012.
 # Kostas Papadimas <pkst@gnome.org>, 2012.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014, 2015.
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2013, 2015, 2016, 2017, 2018.
+# Efstathios Iosifidis <eiosifidis@gnome.org>, 2013, 2015, 2016, 2017, 2018, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-17 02:28+0200\n"
-"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-08-30 14:29+0300\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Ελληνικά <>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Βιβλία"
 
@@ -55,7 +55,6 @@ msgid "Search through e-books"
 msgstr "Αναζητήσετε σε ηλεκτρονικά βιβλία"
 
 #: data/org.gnome.Books.appdata.xml.in:19
-#| msgid "View e-books (PDF and comics) fullscreen"
 msgid "View e-books (ePubs and comics) fullscreen"
 msgstr "Δείτε ηλεκτρονικά βιβλία (PDF και κόμικ) σε πλήρη οθόνη"
 
@@ -66,11 +65,6 @@ msgstr "Το έργο GNOME"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Προσεγγίστε, διαχειριστείτε και μοιραστείτε βιβλία"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -125,26 +119,21 @@ msgstr "Νυχτερινή λειτουργία"
 msgid "Whether the application is in night mode."
 msgstr "Αν η εφαρμογή είναι σε νυχτερινή λειτουργία."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Νυχτερινή λειτουργία"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Συντομεύσεις πληκτρολογίου"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Βοήθεια"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "Περί του Βιβλία"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "Περί του Έγγραφα"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -261,11 +250,11 @@ msgid "Add"
 msgstr "Προσθήκη"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Συλλογές"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Άκυρο"
 
@@ -352,7 +341,7 @@ msgstr "Ημερομηνία"
 msgid "Name"
 msgstr "Όνομα"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Εμφάνιση της έκδοσης του προγράμματος."
 
@@ -378,18 +367,20 @@ msgstr ""
 
 #. Translators: %s is the title of a document
 #: src/documents.js:1098
+#, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Ωχ! Αδυναμία φόρτωσης του “%s”"
 
 #: src/epubview.js:245
+#, javascript-format
 msgid "chapter %s of %s"
 msgstr "κεφάλαιο %s από %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Σελιδοδείκτες"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Προσθήκη αυτής της σελίδας στους σελιδοδείκτες"
 
@@ -426,7 +417,7 @@ msgstr "Χωρίς πίνακα περιεχομένων"
 msgid "Contents"
 msgstr "Περιεχόμενα"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME\n"
@@ -439,32 +430,34 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Εφαρμογή διαχείρισης ηλεκτρονικών βιβλίων"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Μενού"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Πίσω"
 
 #. Translators: only one item has been deleted and %s is its name
 #: src/notifications.js:48
+#, javascript-format
 msgid "“%s” deleted"
 msgstr "Διαγράφηκε το “%s”"
 
 #. Translators: one or more items might have been deleted, and %d
 #. is the count
 #: src/notifications.js:52
+#, javascript-format
 msgid "%d item deleted"
 msgid_plural "%d items deleted"
 msgstr[0] "%d στοιχείο διαγράφτηκε"
@@ -475,6 +468,7 @@ msgid "Undo"
 msgstr "Αναίρεση"
 
 #: src/notifications.js:159
+#, javascript-format
 msgid "Printing “%s”: %s"
 msgstr "Εκτύπωση του “%s”: %s"
 
@@ -495,68 +489,84 @@ msgstr "Δε βρέθηκαν συλλογές"
 msgid "No books found"
 msgstr "Δε βρέθηκαν βιβλία"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Δοκιμάστε μια διαφορετική αναζήτηση"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Μπορείτε να δημιουργήσετε συλλογές από την προβολή βιβλία"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+#| msgid ""
+#| "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#| "<a href=\"file://%s\">Documents folder</a> will appear here."
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+"Εδώ θα εμφανίζονται τα βιβλία από τον φάκελο <a href=\"file://%s\">'Εγγραφα</"
+"a>."
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Μενού προβολής"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Κάντε κλικ στα αντικείμενα για να τα επιλέξετε"
 
-#: src/overview.js:567
+#: src/overview.js:574
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "Επιλέχθηκε %d"
 msgstr[1] "Επιλέχθηκαν %d"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Επιλογή αντικειμένων"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Χθες"
 
-#: src/overview.js:856
+#: src/overview.js:864
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d ημέρα πριν"
 msgstr[1] "%d ημέρες πριν"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Προηγούμενη εβδομάδα"
 
-#: src/overview.js:862
+#: src/overview.js:870
+#, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d εβδομάδα πριν"
 msgstr[1] "%d εβδομάδες πριν"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Προηγούμενος μήνας"
 
-#: src/overview.js:868
+#: src/overview.js:876
+#, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d μήνα πριν"
 msgstr[1] "%d μήνες πριν"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Προηγούμενο έτος"
 
-#: src/overview.js:874
+#: src/overview.js:882
+#, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
 msgstr[0] "%d έτος πριν"
@@ -571,6 +581,7 @@ msgid "_Unlock"
 msgstr "_Ξεκλείδωμα"
 
 #: src/password.js:61
+#, javascript-format
 msgid "Document %s is locked and requires a password to be opened."
 msgstr ""
 "Το έγγραφο %s είναι κλειδωμένο και απαιτείται κωδικός πρόσβασης ώστε να "
@@ -582,14 +593,15 @@ msgstr "_Κωδικός πρόσβασης"
 
 #. Translators: this is the Open action in a context menu
 #: src/preview.js:444 src/selections.js:973
+#, javascript-format
 msgid "Open with %s"
 msgstr "Άνοιγμα με %s"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "Εύρεση προηγουμένου"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "Εύρεση επομένου"
 
@@ -688,6 +700,7 @@ msgid "Delete"
 msgstr "Διαγραφή"
 
 #: src/selections.js:378
+#, javascript-format
 msgid "“%s” removed"
 msgstr "Αφαιρέθηκε το “%s”"
 
@@ -704,6 +717,12 @@ msgstr "Συλλογές"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Αδυναμία ανάκτησης της λίστας εγγράφων"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "Περί του Έγγραφα"
 
 #~ msgid "Print e-books"
 #~ msgstr "Εκτυπώσετε ηλεκτρονικά βιβλία"
@@ -828,14 +847,6 @@ msgstr "Αδυναμία ανάκτησης της λίστας εγγράφων
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Μπορείτε να δημιουργήσετε συλλογές από την προβολή έγγραφα"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Εδώ θα εμφανίζονται τα έγγραφα από τους <a href=\"system-settings"
-#~ "\">Διαδικτυακούς λογαριασμούς</a> και από τον <a href=\"file://%s"
-#~ "\">Φάκελο εγγράφων</a>."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Εκτέλεση σε λειτουργία παρουσίασης"
