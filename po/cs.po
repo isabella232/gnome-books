@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-06 09:37+0100\n"
+"POT-Creation-Date: 2019-08-11 14:38+0000\n"
+"PO-Revision-Date: 2019-08-14 21:52+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Knihy"
 
@@ -62,11 +62,6 @@ msgstr "Projekt GNOME"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "Přístup ke knihám, jejich správa a sdílení"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -121,26 +116,21 @@ msgstr "Noční režim"
 msgid "Whether the application is in night mode."
 msgstr "Zda je aplikace v nočním režimu."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Noční režim"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Nápověda"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "O aplikaci Knihy"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "O aplikaci Dokumenty"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -257,11 +247,11 @@ msgid "Add"
 msgstr "Přidat"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Sady"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -275,7 +265,7 @@ msgstr "_Kopírovat"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:976
+#: src/selections.js:977
 msgid "Open"
 msgstr "Otevřít"
 
@@ -348,7 +338,7 @@ msgstr "Data"
 msgid "Name"
 msgstr "Názvu"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Zobrazit verzi programu"
 
@@ -372,21 +362,21 @@ msgstr ""
 "Používáte ukázku aplikace Knihy. Plně funkční aplikace přijde v brzké době!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1098
+#: src/documents.js:1099
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Jejda! Nelze načíst „%s“"
 
-#: src/epubview.js:245
+#: src/epubview.js:315
 #, javascript-format
 msgid "chapter %s of %s"
 msgstr "kapitola %s z %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Záložky"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Tuto stránku do záložek"
 
@@ -423,27 +413,27 @@ msgstr "Bez obsahu"
 msgid "Contents"
 msgstr "Obsah"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Marek Černocký <marek@manet.cz>\n"
 "Adam Matoušek <adamatousek@gmail.com>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Aplikace pro správu elektronických knih"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Nabídka"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Hledat"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Zpět"
 
@@ -463,7 +453,7 @@ msgstr[0] "%d položka byla smazána"
 msgstr[1] "%d položky byly smazány"
 msgstr[2] "%d položek bylo smazáno"
 
-#: src/notifications.js:61 src/selections.js:383
+#: src/notifications.js:61 src/selections.js:384
 msgid "Undo"
 msgstr "Zpět"
 
@@ -488,24 +478,30 @@ msgstr "Žádné sady nebyly nalezeny"
 msgid "No books found"
 msgstr "Žádné knihy nebyly nalezeny"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Zkusit jiné hledání"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Sadu můžete vytvořit v zobrazení knih"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "Knihy z vaší složky <a href=\"%s\">Dokumenty</a> se objeví zde"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Nabídka zobrazení"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Klikáním na položky je vyberete"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -513,15 +509,15 @@ msgstr[0] "%d vybrán"
 msgstr[1] "%d vybrány"
 msgstr[2] "%d vybráno"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Vybrat položky"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "Včera"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -529,11 +525,11 @@ msgstr[0] "Před %d dnem"
 msgstr[1] "Před %d dny"
 msgstr[2] "Před %d dny"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Minulý týden"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
@@ -541,11 +537,11 @@ msgstr[0] "Před %d týdnem"
 msgstr[1] "Před %d týdny"
 msgstr[2] "Před %d týdny"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Minulý měsíc"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
@@ -553,11 +549,11 @@ msgstr[0] "Před %d měsícem"
 msgstr[1] "Před %d měsíci"
 msgstr[2] "Před %d měsíci"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Minulý rok"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -583,16 +579,16 @@ msgid "_Password"
 msgstr "_Heslo"
 
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:444 src/selections.js:973
+#: src/preview.js:444 src/selections.js:974
 #, javascript-format
 msgid "Open with %s"
 msgstr "Otevřít pomocí %s"
 
-#: src/preview.js:769
+#: src/preview.js:780
 msgid "Find Previous"
 msgstr "Najít předchozí"
 
-#: src/preview.js:775
+#: src/preview.js:786
 msgid "Find Next"
 msgstr "Najít následující"
 
@@ -682,25 +678,25 @@ msgstr "Obsah"
 msgid "Sources"
 msgstr "Zdroje"
 
-#: src/selections.js:356 src/selections.js:358
+#: src/selections.js:357 src/selections.js:359
 msgid "Rename…"
 msgstr "Přejmenovat…"
 
-#: src/selections.js:362 src/selections.js:364
+#: src/selections.js:363 src/selections.js:365
 msgid "Delete"
 msgstr "Smazat"
 
-#: src/selections.js:378
+#: src/selections.js:379
 #, javascript-format
 msgid "“%s” removed"
 msgstr "„%s“ byl odstraněn"
 
-#: src/selections.js:775
+#: src/selections.js:776
 msgid "Rename"
 msgstr "Přejmenování"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:781
+#: src/selections.js:782
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "Sady"
@@ -708,3 +704,9 @@ msgstr "Sady"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Nelze získat seznam dokumentů"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "O aplikaci Dokumenty"
