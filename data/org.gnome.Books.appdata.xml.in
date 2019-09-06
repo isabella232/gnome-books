@@ -43,6 +43,21 @@
   <update_contact>hadess_at_gnome.org</update_contact>
   <translation type="gettext">gnome-books</translation>
   <releases>
+    <release version="3.34.0" date="2019-09-06">
+      <description>
+        <p>
+          We are proud to announce Books 3.34.0 as the latest stable version.
+        </p>
+        <p>
+          This new version has a new application icon, fixes some CBR files not
+          appearing, and looks when the content view is empty.
+        </p>
+        <p>
+          The ePub view can now be zoomed, its night mode works better, and
+          the files can be opened in Foliate and Bookworm.
+        </p>
+      </description>
+    </release>
     <release version="3.32.0" date="2019-03-08">
       <description>
         <p>
