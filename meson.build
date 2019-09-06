@@ -122,6 +122,13 @@ meson.add_install_script(
   books_bindir
 )
 
+meson.add_dist_script(
+  find_program('check-news.sh').path(),
+  '@0@'.format(meson.project_version()),
+  'NEWS',
+  'data/org.gnome.Books.appdata.xml.in'
+)
+
 output = '\n        ' + meson.project_name() + ' ' + books_version + '\n'
 output += '        ======================\n\n'
 output += '        prefix:    ' + books_prefix + '\n'
