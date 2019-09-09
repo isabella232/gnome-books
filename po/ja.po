@@ -1,19 +1,20 @@
 # Japanese translation for gnome-documents.
-# Copyright (C) 2011 the gnome-documents's COPYRIGHT HOLDER
+# Copyright (C) 2011-2019 the gnome-documents's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-documents package.
 # Nishio Futoshi <fut_nis@d3.dion.ne.jp>, 2011.
 # Hideki Yamane <henrich@debian.org>, 2011.
-# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012-2016, 2018.
 # Noriko Mizumoto <noriko@fedoraproject.org>, 2012.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2012-2016, 2018.
 # Hajime Taira <htaira@redhat.com>, 2014-2015.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
 "POT-Creation-Date: 2019-08-02 16:26+0000\n"
-"PO-Revision-Date: 2019-02-98 18:16+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
+"PO-Revision-Date: 2019-09-09 18:45+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -419,10 +420,14 @@ msgstr "目次"
 #: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
-"松澤二郎 <jmatsuzawa@gnome.org>\n"
-"Hajime Taira <htaira@redhat.com>\n"
+"日本 GNOME ユーザー会 <http://www.gnome.gr.jp/>\n"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "Aefgh39622 <sumoisrock@gmail.com>\n"
-"日本GNOMEユーザー会 <http://www.gnome.gr.jp/>"
+"Hajime Taira <htaira@redhat.com>\n"
+"Hideki Yamane <henrich@debian.org>\n"
+"Nishio Futoshi <fut_nis@d3.dion.ne.jp>\n"
+"Noriko Mizumoto <noriko@fedoraproject.org>\n"
+"sicklylife <translation@sicklylife.jp>"
 
 #: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
@@ -491,14 +496,10 @@ msgstr "ブックビューからコレクションを作成できます。"
 
 #. translators: %s is the location of the Documents folder.
 #: src/overview.js:311
-#, fuzzy, javascript-format
-#| msgid ""
-#| "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#| "<a href=\"file://%s\">Documents folder</a> will appear here."
+#, javascript-format
 msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
 msgstr ""
-"<a href=\"system-settings\">オンラインアカウント</a>および<a href=\"file://%s"
-"\">ドキュメントフォルダー</a>内のドキュメントがここに表示されます。"
+"<a href=\"%s\">ドキュメント</a>フォルダー内の電子書籍がここに表示されます"
 
 #. Translators: this is the menu to change view settings
 #: src/overview.js:544
