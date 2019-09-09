@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
 "PO-Revision-Date: 2019-02-98 18:16+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "ブック"
 
@@ -64,11 +64,6 @@ msgstr "GNOME プロジェクト"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "書籍を開く、管理する、そして共有する"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -123,26 +118,21 @@ msgstr "ナイトモード"
 msgid "Whether the application is in night mode."
 msgstr "アプリケーションをナイトモードで利用するかどうか"
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "ナイトモード"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "キーボードショートカット"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "ヘルプ"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "ブックについて"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "このアプリケーションについて"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -259,11 +249,11 @@ msgid "Add"
 msgstr "追加"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "コレクション"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "キャンセル"
 
@@ -350,7 +340,7 @@ msgstr "日付"
 msgid "Name"
 msgstr "タイトル"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "プログラムのバージョンを表示する"
 
@@ -385,11 +375,11 @@ msgstr "“%s”を読み込めません"
 msgid "chapter %s of %s"
 msgstr "%s / %s 章"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "ブックマーク"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "このページをブックマークに追加します"
 
@@ -426,7 +416,7 @@ msgstr "目次なし"
 msgid "Contents"
 msgstr "目次"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "松澤二郎 <jmatsuzawa@gnome.org>\n"
@@ -434,21 +424,21 @@ msgstr ""
 "Aefgh39622 <sumoisrock@gmail.com>\n"
 "日本GNOMEユーザー会 <http://www.gnome.gr.jp/>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "電子書籍管理アプリケーション"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "メニュー"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "検索"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "戻る"
 
@@ -491,68 +481,79 @@ msgstr "コレクションが見つかりません"
 msgid "No books found"
 msgstr "書籍が見つかりません"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "他のキーワードを試してください"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "ブックビューからコレクションを作成できます。"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, fuzzy, javascript-format
+#| msgid ""
+#| "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
+#| "<a href=\"file://%s\">Documents folder</a> will appear here."
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+"<a href=\"system-settings\">オンラインアカウント</a>および<a href=\"file://%s"
+"\">ドキュメントフォルダー</a>内のドキュメントがここに表示されます。"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "表示メニュー"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "選択するアイテムをクリックします"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d 件選択"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "アイテムを選択"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "昨日"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 日前"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "先週"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 週間前"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "先月"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d か月前"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "昨年"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -583,11 +584,11 @@ msgstr "パスワード(_P)"
 msgid "Open with %s"
 msgstr "%s で開く"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "前を検索します"
 
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "次を検索します"
 
@@ -703,6 +704,12 @@ msgstr "コレクション"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "ドキュメントのリストを取得できませんでした"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "このアプリケーションについて"
 
 #~ msgid "Print e-books"
 #~ msgstr "電子書籍の印刷"
@@ -827,14 +834,6 @@ msgstr "ドキュメントのリストを取得できませんでした"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "ドキュメントビューからコレクションを作成できます"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "<a href=\"system-settings\">オンラインアカウント</a>および<a href="
-#~ "\"file://%s\">ドキュメントフォルダー</a>内のドキュメントがここに表示されま"
-#~ "す。"
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "プレゼンテーションモードで実行中"
