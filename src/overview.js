@@ -305,6 +305,8 @@ const EmptyResultsBox = new Lang.Class({
             let docsPath, docsUrl;
 
             docsPath = GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS);
+            if (!docsPath)
+                docsPath = GLib.get_home_dir();
             docsUrl = Gio.file_new_for_path(docsPath).get_uri();
             useMarkup = true;
             /* translators: %s is the location of the Documents folder.*/
