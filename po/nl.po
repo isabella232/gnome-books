@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-02-24 11:39+0100\n"
+"POT-Creation-Date: 2019-09-20 13:09+0000\n"
+"PO-Revision-Date: 2019-09-25 13:38+0200\n"
 "Last-Translator: Nathan Follens <nthn@unseen.is>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1040
 msgid "Books"
 msgstr "Boeken"
 
@@ -64,11 +64,6 @@ msgstr "Het Gnome-project"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "E-boeken openen, beheren en delen"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -123,26 +118,21 @@ msgstr "Nachtmodus"
 msgid "Whether the application is in night mode."
 msgstr "Of het programma in nachtmodus staat."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Nachtmodus"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Sneltoetsen"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Hulp"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "Over Boeken"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "Over Documenten"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -259,11 +249,11 @@ msgid "Add"
 msgstr "Toevoegen"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1044 src/search.js:121
 msgid "Collections"
 msgstr "Verzamelingen"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:600
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -277,7 +267,7 @@ msgstr "_Kopiëren"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:976
+#: src/selections.js:977
 msgid "Open"
 msgstr "Openen"
 
@@ -350,7 +340,7 @@ msgstr "Datum"
 msgid "Name"
 msgstr "Naam"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "Toepassingsversie tonen"
 
@@ -375,22 +365,22 @@ msgstr ""
 "binnenkort!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1098
+#: src/documents.js:1099
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Oeps! Niet in staat ‘%s’ te laden"
 
 # Vorige vertaling was 'pagina', volgens mij is 'hoofdstuk' hier toch gepaster, dus heb ik het aangepast.
-#: src/epubview.js:245
+#: src/epubview.js:315
 #, javascript-format
 msgid "chapter %s of %s"
 msgstr "Hoofdstuk %s van %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Bladwijzers"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Bladwijzer voor deze pagina maken"
 
@@ -427,7 +417,7 @@ msgstr "Geen inhoudsopgave"
 msgid "Contents"
 msgstr "Inhoud"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Wouter Bolsterlee <wbolster@gnome.org>\n"
@@ -439,21 +429,21 @@ msgstr ""
 "\n"
 "Meer info over Gnome-NL http://nl.gnome.org/"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Een toepassing voor e-boekbeheer"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Zoeken"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Terug"
 
@@ -472,7 +462,7 @@ msgid_plural "%d items deleted"
 msgstr[0] "%d item is verwijderd"
 msgstr[1] "%d items zijn verwijderd"
 
-#: src/notifications.js:61 src/selections.js:383
+#: src/notifications.js:61 src/selections.js:384
 msgid "Undo"
 msgstr "Ongedaan maken"
 
@@ -499,72 +489,79 @@ msgstr "Geen verzamelingen gevonden"
 msgid "No books found"
 msgstr "Geen boeken gevonden"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Probeer een andere zoekopdracht"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "U kunt verzamelingen aanmaken vanuit het Boeken-overzicht"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:313
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+"Hier komen de boeken uit uw <a href=\"file://%s\">Documentenmap</a> te staan"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:546
 msgid "View Menu"
 msgstr "Menu tonen"
 
-#: src/overview.js:565
+#: src/overview.js:574
 msgid "Click on items to select them"
 msgstr "Klik op een item om het te selecteren"
 
-#: src/overview.js:567
+#: src/overview.js:576
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d geselecteerd"
 msgstr[1] "%d geselecteerd"
 
-#: src/overview.js:648
+#: src/overview.js:657
 msgid "Select Items"
 msgstr "Items selecteren"
 
-#: src/overview.js:854
+#: src/overview.js:864
 msgid "Yesterday"
 msgstr "Gisteren"
 
-#: src/overview.js:856
+#: src/overview.js:866
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dag geleden"
 msgstr[1] "%d dagen geleden"
 
-#: src/overview.js:860
+#: src/overview.js:870
 msgid "Last week"
 msgstr "Vorige week"
 
-#: src/overview.js:862
+#: src/overview.js:872
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d week geleden"
 msgstr[1] "%d weken geleden"
 
-#: src/overview.js:866
+#: src/overview.js:876
 msgid "Last month"
 msgstr "Vorige maand"
 
-#: src/overview.js:868
+#: src/overview.js:878
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d maand geleden"
 msgstr[1] "%d maanden geleden"
 
-#: src/overview.js:872
+#: src/overview.js:882
 msgid "Last year"
 msgstr "Vorig jaar"
 
-#: src/overview.js:874
+#: src/overview.js:884
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -591,16 +588,16 @@ msgid "_Password"
 msgstr "_Wachtwoord"
 
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:444 src/selections.js:973
+#: src/preview.js:444 src/selections.js:974
 #, javascript-format
 msgid "Open with %s"
 msgstr "Openen met %s"
 
-#: src/preview.js:769
+#: src/preview.js:780
 msgid "Find Previous"
 msgstr "Vorige zoeken"
 
-#: src/preview.js:775
+#: src/preview.js:786
 msgid "Find Next"
 msgstr "Volgende zoeken"
 
@@ -691,25 +688,25 @@ msgstr "Inhoud"
 msgid "Sources"
 msgstr "Bronnen"
 
-#: src/selections.js:356 src/selections.js:358
+#: src/selections.js:357 src/selections.js:359
 msgid "Rename…"
 msgstr "Hernoemen…"
 
-#: src/selections.js:362 src/selections.js:364
+#: src/selections.js:363 src/selections.js:365
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: src/selections.js:378
+#: src/selections.js:379
 #, javascript-format
 msgid "“%s” removed"
 msgstr "‘%s’ verwijderd"
 
-#: src/selections.js:775
+#: src/selections.js:776
 msgid "Rename"
 msgstr "Hernoemen"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:781
+#: src/selections.js:782
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "Verzamelingen"
@@ -717,6 +714,12 @@ msgstr "Verzamelingen"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "Opvragen van lijst van documenten mislukt"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "Over Documenten"
 
 #~ msgid "Print e-books"
 #~ msgstr "E-boeken afdrukken"
@@ -848,13 +851,6 @@ msgstr "Opvragen van lijst van documenten mislukt"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "U kan verzamelingen aanmaken vanuit het Documenten-overzicht"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Hier komen documenten uit uw <a href=\"system-settings\">Online-accounts</"
-#~ "a> en <a href=\"file://%s\">Documentenmap</a> te staan."
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "Uitgevoerd in de presentatiemodus"
