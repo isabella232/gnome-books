@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-03-25 17:31+0000\n"
-"PO-Revision-Date: 2019-02-11 19:37+0100\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-10-02 05:01+0200\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -24,7 +24,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "Bøger"
 
@@ -119,26 +119,21 @@ msgstr "Nattilstand"
 msgid "Whether the application is in night mode."
 msgstr "Om programmet er i nattilstand."
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "Nattilstand"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "Tastaturgenveje"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "Hjælp"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "Om Bøger"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "Om Dokumenter"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -255,11 +250,11 @@ msgid "Add"
 msgstr "Tilføj"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "Samlinger"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "Annullér"
 
@@ -381,11 +376,11 @@ msgstr "Ups! Ikke i stand til at indlæse “%s”"
 msgid "chapter %s of %s"
 msgstr "kapitel %s af %s"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "Bogmærker"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "Bogmærk den nuværende side"
 
@@ -422,7 +417,7 @@ msgstr "Ingen indholdsfortegnelse"
 msgid "Contents"
 msgstr "Indhold"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "Kris Thomsen\n"
@@ -433,21 +428,21 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "Et program til e-bogshåndtering"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "Menu"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "Søg"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "Tilbage"
 
@@ -491,72 +486,78 @@ msgstr "Ingen samlinger fundet"
 msgid "No books found"
 msgstr "Ingen bøger fundet"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "Prøv en anden søgning"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "Du kan oprette samlinger fra visningen Bøger"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "Her vises bøger fra din <a href=\"%s\">Dokumenter</a>-mappe"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "Menuen Vis"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "Klik på elementer for at vælge dem"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d valgt"
 msgstr[1] "%d valgte"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "Vælg elementer"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "I går"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dag siden"
 msgstr[1] "%d dage siden"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "Sidste uge"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d uge siden"
 msgstr[1] "%d uger siden"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "Sidste måned"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d måned siden"
 msgstr[1] "%d måneder siden"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "Sidste år"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -707,6 +708,9 @@ msgstr "Samlinger"
 msgid "Unable to fetch the list of documents"
 msgstr "Kunne ikke hente dokumentlisten"
 
+#~ msgid "About Documents"
+#~ msgstr "Om Dokumenter"
+
 #~ msgid "org.gnome.Books"
 #~ msgstr "org.gnome.Books"
 
@@ -720,14 +724,14 @@ msgstr "Kunne ikke hente dokumentlisten"
 #~ msgstr "Et program til dokumenthåndtering i GNOME"
 
 #~ msgid ""
-#~ "A simple application to access, organize and share your documents on GNOME. "
-#~ "It is meant to be a simple and elegant replacement for using a file manager "
-#~ "to deal with documents. Seamless cloud integration is offered through GNOME "
-#~ "Online Accounts."
+#~ "A simple application to access, organize and share your documents on "
+#~ "GNOME. It is meant to be a simple and elegant replacement for using a "
+#~ "file manager to deal with documents. Seamless cloud integration is "
+#~ "offered through GNOME Online Accounts."
 #~ msgstr ""
 #~ "En simpel applikation til at tilgå, organisere og dele dine dokumenter i "
-#~ "GNOME. Det er påtænkt at være en simpel og elegant erstatning for at bruge "
-#~ "et filhåndteringsprogram til at håndtere dokumenter. Problemfri "
+#~ "GNOME. Det er påtænkt at være en simpel og elegant erstatning for at "
+#~ "bruge et filhåndteringsprogram til at håndtere dokumenter. Problemfri "
 #~ "cloud-integration tilbydes gennem GNOME online-konti."
 
 #~ msgid "View recent local and online documents"
@@ -842,13 +846,6 @@ msgstr "Kunne ikke hente dokumentlisten"
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "Du kan oprette samlinger fra visningen Dokumenter"
 
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and <a "
-#~ "href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "Dokumenter fra dine <a href=\"system-settings\">onlinekonti</a> og mappen <a "
-#~ "href=\"file://%s\">Dokumenter</a> vil blive vist her."
-
 #~ msgid "Running in presentation mode"
 #~ msgstr "Kører i præsentationstilstand"
 
@@ -951,4 +948,3 @@ msgstr "Kunne ikke hente dokumentlisten"
 
 #~ msgid "Documents folder"
 #~ msgstr "mappen Dokumenter"
-
