@@ -706,6 +706,7 @@ const DocCommon = new Lang.Class({
         Utils.debug('Loading ' + this.__name__ + ' ' + this.id + ' from ' + this.uriToLoad);
 
         if (this.mimeType == 'application/x-mobipocket-ebook' ||
+            this.mimeType == 'application/vnd.amazon.mobi8-ebook' ||
             this.mimeType == 'application/x-fictionbook+xml' ||
             this.mimeType == 'application/x-zip-compressed-fb2') {
             let exception = new GLib.Error(Gio.IOErrorEnum,

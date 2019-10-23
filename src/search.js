@@ -125,7 +125,7 @@ const SearchTypeManager = new Lang.Class({
 
         this.addItem(new SearchType({ id: SearchTypeStock.EBOOKS,
                                       name: _("e-Books"),
-                                      filter: '(nie:mimeType(?urn) IN (\"application/epub+zip\", \"application/x-mobipocket-ebook\", \"application/x-fictionbook+xml\", \"application/x-zip-compressed-fb2\", \"image/vnd.djvu+multipage\"))',
+                                      filter: '(nie:mimeType(?urn) IN (\"application/epub+zip\", \"application/x-mobipocket-ebook\", \"application/vnd.amazon.mobi8-ebook\", \"application/x-fictionbook+xml\", \"application/x-zip-compressed-fb2\", \"image/vnd.djvu+multipage\"))',
                                       where: '?urn rdf:type nfo:FileDataObject .' }));
         this.addItem(new SearchType({ id: SearchTypeStock.COMICS,
                                       name: _("Comics"),
