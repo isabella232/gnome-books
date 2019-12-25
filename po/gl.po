@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-documents master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-08-02 16:26+0000\n"
-"PO-Revision-Date: 2019-08-26 00:31+0200\n"
+"POT-Creation-Date: 2019-10-06 10:52+0000\n"
+"PO-Revision-Date: 2019-12-25 13:42+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician\n"
 "Language: gl\n"
@@ -19,17 +19,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1038
+#: src/application.js:104 src/overview.js:1040
 msgid "Books"
 msgstr "Libros"
 
 #: data/org.gnome.Books.appdata.xml.in:8
 msgid "An e-book manager application for GNOME"
-msgstr "Un aplicativo para xestionar libros dixitais para GNOME"
+msgstr "Unha aplicación para xestionar libros dixitais para GNOME"
 
 #: data/org.gnome.Books.appdata.xml.in:10
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "meant to be a simple and elegant replacement for using a file manager to "
 "deal with e-books."
 msgstr ""
-"Un aplicativo sinxelo para acceder, organizar e compartir os seus documentos "
+"Unha aplicación doada para acceder, organizar e compartir os seus documentos "
 "en GNOME. Está pensado para que sexa unha alternativa simple e elegante ao "
 "uso do explorador de ficheiros para xestionar os seus libros dixitais."
 
@@ -116,7 +116,7 @@ msgstr "Modo noite"
 
 #: data/org.gnome.books.gschema.xml:31
 msgid "Whether the application is in night mode."
-msgstr "Indica se o aplicativo está en modo noite."
+msgstr "Indica se a aplicación está en modo noite."
 
 #: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
@@ -249,11 +249,11 @@ msgid "Add"
 msgstr "Engadir"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1042 src/search.js:121
+#: src/overview.js:1044 src/search.js:121
 msgid "Collections"
 msgstr "Coleccións"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:600
 msgid "Cancel"
 msgstr "Cancelar"
 
@@ -267,7 +267,7 @@ msgstr "_Copiar"
 
 #. Translators: this is the Open action in a context menu
 #: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
-#: src/selections.js:976
+#: src/selections.js:977
 msgid "Open"
 msgstr "Abrir"
 
@@ -365,12 +365,12 @@ msgstr ""
 "visualización completas chegarán pronto!"
 
 #. Translators: %s is the title of a document
-#: src/documents.js:1098
+#: src/documents.js:1099
 #, javascript-format
 msgid "Oops! Unable to load “%s”"
 msgstr "Oops! Non foi posíbel cargar «%s»"
 
-#: src/epubview.js:245
+#: src/epubview.js:315
 #, javascript-format
 msgid "chapter %s of %s"
 msgstr "capítulo %s de %s"
@@ -419,12 +419,12 @@ msgstr "Contidos"
 #: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
-"Fran Dieguez <frandieguez@gnome.org>, 2012-2019\n"
+"Fran Diéguez <frandieguez@gnome.org>, 2012-2020\n"
 "Leandro Regueiro <leandro.regueiro@gmail.com>, 2012"
 
 #: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
-msgstr "Un aplicativo para xestionar libros dixitais"
+msgstr "Unha aplicación para xestionar libros dixitais"
 
 #: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
@@ -455,7 +455,7 @@ msgid_plural "%d items deleted"
 msgstr[0] "%d elemento eliminado"
 msgstr[1] "%d elementos eliminados"
 
-#: src/notifications.js:61 src/selections.js:383
+#: src/notifications.js:61 src/selections.js:384
 msgid "Undo"
 msgstr "Desfacer"
 
@@ -489,70 +489,70 @@ msgid "You can create collections from the Books view"
 msgstr "Pode crear coleccións desde a vista de Libros"
 
 #. translators: %s is the location of the Documents folder.
-#: src/overview.js:311
+#: src/overview.js:313
 #, javascript-format
 msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
 msgstr ""
-"Os libros do seu cartafol <a href=\"%s\">Documentos</a> aparecerán aquí."
+"Os libros do seu cartafol <a href=\"%s\">Documentos</a> aparecerán aquí"
 
 #. Translators: this is the menu to change view settings
-#: src/overview.js:544
+#: src/overview.js:546
 msgid "View Menu"
 msgstr "Menú Ver"
 
-#: src/overview.js:572
+#: src/overview.js:574
 msgid "Click on items to select them"
 msgstr "Prema nos elementos para seleccionalos"
 
-#: src/overview.js:574
+#: src/overview.js:576
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionado"
 msgstr[1] "%d seleccionados"
 
-#: src/overview.js:655
+#: src/overview.js:657
 msgid "Select Items"
 msgstr "Seleccionar elementos"
 
-#: src/overview.js:862
+#: src/overview.js:864
 msgid "Yesterday"
 msgstr "Onte"
 
-#: src/overview.js:864
+#: src/overview.js:866
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "fai %d día"
 msgstr[1] "fai %d días"
 
-#: src/overview.js:868
+#: src/overview.js:870
 msgid "Last week"
 msgstr "Última semana"
 
-#: src/overview.js:870
+#: src/overview.js:872
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "fai %d semana"
 msgstr[1] "fai %d semanas"
 
-#: src/overview.js:874
+#: src/overview.js:876
 msgid "Last month"
 msgstr "Último mes"
 
-#: src/overview.js:876
+#: src/overview.js:878
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "fai %d mes"
 msgstr[1] "fai %d meses"
 
-#: src/overview.js:880
+#: src/overview.js:882
 msgid "Last year"
 msgstr "Último ano"
 
-#: src/overview.js:882
+#: src/overview.js:884
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -577,16 +577,16 @@ msgid "_Password"
 msgstr "_Contrasinal"
 
 #. Translators: this is the Open action in a context menu
-#: src/preview.js:444 src/selections.js:973
+#: src/preview.js:444 src/selections.js:974
 #, javascript-format
 msgid "Open with %s"
 msgstr "Abrir con %s"
 
-#: src/preview.js:770
+#: src/preview.js:780
 msgid "Find Previous"
 msgstr "Buscar anterior"
 
-#: src/preview.js:776
+#: src/preview.js:786
 msgid "Find Next"
 msgstr "Buscar seguinte"
 
@@ -676,25 +676,25 @@ msgstr "Contido"
 msgid "Sources"
 msgstr "Fontes"
 
-#: src/selections.js:356 src/selections.js:358
+#: src/selections.js:357 src/selections.js:359
 msgid "Rename…"
 msgstr "Renomear…"
 
-#: src/selections.js:362 src/selections.js:364
+#: src/selections.js:363 src/selections.js:365
 msgid "Delete"
 msgstr "Eliminar"
 
-#: src/selections.js:378
+#: src/selections.js:379
 #, javascript-format
 msgid "“%s” removed"
 msgstr "“%s” eliminado"
 
-#: src/selections.js:775
+#: src/selections.js:776
 msgid "Rename"
 msgstr "Renomear"
 
 #. Translators: "Collections" refers to documents in this context
-#: src/selections.js:781
+#: src/selections.js:782
 msgctxt "Dialog Title"
 msgid "Collections"
 msgstr "Coleccións"
