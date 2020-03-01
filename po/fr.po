@@ -506,7 +506,7 @@ msgstr "Vous pouvez créer des collections à partir de l’affichage par livres
 #, javascript-format
 msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
 msgstr ""
-"Les livres de votre dossier <a \"href=\"%s\">Documents</a> apparaîtront ici."
+"Les livres de votre dossier <a href=\"%s\">Documents</a> apparaîtront ici."
 "\""
 
 #. Translators: this is the menu to change view settings
