@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-books master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
-"POT-Creation-Date: 2019-02-01 10:29+0000\n"
-"PO-Revision-Date: 2019-03-15 20:55+0800\n"
+"POT-Creation-Date: 2019-08-02 16:26+0000\n"
+"PO-Revision-Date: 2019-09-12 23:59+0800\n"
 "Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -25,10 +25,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.32.1\n"
 
 #: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
-#: src/application.js:104 src/overview.js:1030
+#: src/application.js:104 src/overview.js:1038
 msgid "Books"
 msgstr "图书"
 
@@ -68,11 +68,6 @@ msgstr "GNOME 项目"
 #: data/org.gnome.Books.desktop.in:4
 msgid "Access, manage and share books"
 msgstr "访问、管理以及分享图书"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Books.desktop.in:7
-msgid "org.gnome.Books"
-msgstr "org.gnome.Books"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Books.desktop.in:15
@@ -127,26 +122,21 @@ msgstr "夜间模式"
 msgid "Whether the application is in night mode."
 msgstr "应用程序是否进入夜间模式。"
 
-#: data/ui/books-app-menu.ui:6 data/ui/documents-app-menu.ui:6
-#: src/preview.js:452
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
 msgid "Night Mode"
 msgstr "夜间模式"
 
-#: data/ui/books-app-menu.ui:12 data/ui/documents-app-menu.ui:12
+#: data/ui/books-app-menu.ui:12
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键"
 
-#: data/ui/books-app-menu.ui:16 data/ui/documents-app-menu.ui:16
+#: data/ui/books-app-menu.ui:16
 msgid "Help"
 msgstr "帮助"
 
 #: data/ui/books-app-menu.ui:20
 msgid "About Books"
 msgstr "关于图书"
-
-#: data/ui/documents-app-menu.ui:20
-msgid "About Documents"
-msgstr "关于文档"
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -263,11 +253,11 @@ msgid "Add"
 msgstr "添加"
 
 #: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
-#: src/overview.js:1034 src/search.js:121
+#: src/overview.js:1042 src/search.js:121
 msgid "Collections"
 msgstr "合集"
 
-#: data/ui/organize-collection-dialog.ui:167 src/overview.js:591
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:598
 msgid "Cancel"
 msgstr "取消"
 
@@ -354,7 +344,7 @@ msgstr "日期"
 msgid "Name"
 msgstr "名称"
 
-#: src/application.js:114
+#: src/application.js:113
 msgid "Show the version of the program"
 msgstr "显示程序版本"
 
@@ -387,11 +377,11 @@ msgstr "糟糕！无法载入“%s”"
 msgid "chapter %s of %s"
 msgstr "第 %s/%s 章"
 
-#: src/evinceview.js:524 src/lib/gd-places-bookmarks.c:656
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
 msgid "Bookmarks"
 msgstr "书签"
 
-#: src/evinceview.js:532
+#: src/evinceview.js:529
 msgid "Bookmark this page"
 msgstr "将该页添加至书签"
 
@@ -428,7 +418,7 @@ msgstr "没有目录"
 msgid "Contents"
 msgstr "目录"
 
-#: src/lib/gd-utils.c:328
+#: src/lib/gd-utils.c:318
 msgid "translator-credits"
 msgstr ""
 "甘 露 <rhythm.gan@gmail.com>, 2011\n"
@@ -440,21 +430,21 @@ msgstr ""
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016\n"
 "Bin Li <binli@gnome.org>, 2016"
 
-#: src/lib/gd-utils.c:329
+#: src/lib/gd-utils.c:319
 msgid "An e-books manager application"
 msgstr "电子书管理程序"
 
-#: src/mainToolbar.js:101
+#: src/mainToolbar.js:95
 msgctxt "menu button tooltip"
 msgid "Menu"
 msgstr "菜单"
 
-#: src/mainToolbar.js:111
+#: src/mainToolbar.js:106
 msgctxt "toolbar button tooltip"
 msgid "Search"
 msgstr "搜索"
 
-#: src/mainToolbar.js:120
+#: src/mainToolbar.js:116
 msgid "Back"
 msgstr "返回"
 
@@ -497,68 +487,74 @@ msgstr "未发现合集"
 msgid "No books found"
 msgstr "未发现图书"
 
-#: src/overview.js:298
+#: src/overview.js:301
 msgid "Try a different search"
 msgstr "尝试不同的搜索"
 
-#: src/overview.js:304
+#: src/overview.js:303
 msgid "You can create collections from the Books view"
 msgstr "你可以从图书视图创建合集"
 
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:311
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr "这里会显示您 <a href=\"%s\">文档</a> 文件夹中的图书"
+
 #. Translators: this is the menu to change view settings
-#: src/overview.js:537
+#: src/overview.js:544
 msgid "View Menu"
 msgstr "视图菜单"
 
-#: src/overview.js:565
+#: src/overview.js:572
 msgid "Click on items to select them"
 msgstr "点击项目来选择它们"
 
-#: src/overview.js:567
+#: src/overview.js:574
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "已选 %d 项"
 
-#: src/overview.js:648
+#: src/overview.js:655
 msgid "Select Items"
 msgstr "选择项目"
 
-#: src/overview.js:854
+#: src/overview.js:862
 msgid "Yesterday"
 msgstr "昨天"
 
-#: src/overview.js:856
+#: src/overview.js:864
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 天前"
 
-#: src/overview.js:860
+#: src/overview.js:868
 msgid "Last week"
 msgstr "上周"
 
-#: src/overview.js:862
+#: src/overview.js:870
 #, javascript-format
 msgid "%d week ago"
 msgid_plural "%d weeks ago"
 msgstr[0] "%d 周前"
 
-#: src/overview.js:866
+#: src/overview.js:874
 msgid "Last month"
 msgstr "上个月"
 
-#: src/overview.js:868
+#: src/overview.js:876
 #, javascript-format
 msgid "%d month ago"
 msgid_plural "%d months ago"
 msgstr[0] "%d 个月前"
 
-#: src/overview.js:872
+#: src/overview.js:880
 msgid "Last year"
 msgstr "去年"
 
-#: src/overview.js:874
+#: src/overview.js:882
 #, javascript-format
 msgid "%d year ago"
 msgid_plural "%d years ago"
@@ -587,12 +583,12 @@ msgstr "密码(_P)"
 msgid "Open with %s"
 msgstr "使用 %s 打开"
 
-#: src/preview.js:769
+#: src/preview.js:770
 msgid "Find Previous"
 msgstr "查找上一个"
 
 # 后一个，怪怪的
-#: src/preview.js:775
+#: src/preview.js:776
 msgid "Find Next"
 msgstr "查找下一个"
 
@@ -708,6 +704,12 @@ msgstr "合集"
 #: src/trackerController.js:176
 msgid "Unable to fetch the list of documents"
 msgstr "无法获取文档列表"
+
+#~ msgid "org.gnome.Books"
+#~ msgstr "org.gnome.Books"
+
+#~ msgid "About Documents"
+#~ msgstr "关于文档"
 
 #~ msgid "Print e-books"
 #~ msgstr "打印电子书"
@@ -834,13 +836,6 @@ msgstr "无法获取文档列表"
 
 #~ msgid "You can create collections from the Documents view"
 #~ msgstr "你可以从文档视图创建合集"
-
-#~ msgid ""
-#~ "Documents from your <a href=\"system-settings\">Online Accounts</a> and "
-#~ "<a href=\"file://%s\">Documents folder</a> will appear here."
-#~ msgstr ""
-#~ "这里会显示您 <a href=\"system-settings\">在线帐号</a> 和 <a href=\"file://"
-#~ "%s\">文档文件夹</a> 中的文件。"
 
 #~ msgid "Running in presentation mode"
 #~ msgstr "正在演示模式下运行"
