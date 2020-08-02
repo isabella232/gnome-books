@@ -20,15 +20,5 @@ flatpak:master:
         APP_ID: "org.gnome.Books"
     extends: .flatpak
 
-review:
-    extends: .review
-    stage: deploy
-    dependencies:
-        - flatpak:master
-
-stop_review:
-    extends: .stop_review
-    stage: deploy
-
 nightly:
     extends: '.publish_nightly'
