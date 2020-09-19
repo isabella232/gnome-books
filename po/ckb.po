@@ -1,0 +1,694 @@
+# Central Kurdish translation for gnome-books.
+# Copyright (C) 2020 gnome-books's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-books package.
+# Jwtiyar Nariman <jwtiyar@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-books master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-books/issues\n"
+"POT-Creation-Date: 2020-09-12 02:07+0000\n"
+"PO-Revision-Date: 2020-09-19 12:15+0000\n"
+"Language-Team: Central Kurdish <kurdish-ckb@zkurd.org>\n"
+"Language: ckb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/org.gnome.Books.appdata.xml.in:7 data/org.gnome.Books.desktop.in:3
+#: src/application.js:104 src/overview.js:1040
+msgid "Books"
+msgstr "Books"
+
+#: data/org.gnome.Books.appdata.xml.in:8
+msgid "An e-book manager application for GNOME"
+msgstr "ڕێکخەری پەرتووکی ئەلکترۆنی بۆ گنۆم"
+
+#: data/org.gnome.Books.appdata.xml.in:10
+msgid ""
+"A simple application to access and organize your e-books on GNOME. It is "
+"meant to be a simple and elegant replacement for using a file manager to "
+"deal with e-books."
+msgstr ""
+
+#: data/org.gnome.Books.appdata.xml.in:15
+msgid "It lets you:"
+msgstr ""
+
+#: data/org.gnome.Books.appdata.xml.in:17
+msgid "View recent e-books"
+msgstr "دووا پەرتوکە ئەلکترۆنییەکان پیشا بدە"
+
+#: data/org.gnome.Books.appdata.xml.in:18
+msgid "Search through e-books"
+msgstr "بگەڕێ بەناو پەرتوکە ئەلکترۆنییەکان"
+
+#: data/org.gnome.Books.appdata.xml.in:19
+msgid "View e-books (ePubs and comics) fullscreen"
+msgstr ""
+
+#: data/org.gnome.Books.appdata.xml.in:31
+msgid "The GNOME Project"
+msgstr "پرۆژەی گنۆم"
+
+#: data/org.gnome.Books.desktop.in:4
+msgid "Access, manage and share books"
+msgstr "چوونەناو، ڕێکخستنی و بڵاوکردنەوەی پەرتووک"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Books.desktop.in:15
+msgid "Books;Comics;ePub;PDF;"
+msgstr ""
+
+#: data/org.gnome.books.gschema.xml:5
+msgid "View as"
+msgstr "پیشاندانی وەکوو"
+
+#: data/org.gnome.books.gschema.xml:6
+msgid "View as type"
+msgstr "پیشاندان بەپێی جۆر"
+
+#: data/org.gnome.books.gschema.xml:10
+msgid "Sort by"
+msgstr "ریزکردن بەپێی"
+
+#: data/org.gnome.books.gschema.xml:11
+msgid "Sort by type"
+msgstr "ڕیزکردن بە پێی جۆر"
+
+#: data/org.gnome.books.gschema.xml:15
+msgid "Window size"
+msgstr "قەبارەی پەنجەرە"
+
+#: data/org.gnome.books.gschema.xml:16
+msgid "Window size (width and height)."
+msgstr "قەبارەی پەنجەرە(پانی و بەرزی)"
+
+#: data/org.gnome.books.gschema.xml:20
+msgid "Window position"
+msgstr "شوێنی پەنجەرە"
+
+#: data/org.gnome.books.gschema.xml:21
+msgid "Window position (x and y)."
+msgstr "شوێنی پەنجەرە( x و y)"
+
+#: data/org.gnome.books.gschema.xml:25
+msgid "Window maximized"
+msgstr "پەنجەرە گەورەکرایەوە"
+
+#: data/org.gnome.books.gschema.xml:26
+msgid "Window maximized state"
+msgstr "دۆخی پەنجەرەی گەورەکراوە"
+
+#: data/org.gnome.books.gschema.xml:30
+msgid "Night mode"
+msgstr "دۆخی شەوانە"
+
+#: data/org.gnome.books.gschema.xml:31
+msgid "Whether the application is in night mode."
+msgstr "بزانە کە داوانامە لە دۆخی شەوانە یان نا"
+
+#: data/ui/books-app-menu.ui:6 src/preview.js:452
+msgid "Night Mode"
+msgstr "دۆخی شەوانە"
+
+#: data/ui/books-app-menu.ui:12
+msgid "Keyboard Shortcuts"
+msgstr "قەدبڕەکانی تەختەکلیل"
+
+#: data/ui/books-app-menu.ui:16
+msgid "Help"
+msgstr "یارمەتی"
+
+#: data/ui/books-app-menu.ui:20
+msgid "About Books"
+msgstr "دەربارەی Books"
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "گشتی"
+
+#: data/ui/help-overlay.ui:15
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "یارمەتی پێشان بدە"
+
+#: data/ui/help-overlay.ui:22
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "دەرچوون"
+
+#: data/ui/help-overlay.ui:29
+msgctxt "shortcut window"
+msgid "Search"
+msgstr "گەڕان"
+
+#: data/ui/help-overlay.ui:36
+msgctxt "shortcut window"
+msgid "Print the current document"
+msgstr "چاپکردنی بەڵگەنامەی ئێستا..."
+
+#: data/ui/help-overlay.ui:45
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "ڕێدۆزی"
+
+#: data/ui/help-overlay.ui:49 data/ui/help-overlay.ui:57
+msgctxt "shortcut window"
+msgid "Go back"
+msgstr "بڕۆدواوە"
+
+#: data/ui/help-overlay.ui:67
+msgctxt "shortcut window"
+msgid "Preview"
+msgstr "پێشبینین"
+
+#: data/ui/help-overlay.ui:71
+msgctxt "shortcut window"
+msgid "Zoom in"
+msgstr "نزیکردنەوە"
+
+#: data/ui/help-overlay.ui:78
+msgctxt "shortcut window"
+msgid "Zoom out"
+msgstr "دوورکردنەوە"
+
+#: data/ui/help-overlay.ui:85
+msgctxt "shortcut window"
+msgid "Bookmark the current page"
+msgstr "پەڕەی ئێستا دڵخواز بکە"
+
+#: data/ui/help-overlay.ui:92
+msgctxt "shortcut window"
+msgid "Open places and bookmarks dialog"
+msgstr ""
+
+#: data/ui/help-overlay.ui:99
+msgctxt "shortcut window"
+msgid "Copy selected text to clipboard"
+msgstr "دەقی دیاریکراو لەبەربگرەوە بۆ لیستەی لەبەرگیراوە"
+
+#: data/ui/help-overlay.ui:106
+msgctxt "shortcut window"
+msgid "Rotate counterclockwise"
+msgstr "خولانەوە بە پێچەوانەی میلی کاتژمێر"
+
+#: data/ui/help-overlay.ui:113
+msgctxt "shortcut window"
+msgid "Rotate clockwise"
+msgstr "خولانەوە بە ئاڕاستەی میلی کاتژمێر"
+
+#: data/ui/help-overlay.ui:120
+msgctxt "shortcut window"
+msgid "Next occurrence of the search string"
+msgstr "بگەڕێ بۆ نووسەی داهاتوو"
+
+#: data/ui/help-overlay.ui:127
+msgctxt "shortcut window"
+msgid "Previous occurrence of the search string"
+msgstr ""
+
+#: data/ui/help-overlay.ui:134
+msgctxt "shortcut window"
+msgid "Presentation mode"
+msgstr ""
+
+#: data/ui/help-overlay.ui:141
+msgctxt "shortcut window"
+msgid "Open action menu"
+msgstr ""
+
+#: data/ui/help-overlay.ui:148
+msgctxt "shortcut window"
+msgid "Fullscreen"
+msgstr "پڕاوپڕی پەردە"
+
+#: data/ui/organize-collection-dialog.ui:40
+msgid "Enter a name for your first collection"
+msgstr "ناوی یەکەم بژاردە بنووسە"
+
+#: data/ui/organize-collection-dialog.ui:56
+#: data/ui/organize-collection-dialog.ui:113
+msgid "New Collection…"
+msgstr "بژاردەی نوێ..."
+
+#: data/ui/organize-collection-dialog.ui:73
+#: data/ui/organize-collection-dialog.ui:122
+msgid "Add"
+msgstr "زیادکردن"
+
+#: data/ui/organize-collection-dialog.ui:163 data/ui/selection-toolbar.ui:88
+#: src/overview.js:1044 src/search.js:121
+msgid "Collections"
+msgstr "بژاردەکان"
+
+#: data/ui/organize-collection-dialog.ui:167 src/overview.js:600
+msgid "Cancel"
+msgstr "هه‌ڵوه‌شاندنه‌وه‌"
+
+#: data/ui/organize-collection-dialog.ui:173
+msgid "Done"
+msgstr "تەواو"
+
+#: data/ui/preview-context-menu.ui:6
+msgid "_Copy"
+msgstr "_لەبەرگرتنەوە"
+
+#. Translators: this is the Open action in a context menu
+#: data/ui/preview-menu.ui:6 data/ui/selection-toolbar.ui:9
+#: src/selections.js:977
+msgid "Open"
+msgstr "کردنەوە"
+
+#: data/ui/preview-menu.ui:10
+msgid "Edit"
+msgstr "دەسکاریکردن"
+
+#: data/ui/preview-menu.ui:15
+msgid "Print…"
+msgstr "چاپکردن..."
+
+#: data/ui/preview-menu.ui:21 src/preview.js:461
+msgid "Fullscreen"
+msgstr "پڕاوپڕی پەردە"
+
+#: data/ui/preview-menu.ui:27
+msgid "Present"
+msgstr ""
+
+#: data/ui/preview-menu.ui:35
+msgid "Zoom In"
+msgstr "نزیکردنەوە"
+
+#: data/ui/preview-menu.ui:41
+msgid "Zoom Out"
+msgstr "دوورکردنەوە"
+
+#: data/ui/preview-menu.ui:49
+msgid "Rotate ↶"
+msgstr "خولانەوە ↶"
+
+#: data/ui/preview-menu.ui:55
+msgid "Rotate ↷"
+msgstr "خولانەوە ↷"
+
+#: data/ui/preview-menu.ui:62 data/ui/selection-toolbar.ui:79
+#: src/properties.js:61
+msgid "Properties"
+msgstr "تایبەتمەندی"
+
+#: data/ui/selection-menu.ui:6
+msgid "Select All"
+msgstr "هەمووی دیاریبکە"
+
+#: data/ui/selection-menu.ui:11
+msgid "Select None"
+msgstr "هیچ دیاری مەکە"
+
+#: data/ui/view-menu.ui:23
+msgid "View items as a grid of icons"
+msgstr "پیشاندانی چوارخانەی وێنۆچکەکان"
+
+#: data/ui/view-menu.ui:40
+msgid "View items as a list"
+msgstr "وێنۆچکەکان وەکوو لیستە پیشان بدە"
+
+#: data/ui/view-menu.ui:73
+msgid "Sort"
+msgstr "ڕێکخستن"
+
+#: data/ui/view-menu.ui:84
+msgid "Author"
+msgstr "نووسەر"
+
+#: data/ui/view-menu.ui:93
+msgid "Date"
+msgstr "بەروار"
+
+#: data/ui/view-menu.ui:102
+msgid "Name"
+msgstr "ناو"
+
+#: src/application.js:113
+msgid "Show the version of the program"
+msgstr "وەشانی داوانامە پیشان بدە"
+
+#: src/documents.js:780
+msgid "Failed to print document"
+msgstr "نەتوانرا بەڵگەنامە چاپبکرێت"
+
+#. Translators: this refers to local documents
+#: src/documents.js:822 src/search.js:405
+msgid "Local"
+msgstr "ناوخۆیی"
+
+#: src/documents.js:879
+msgid "Collection"
+msgstr "بژاردە"
+
+#: src/documents.js:1073
+msgid ""
+"You are using a preview of Books. Full viewing capabilities are coming soon!"
+msgstr ""
+
+#. Translators: %s is the title of a document
+#: src/documents.js:1100
+#, javascript-format
+msgid "Oops! Unable to load “%s”"
+msgstr ""
+
+#: src/epubview.js:315
+#, javascript-format
+msgid "chapter %s of %s"
+msgstr "بەشی %s  لە %s "
+
+#: src/evinceview.js:521 src/lib/gd-places-bookmarks.c:656
+msgid "Bookmarks"
+msgstr "دڵخوازەکان"
+
+#: src/evinceview.js:529
+msgid "Bookmark this page"
+msgstr "پەڕە دڵخواز بکە"
+
+#: src/lib/gd-nav-bar.c:242
+#, c-format
+msgid "Page %u of %u"
+msgstr "پەڕەی %u لە %u"
+
+#: src/lib/gd-pdf-loader.c:142
+msgid "Unable to load the document"
+msgstr "نەتوانرا بەڵگەنامە باربکرێت"
+
+#. Translators: %s is the number of the page, already formatted
+#. * as a string, for example "Page 5".
+#.
+#: src/lib/gd-places-bookmarks.c:321
+#, c-format
+msgid "Page %s"
+msgstr "پەڕەی %s"
+
+#: src/lib/gd-places-bookmarks.c:384
+msgid "No bookmarks"
+msgstr "دڵخواز نیە"
+
+#: src/lib/gd-places-bookmarks.c:392 src/lib/gd-places-links.c:257
+msgid "Loading…"
+msgstr "باردەکرێت..."
+
+#: src/lib/gd-places-links.c:342
+msgid "No table of contents"
+msgstr "خشتەی ناوەڕۆک نیە"
+
+#: src/lib/gd-places-links.c:514
+msgid "Contents"
+msgstr "ناوەڕۆک"
+
+#: src/lib/gd-utils.c:318
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jwtiyar Nariman https://launchpad.net/~jwtiyar"
+
+#: src/lib/gd-utils.c:319
+msgid "An e-books manager application"
+msgstr ""
+
+#: src/mainToolbar.js:95
+msgctxt "menu button tooltip"
+msgid "Menu"
+msgstr "پێڕست"
+
+#: src/mainToolbar.js:106
+msgctxt "toolbar button tooltip"
+msgid "Search"
+msgstr "گەڕان"
+
+#: src/mainToolbar.js:116
+msgid "Back"
+msgstr "بڕۆدواوە"
+
+#. Translators: only one item has been deleted and %s is its name
+#: src/notifications.js:48
+#, javascript-format
+msgid "“%s” deleted"
+msgstr "“%s” سڕایەوە"
+
+#. Translators: one or more items might have been deleted, and %d
+#. is the count
+#: src/notifications.js:52
+#, javascript-format
+msgid "%d item deleted"
+msgid_plural "%d items deleted"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/notifications.js:61 src/selections.js:384
+msgid "Undo"
+msgstr "گەڕانەوە"
+
+#: src/notifications.js:159
+#, javascript-format
+msgid "Printing “%s”: %s"
+msgstr ""
+
+#: src/notifications.js:210
+msgid "Your documents are being indexed"
+msgstr ""
+
+#: src/notifications.js:211
+msgid "Some documents might not be available during this process"
+msgstr ""
+
+#: src/overview.js:287
+msgid "No collections found"
+msgstr ""
+
+#: src/overview.js:289
+msgid "No books found"
+msgstr "پەرتووک نەدۆزرایەوە"
+
+#: src/overview.js:301
+msgid "Try a different search"
+msgstr "گەڕانێکی نوێ ئەنجام بدە"
+
+#: src/overview.js:303
+msgid "You can create collections from the Books view"
+msgstr ""
+
+#. translators: %s is the location of the Documents folder.
+#: src/overview.js:313
+#, javascript-format
+msgid "Books from your <a href=\"%s\">Documents</a> folder will appear here"
+msgstr ""
+
+#. Translators: this is the menu to change view settings
+#: src/overview.js:546
+msgid "View Menu"
+msgstr "پێڕست پیشان بدە"
+
+#: src/overview.js:574
+msgid "Click on items to select them"
+msgstr "کرتە بکە لەسەر هەرکامێکیان بۆ ئەوەی دیاریان بکەی"
+
+#: src/overview.js:576
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d  دیاریکراوە"
+msgstr[1] "%d  دیاریکراوە"
+
+#: src/overview.js:657
+msgid "Select Items"
+msgstr "بڕگەی دیاریکراو"
+
+#: src/overview.js:864
+msgid "Yesterday"
+msgstr "دوێنێ"
+
+#: src/overview.js:866
+#, javascript-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "‫%d ڕۆژ پێش ئێستا"
+msgstr[1] "‏‫%d ڕۆژ پێش ئێس"
+
+#: src/overview.js:870
+msgid "Last week"
+msgstr "هەفتەی پێشوو"
+
+#: src/overview.js:872
+#, javascript-format
+msgid "%d week ago"
+msgid_plural "%d weeks ago"
+msgstr[0] "%d هەفتە پێش ئێستا"
+msgstr[1] "%d هەفتە پێش ئێستا"
+
+#: src/overview.js:876
+msgid "Last month"
+msgstr "مانگی پێشوو"
+
+#: src/overview.js:878
+#, javascript-format
+msgid "%d month ago"
+msgid_plural "%d months ago"
+msgstr[0] "%d مانگ پێش ئێستا"
+msgstr[1] "%d مانگ پێش ئێستا"
+
+#: src/overview.js:882
+msgid "Last year"
+msgstr "ساڵی پێشوو"
+
+#: src/overview.js:884
+#, javascript-format
+msgid "%d year ago"
+msgid_plural "%d years ago"
+msgstr[0] "%d ساڵ پێش ئێستا"
+msgstr[1] "%d ساڵ پێش ئێستا"
+
+#: src/password.js:42
+msgid "Password Required"
+msgstr "وشەی تێپەڕبوون داواکراوە"
+
+#: src/password.js:45
+msgid "_Unlock"
+msgstr "_بیکەرەوە"
+
+#: src/password.js:61
+#, javascript-format
+msgid "Document %s is locked and requires a password to be opened."
+msgstr ""
+
+#: src/password.js:75
+msgid "_Password"
+msgstr "_تێپەڕەوشە"
+
+#. Translators: this is the Open action in a context menu
+#: src/preview.js:444 src/selections.js:974
+#, javascript-format
+msgid "Open with %s"
+msgstr "بیکەرەوە لەڕێگەی %s"
+
+#: src/preview.js:780
+msgid "Find Previous"
+msgstr "پێشوو بدۆزرەوە"
+
+#: src/preview.js:786
+msgid "Find Next"
+msgstr "داهاتوو بدۆزرەوە\t"
+
+#. Title item
+#. Translators: "Title" is the label next to the document title
+#. in the properties dialog
+#: src/properties.js:81
+msgctxt "Document Title"
+msgid "Title"
+msgstr "ناونیشان"
+
+#. Translators: "Author" is the label next to the document author
+#. in the properties dialog
+#: src/properties.js:90
+msgctxt "Document Author"
+msgid "Author"
+msgstr "نووسەر"
+
+#. Source item
+#: src/properties.js:97
+msgid "Source"
+msgstr "سەرچاوە"
+
+#. Date Modified item
+#: src/properties.js:103
+msgid "Date Modified"
+msgstr "ڕۆژی دەستکاریکردن"
+
+#: src/properties.js:110
+msgid "Date Created"
+msgstr "ڕۆژی درووستکردن"
+
+#. Document type item
+#. Translators: "Type" is the label next to the document type
+#. (PDF, spreadsheet, ...) in the properties dialog
+#: src/properties.js:119
+msgctxt "Document Type"
+msgid "Type"
+msgstr "جۆر"
+
+#. Translators: "Type" refers to a search filter on the document type
+#. (e-Books, Comics, ...)
+#: src/search.js:116
+msgctxt "Search Filter"
+msgid "Type"
+msgstr "جۆر"
+
+#. Translators: this refers to documents
+#: src/search.js:119 src/search.js:225 src/search.js:399
+msgid "All"
+msgstr "هەمووی"
+
+#: src/search.js:127
+msgid "e-Books"
+msgstr "پەرتووکی ئەلکترۆنی"
+
+#: src/search.js:131
+msgid "Comics"
+msgstr "کۆمیک"
+
+#. Translators: this is a verb that refers to "All", "Title", "Author",
+#. and "Content" as in "Match All", "Match Title", "Match Author", and
+#. "Match Content"
+#: src/search.js:222
+msgid "Match"
+msgstr ""
+
+#. Translators: "Title" refers to "Match Title" when searching
+#: src/search.js:228
+msgctxt "Search Filter"
+msgid "Title"
+msgstr "ناونیشان"
+
+#. Translators: "Author" refers to "Match Author" when searching
+#: src/search.js:231
+msgctxt "Search Filter"
+msgid "Author"
+msgstr "نووسەر"
+
+#. Translators: "Content" refers to "Match Content" when searching
+#: src/search.js:234
+msgctxt "Search Filter"
+msgid "Content"
+msgstr "ناوەڕۆک"
+
+#: src/search.js:395
+msgid "Sources"
+msgstr "سەرچاوەکان"
+
+#: src/selections.js:357 src/selections.js:359
+msgid "Rename…"
+msgstr "ناولێنان..."
+
+#: src/selections.js:363 src/selections.js:365
+msgid "Delete"
+msgstr "سڕینەوە"
+
+#: src/selections.js:379
+#, javascript-format
+msgid "“%s” removed"
+msgstr "%s سڕایەوە"
+
+#: src/selections.js:776
+msgid "Rename"
+msgstr "ناولێنان"
+
+#. Translators: "Collections" refers to documents in this context
+#: src/selections.js:782
+msgctxt "Dialog Title"
+msgid "Collections"
+msgstr "بژاردەکان"
+
+#: src/trackerController.js:176
+msgid "Unable to fetch the list of documents"
+msgstr ""
