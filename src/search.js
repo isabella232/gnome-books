@@ -286,9 +286,6 @@ var SearchSourceStock = {
     LOCAL: 'local'
 };
 
-const TRACKER_SCHEMA = 'org.freedesktop.Tracker.Miner.Files';
-const TRACKER_KEY_RECURSIVE_DIRECTORIES = 'index-recursive-directories';
-
 const Source = new Lang.Class({
     Name: 'Source',
 
@@ -301,36 +298,6 @@ const Source = new Lang.Class({
         this.name = params.name;
 
         this.builtin = params.builtin;
-    },
-
-    _getTrackerLocations: function() {
-        let settings = new Gio.Settings({ schema_id: TRACKER_SCHEMA });
-        let locations = settings.get_strv(TRACKER_KEY_RECURSIVE_DIRECTORIES);
-        let files = [];
-
-        locations.forEach(Lang.bind(this,
-            function(location) {
-                // ignore special XDG placeholders, since we handle those internally
-                if (location[0] == '&' || location[0] == '$')
-                    return;
-
-                let trackerFile = Gio.file_new_for_commandline_arg(location);
-
-                // also ignore XDG locations if they are present with their full path
-                for (let idx = 0; idx < GLib.UserDirectory.N_DIRECTORIES; idx++) {
-                    let path = GLib.get_user_special_dir(idx);
-                    if (!path)
-                        continue;
-
-                    let file = Gio.file_new_for_path(path);
-                    if (trackerFile.equal(file))
-                        return;
-                }
-
-                files.push(trackerFile);
-            }));
-
-        return files;
     },
 
     _getBuiltinLocations: function() {
@@ -351,7 +318,6 @@ const Source = new Lang.Class({
 
     _buildFilterLocal: function() {
         let locations = this._getBuiltinLocations();
-        locations = locations.concat(this._getTrackerLocations());
 
         let filters = [];
         locations.forEach(Lang.bind(this,
