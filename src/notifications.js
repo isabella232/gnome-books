@@ -22,7 +22,6 @@
 const Gd = imports.gi.Gd;
 const Gettext = imports.gettext;
 const Gtk = imports.gi.Gtk;
-const TrackerControl = imports.gi.TrackerControl;
 const _ = imports.gettext.gettext;
 
 const Application = imports.application;
@@ -166,124 +165,6 @@ var PrintNotification = new Lang.Class({
     }
 });
 
-const REMOTE_MINER_TIMEOUT = 10; // seconds
-const TRACKER_MINER_FILES_NAME = 'org.freedesktop.Tracker1.Miner.Files';
-
-const IndexingNotification = new Lang.Class({
-    Name: 'IndexingNotification',
-
-    _init: function() {
-        this._closed = false;
-
-        try {
-            this._manager = TrackerControl.MinerManager.new_full(false);
-            this._manager.connect('miner-progress', Lang.bind(this, this._checkNotification));
-        } catch(e) {
-            logError(e, 'Unable to create a TrackerMinerManager, indexing progress ' +
-                     'notification won\'t work');
-            return;
-        }
-
-        Application.application.connect('miners-changed', Lang.bind(this, this._checkNotification));
-        Application.modeController.connect('window-mode-changed', Lang.bind(this, this._checkNotification));
-    },
-
-    _checkNotification: function() {
-        if (Application.modeController.getWindowMode() == WindowMode.WindowMode.PREVIEW_EV) {
-            this._destroy(false);
-            return;
-        }
-
-        let isIndexingLocal = false;
-
-        if (this._manager) {
-            let running = this._manager.get_running();
-            if (running.indexOf(TRACKER_MINER_FILES_NAME) != -1) {
-                let [res, status, progress, time] = this._manager.get_status(TRACKER_MINER_FILES_NAME);
-
-                if (progress < 1)
-                    isIndexingLocal = true;
-            }
-        }
-
-        if (isIndexingLocal) {
-            this._display(_("Your documents are being indexed"),
-                          _("Some documents might not be available during this process"));
-        } else {
-            this._destroy(false);
-        }
-    },
-
-    _buildWidget: function() {
-        this.widget = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                     column_spacing: 12 });
-
-        let spinner = new Gtk.Spinner({ width_request: 16,
-                                        height_request: 16 });
-        spinner.start();
-        this.widget.add(spinner);
-
-        let labels = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL,
-                                    row_spacing: 3 });
-        this.widget.add(labels);
-
-        this._primaryLabel = new Gtk.Label({ halign: Gtk.Align.START });
-        labels.add(this._primaryLabel);
-
-        this._secondaryLabel = new Gtk.Label({ halign: Gtk.Align.START });
-        this._secondaryLabel.get_style_context().add_class('dim-label');
-        labels.add(this._secondaryLabel);
-
-        let close = new Gtk.Button({ image: new Gtk.Image({ icon_name: 'window-close-symbolic',
-                                                            pixel_size: 16,
-                                                            margin_top: 2,
-                                                            margin_bottom: 2 }),
-                                     valign: Gtk.Align.CENTER,
-                                     focus_on_click: false,
-                                     relief: Gtk.ReliefStyle.NONE });
-        close.connect('clicked', Lang.bind(this,
-            function() {
-                this._destroy(true);
-            }));
-        this.widget.add(close);
-
-        Application.notificationManager.addNotification(this);
-    },
-
-    _update: function(primaryText, secondaryText) {
-        this._primaryLabel.label = primaryText;
-        this._secondaryLabel.label = secondaryText;
-
-        if (secondaryText) {
-            this._primaryLabel.vexpand = false;
-            this._secondaryLabel.show();
-        } else {
-            this._primaryLabel.vexpand = true;
-            this._secondaryLabel.hide();
-        }
-    },
-
-    _display: function(primaryText, secondaryText) {
-        if (this._closed) {
-            return;
-        }
-
-        if (!this.widget)
-            this._buildWidget();
-
-        this._update(primaryText, secondaryText);
-    },
-
-    _destroy: function(closed) {
-        if (this.widget) {
-            this.widget.destroy();
-            this.widget = null;
-        }
-
-        this._closed = closed;
-    }
-});
-
 var NotificationManager = new Lang.Class({
     Name: 'NotificationManager',
     Extends: Gtk.Revealer,
@@ -300,9 +181,6 @@ var NotificationManager = new Lang.Class({
                                     row_spacing: 6 });
 
         frame.add(this._grid);
-
-        // add indexing monitor notification
-        this._indexingNotification = new IndexingNotification();
     },
 
     addNotification: function(notification) {
