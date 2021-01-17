@@ -19,6 +19,8 @@
  *
  */
 
+imports.gi.versions.Tracker = '3.0';
+
 const Application = imports.application;
 const Documents = imports.documents;
 const Manager = imports.manager;
@@ -126,11 +128,11 @@ const SearchTypeManager = new Lang.Class({
         this.addItem(new SearchType({ id: SearchTypeStock.EBOOKS,
                                       name: _("e-Books"),
                                       filter: '(nie:mimeType(?urn) IN (\"application/epub+zip\", \"application/x-mobipocket-ebook\", \"application/vnd.amazon.mobi8-ebook\", \"application/x-fictionbook+xml\", \"application/x-zip-compressed-fb2\", \"image/vnd.djvu+multipage\"))',
-                                      where: '?urn rdf:type nfo:FileDataObject .' }));
+                                      where: '?urn rdf:type nfo:EBook .' }));
         this.addItem(new SearchType({ id: SearchTypeStock.COMICS,
                                       name: _("Comics"),
                                       filter: '(nie:mimeType(?urn) IN (\"application/x-cbr\", \"application/vnd.comicbook-rar\", \"application/x-cbz\", \"application/vnd.comicbook+zip\", \"application/x-cbt\", \"application/x-cb7\"))',
-                                      where: '?urn rdf:type nfo:FileDataObject .' }));
+                                      where: '?urn rdf:type nfo:EBook .' }));
 
 
         this.setActiveItemById(SearchTypeStock.ALL);
@@ -322,7 +324,7 @@ const Source = new Lang.Class({
         let filters = [];
         locations.forEach(Lang.bind(this,
             function(location) {
-                filters.push('(fn:contains (nie:url(?urn), "%s"))'.format(location.get_uri()));
+                filters.push('(fn:contains (nie:isStoredAs(?urn), "%s"))'.format(location.get_uri()));
             }));
 
         filters.push('(fn:starts-with (nao:identifier(?urn), "gb:collection:local:"))');

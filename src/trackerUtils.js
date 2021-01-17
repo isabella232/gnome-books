@@ -24,7 +24,7 @@ const Lang = imports.lang;
 const Application = imports.application;
 
 function setEditedName(newTitle, docId, callback) {
-    let sparql = ('INSERT OR REPLACE { <%s> nie:title \"%s\" }'.format(docId, newTitle));
+    let sparql = ('INSERT OR REPLACE { <%s> a nie:InformationElement ; nie:title \"%s\" }'.format(docId, newTitle));
 
     Application.connectionQueue.update(sparql, null,
         function(object, res) {

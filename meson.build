@@ -50,7 +50,6 @@ endforeach
 add_project_arguments('-DHAVE_CONFIG_H', language: 'c')
 
 evince_req_version = '>= 3.13.3'
-tracker_req_version = '>= 0.17.3'
 
 gjs_dep = dependency('gjs-1.0', version: '>= 1.48.0')
 gjs_console = gjs_dep.get_pkgconfig_variable('gjs_console')
@@ -63,8 +62,7 @@ books_deps = [
   dependency('gnome-desktop-3.0'),
   dependency('gobject-introspection-1.0', version: '>= 1.31.6'),
   dependency('gtk+-3.0', version: '>= 3.22.15'),
-  dependency('tracker-control-2.0', version: tracker_req_version),
-  dependency('tracker-sparql-2.0', version: tracker_req_version),
+  dependency('tracker-sparql-3.0'),
   dependency('webkit2gtk-4.0', version: '>= 2.6.0'),
   cc.find_library('m')
 ]

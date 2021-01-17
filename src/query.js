@@ -94,9 +94,6 @@ var QueryBuilder = new Lang.Class({
                 part += this._buildOptional();
 
                 if ((flags & QueryFlags.UNFILTERED) == 0) {
-                    if (global)
-                        part += this._context.documentManager.getWhere();
-
                     part += this._buildFilterString(currentType, flags, ftsQuery.length > 0);
                 }
 
@@ -139,12 +136,25 @@ var QueryBuilder = new Lang.Class({
 
         // put all the clauses in an UNION
         whereSparql += whereParts.join(' UNION ');
+
         whereSparql += ' }';
 
         return whereSparql;
     },
 
     _buildQueryInternal: function(global, flags, offsetController, sortBy) {
+	let selectClauses =
+            '    (nie:isStoredAs(?urn) AS ?uri) ' +
+            '    (nfo:fileName(?urn) AS ?filename) ' +
+            '    (nie:mimeType(?urn) AS ?mimetype) ' +
+            '    (nie:title(?urn) AS ?title) ' +
+            '    (tracker:coalesce(nco:fullname(?creator), nco:fullname(?publisher), \'\') AS ?author) ' +
+            '    (nie:contentLastModified(?urn) AS ?mtime) ' +
+            '    (nao:identifier(?urn) AS ?identifier) ' +
+            '    (rdf:type(?urn) AS ?type) ' +
+            '    (nie:dataSource(?urn) AS ?datasource ) ' +
+            '    (( EXISTS { ?urn nco:contributor ?contributor FILTER ( ?contributor != ?creator ) } ) AS ?shared) ' +
+            '    (nie:contentCreated(?urn) AS ?created) ';
         let whereSparql = this._buildWhere(global, flags);
         let tailSparql = '';
 
@@ -179,19 +189,44 @@ var QueryBuilder = new Lang.Class({
         }
 
         let sparql =
-            'SELECT DISTINCT ?urn ' + // urn
-            'nie:url(?urn) ' + // uri
-            'nfo:fileName(?urn) AS ?filename ' + // filename
-            'nie:mimeType(?urn)' + // mimetype
-            'nie:title(?urn) AS ?title ' + // title
-            'tracker:coalesce(nco:fullname(?creator), nco:fullname(?publisher), \'\') AS ?author ' + // author
-            'tracker:coalesce(nfo:fileLastModified(?urn), nie:contentLastModified(?urn)) AS ?mtime ' + // mtime
-            'nao:identifier(?urn) ' + // identifier
-            'rdf:type(?urn) ' + // type
-            'nie:dataSource(?urn) ' + // resource URN
-            '( EXISTS { ?urn nco:contributor ?contributor FILTER ( ?contributor != ?creator ) } ) ' + // shared
-            'tracker:coalesce(nfo:fileCreated(?urn), nie:contentCreated(?urn)) ' + // date created
-            whereSparql + tailSparql;
+            'SELECT ?urn ' +
+            '  ?uri ' +
+            '  ?filename ' +
+            '  ?mimetype ' +
+            '  COALESCE (?localTitle, ?title) ' +
+            '  ?author ' +
+            '  ?mtime ' +
+            '  ?identifier ' +
+            '  ?type ' +
+            '  ?datasource ' +
+            '  ?shared ' +
+            '  ?created ' +
+            'WHERE { ';
+
+        // Collections queries are local
+        if (flags & QueryFlags.COLLECTIONS) {
+            sparql +=
+                'SELECT DISTINCT ?urn ' +
+                selectClauses +
+                whereSparql +
+                tailSparql;
+        } else {
+            sparql +=
+                'SERVICE <dbus:org.freedesktop.Tracker3.Miner.Files> {' +
+                '  GRAPH tracker:Documents { ' +
+                '    SELECT DISTINCT ?urn ' +
+                selectClauses +
+                whereSparql +
+                tailSparql +
+                '  }' +
+                '}' +
+                'OPTIONAL { ?urn nie:title ?localTitle } . ';
+
+                if (global && (flags & QueryFlags.UNFILTERED) == 0)
+                    sparql += this._context.documentManager.getWhere();
+        }
+
+        sparql += '}';
 
         return sparql;
     },
@@ -208,8 +243,18 @@ var QueryBuilder = new Lang.Class({
     },
 
     buildCountQuery: function(flags) {
-        let sparql = 'SELECT DISTINCT COUNT(?urn) ' +
-            this._buildWhere(true, flags);
+	let sparql;
+	if (flags & QueryFlags.COLLECTIONS) {
+	    sparql = 'SELECT DISTINCT COUNT(?urn) AS ?c ' +
+		this._buildWhere(true, flags);
+	} else {
+	    sparql = 'SELECT ?c {' +
+		'  SERVICE <dbus:org.freedesktop.Tracker3.Miner.Files> { ' +
+		'    SELECT DISTINCT COUNT(?urn) AS ?c ' +
+		this._buildWhere(true, flags) +
+		'  }' +
+		'}';
+	}
 
         return this._createQuery(sparql);
     },
@@ -219,8 +264,8 @@ var QueryBuilder = new Lang.Class({
         let sparql =
             ('SELECT ' +
              '?urn ' +
-             'tracker:coalesce(nfo:fileLastModified(?urn), nie:contentLastModified(?urn)) AS ?mtime ' +
-             'WHERE { ?urn nie:isPartOf ?collUrn } ' +
+             'nie:contentLastModified(?urn) AS ?mtime ' +
+             'WHERE { ?urn nie:isLogicalPartOf ?collUrn } ' +
              'ORDER BY DESC (?mtime)' +
              'LIMIT 4').replace(/\?collUrn/, '<' + resource + '>');
 
@@ -232,7 +277,7 @@ var QueryBuilder = new Lang.Class({
         let sparql =
             ('SELECT ' +
              '?urn ' +
-             'WHERE { ?urn a nfo:DataContainer . ?docUrn nie:isPartOf ?urn }'
+             'WHERE { ?urn a nfo:DataContainer . ?docUrn nie:isLogicalPartOf ?urn }'
             ).replace(/\?docUrn/, '<' + resource + '>');
 
         return this._createQuery(sparql);
@@ -240,15 +285,21 @@ var QueryBuilder = new Lang.Class({
 
     // adds or removes the given item to the given collection
     buildSetCollectionQuery: function(itemUrn, collectionUrn, setting) {
-        let sparql = ('%s { <%s> nie:isPartOf <%s> }'
-                     ).format((setting ? 'INSERT' : 'DELETE'), itemUrn, collectionUrn);
+        let sparql;
+        if (setting) {
+            sparql = ('INSERT DATA { <%s> a nie:InformationElement; nie:isLogicalPartOf <%s> }'
+                     ).format(itemUrn, collectionUrn);
+        } else {
+            sparql = ('DELETE DATA { <%s> nie:isLogicalPartOf <%s> }'
+                     ).format(itemUrn, collectionUrn);
+        }
         return this._createQuery(sparql);
     },
 
     // bumps the mtime to current time for the given resource
     buildUpdateMtimeQuery: function(resource) {
         let time = GdPrivate.iso8601_from_timestamp(GLib.get_real_time() / GLib.USEC_PER_SEC);
-        let sparql = ('INSERT OR REPLACE { <%s> nie:contentLastModified \"%s\" }'
+        let sparql = ('INSERT OR REPLACE { <%s> a nie:InformationElement ; nie:contentLastModified \"%s\" }'
                      ).format(resource, time);
 
         return this._createQuery(sparql);

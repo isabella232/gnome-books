@@ -89,10 +89,10 @@ var TrackerConnectionQueue = new Lang.Class({
             Application.connection.query_async(params.query, params.cancellable,
                                           Lang.bind(this, this._queueCollector, params));
         else if (params.queryType == QueryType.UPDATE)
-            Application.connection.update_async(params.query, GLib.PRIORITY_DEFAULT, params.cancellable,
+            Application.connection.update_async(params.query, params.cancellable,
                                            Lang.bind(this, this._queueCollector, params));
         else if (params.queryType == QueryType.UPDATE_BLANK)
-            Application.connection.update_blank_async(params.query, GLib.PRIORITY_DEFAULT, params.cancellable,
+            Application.connection.update_blank_async(params.query, params.cancellable,
                                                  Lang.bind(this, this._queueCollector, params));
     },
 
