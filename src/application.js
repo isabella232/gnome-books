@@ -69,20 +69,21 @@ var trackerCollectionsController = null;
 var trackerDocumentsController = null;
 var trackerSearchController = null;
 
-const TrackerExtractPriorityIface = '<node> \
-<interface name="org.freedesktop.Tracker1.Extract.Priority"> \
-    <method name="ClearRdfTypes" /> \
-    <method name="SetRdfTypes"> \
-        <arg name="rdf_types" type="as" /> \
+const TrackerMinerFilesIndexIface = '<node> \
+<interface name="org.freedesktop.Tracker3.Miner.Files.Index"> \
+    <method name="IndexLocation"> \
+        <arg name="file_uri" type="s" /> \
+        <arg name="graphs" type="as" /> \
+        <arg name="flags" type="as" /> \
     </method> \
 </interface> \
 </node>';
 
-var TrackerExtractPriorityProxy = Gio.DBusProxy.makeProxyWrapper(TrackerExtractPriorityIface);
-function TrackerExtractPriority() {
-    return new TrackerExtractPriorityProxy(Gio.DBus.session,
-                                           'org.freedesktop.Tracker1.Miner.Extract',
-                                           '/org/freedesktop/Tracker1/Extract/Priority');
+var TrackerMinerFilesControlProxy = Gio.DBusProxy.makeProxyWrapper(TrackerMinerFilesIndexIface);
+function TrackerMinerFilesControl() {
+    return new TrackerMinerFilesControlProxy(Gio.DBus.session,
+                                             'org.freedesktop.Tracker3.Miner.Files.Control',
+                                             '/org/freedesktop/Tracker3/Miner/Files/Index');
 }
 
 const MINER_REFRESH_TIMEOUT = 60; /* seconds */
@@ -97,7 +98,7 @@ var Application = new Lang.Class({
     _init: function() {
         this.minersRunning = [];
         this._activationTimestamp = Gdk.CURRENT_TIME;
-        this._extractPriority = null;
+        this._minerControl = null;
 
         let appid;
         GLib.set_application_name(_("Books"));
@@ -219,8 +220,9 @@ var Application = new Lang.Class({
         this._mainWindow.connect('destroy', Lang.bind(this, this._onWindowDestroy));
 
         try {
-            this._extractPriority = TrackerExtractPriority();
-            this._extractPriority.SetRdfTypesRemote(['nfo:Document']);
+            this._minerControl = TrackerMinerFilesControl();
+            this._minerControl.IndexLocationRemote(GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS),
+                                                   ['tracker:Documents'], []);
         } catch (e) {
             logError(e, 'Unable to connect to the tracker extractor');
         }
@@ -264,9 +266,6 @@ var Application = new Lang.Class({
         modeController.setWindowMode(WindowMode.WindowMode.NONE);
         selectionController.setSelection(null);
         notificationManager = null;
-
-        if (this._extractPriority)
-            this._extractPriority.ClearRdfTypesRemote();
     },
 
     _onWindowDestroy: function(window) {
