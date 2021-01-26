@@ -17,10 +17,8 @@
         "--filesystem=xdg-documents:ro", "--filesystem=xdg-download:ro",
         /* Needs to talk to the network: */
         "--share=network",
-        /* Tracker D-Bus access */
-        "--talk-name=org.freedesktop.Tracker1",
-        "--talk-name=org.freedesktop.Tracker1.Miner.Extract",
-        "--env=TRACKER_SPARQL_BACKEND=bus",
+        /* Tracker3 graph access */
+        "--add-policy=Tracker3.dbus:org.freedesktop.Tracker3.Miner.Files=tracker:Documents",
         /* For the WebP loader */
         "--env=GDK_PIXBUF_MODULE_FILE=/app/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
         /* Needed for dconf to work */
@@ -126,19 +124,6 @@
             ]
         },
         {
-            "name": "tracker",
-            "buildsystem": "meson",
-            "cleanup": [ "/bin", "/etc", "/lib/systemd", "/libexec", "/share/dbus-1/services" ],
-            "config-opts": [ "--default-library=shared", "-Dbash-completion=no", "-Ddocs=false", "-Dsystemd_user_services=no" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/tracker.git",
-                    "branch": "tracker-2.3"
-                }
-            ]
-        },
-        {
             "name": "intltool",
             "cleanup": [ "*" ],
             "sources": [
@@ -152,20 +137,18 @@
         {
             "name": "tracker-miners",
             "buildsystem": "meson",
-            "cleanup": [ "/bin", "/etc", "/lib/systemd", "/libexec" ],
-            "config-opts": [ "--default-library=shared",
-                             "-Dminer_apps=false",
-                             "-Dminer_rss=false",
-                             "-Dextract=false",
-                             "-Dgeneric_media_extractor=none",
-                             "-Dwriteback=false",
+            "config-opts": [ "-Ddefault_index_single_directories=&DOWNLOADS",
+                             "-Ddefault_index_recursive_directories=&DOCUMENTS",
+                             "-Ddomain_prefix=org.gnome.Books",
+                             "-Dman=false",
                              "-Dminer_fs=true",
-                             "-Ddbus_services=/app/share/dbus-1/services/" ],
+                             "-Dminer_fs_cache_location=$XDG_CACHE_HOME/org.gnome.Books/miner/files",
+                             "-Dminer_rss=false",
+                             "-Dsystemd_user_services=false" ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/tracker-miners.git",
-                    "branch": "tracker-miners-2.3"
+                    "url": "https://gitlab.gnome.org/GNOME/tracker-miners.git"
                 }
             ]
         },

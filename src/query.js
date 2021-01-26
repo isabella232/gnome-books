@@ -212,7 +212,7 @@ var QueryBuilder = new Lang.Class({
                 tailSparql;
         } else {
             sparql +=
-                'SERVICE <dbus:org.freedesktop.Tracker3.Miner.Files> {' +
+                'SERVICE <dbus:' + this._context.trackerMinerService + '> {' +
                 '  GRAPH tracker:Documents { ' +
                 '    SELECT DISTINCT ?urn ' +
                 selectClauses +
@@ -249,7 +249,7 @@ var QueryBuilder = new Lang.Class({
 		this._buildWhere(true, flags);
 	} else {
 	    sparql = 'SELECT ?c {' +
-		'  SERVICE <dbus:org.freedesktop.Tracker3.Miner.Files> { ' +
+		'  SERVICE <dbus:' + this._context.trackerMinerService + '> { ' +
 		'    SELECT DISTINCT COUNT(?urn) AS ?c ' +
 		this._buildWhere(true, flags) +
 		'  }' +

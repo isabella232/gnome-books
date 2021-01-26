@@ -68,6 +68,7 @@ var sourceManager = null;
 var trackerCollectionsController = null;
 var trackerDocumentsController = null;
 var trackerSearchController = null;
+var trackerMinerService = null;
 
 const TrackerMinerFilesIndexIface = '<node> \
 <interface name="org.freedesktop.Tracker3.Miner.Files.Index"> \
@@ -160,6 +161,11 @@ var Application = new Lang.Class({
         }
     },
 
+    _isSandboxed: function() {
+	file = Gio.File.new_for_path("/.flatpak-info");
+	return file.query_exists(null);
+    },
+
     vfunc_startup: function() {
         this.parent();
         String.prototype.format = Format.format;
@@ -184,6 +190,24 @@ var Application = new Lang.Class({
             logError(e, 'Unable to set up the tracker database');
             return;
         }
+
+	if (this._isSandboxed()) {
+	    // if the daemon is not available, run our own copy (for the sandboxed case)
+	    trackerMinerService = this.get_application_id() + '.Tracker3.Miner.Files';
+	} else {
+	    // use global tracker daemon
+	    let busConn = Tracker.SparqlConnection.bus_new('org.freedesktop.Tracker3.Miner.Files',
+							   null, Gio.DBus.session);
+	    trackerMinerService = 'org.freedesktop.Tracker3.Miner.Files';
+
+	    try {
+		this._minerControl = TrackerMinerFilesControl();
+		this._minerControl.IndexLocationRemote(GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS),
+						       ['tracker:Documents'], []);
+	    } catch (e) {
+		logError(e, 'Unable to connect to the tracker extractor');
+	    }
+	}
 
         connectionQueue = new TrackerController.TrackerConnectionQueue();
         changeMonitor = new ChangeMonitor.TrackerChangeMonitor();
@@ -222,14 +246,6 @@ var Application = new Lang.Class({
         notificationManager = new Notifications.NotificationManager();
         this._mainWindow = new MainWindow.MainWindow(this);
         this._mainWindow.connect('destroy', Lang.bind(this, this._onWindowDestroy));
-
-        try {
-            this._minerControl = TrackerMinerFilesControl();
-            this._minerControl.IndexLocationRemote(GLib.get_user_special_dir(GLib.UserDirectory.DIRECTORY_DOCUMENTS),
-                                                   ['tracker:Documents'], []);
-        } catch (e) {
-            logError(e, 'Unable to connect to the tracker extractor');
-        }
     },
 
     vfunc_handle_local_options: function(options) {
