@@ -145,7 +145,7 @@ var QueryBuilder = new Lang.Class({
     _buildQueryInternal: function(global, flags, offsetController, sortBy) {
 	let selectClauses =
             '    (nie:isStoredAs(?urn) AS ?uri) ' +
-            '    (nfo:fileName(?urn) AS ?filename) ' +
+            '    (COALESCE (nfo:fileName(nie:isStoredAs(?urn)), tracker:string-from-filename(nie:isStoredAs(?urn))) AS ?filename) ' +
             '    (nie:mimeType(?urn) AS ?mimetype) ' +
             '    (nie:title(?urn) AS ?title) ' +
             '    (tracker:coalesce(nco:fullname(?creator), nco:fullname(?publisher), \'\') AS ?author) ' +
