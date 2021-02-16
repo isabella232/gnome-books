@@ -98,7 +98,9 @@
                              "-Dpreviewer=false", "-Ddbus=false",
                              "-Dbrowser_plugin=false", "-Dintrospection=true",
                              "-Dcomics=enabled", "-Dpdf=enabled",
-                             "-Dgspell=disabled", "-Dgtk_doc=false" ],
+                             "-Dgspell=disabled", "-Dgtk_doc=false",
+                             "-Dt1lib=disabled", "-Duser_doc=false",
+                             "-Dthumbnailer=true" ],
             "sources": [
                 {
                     "type": "git",
