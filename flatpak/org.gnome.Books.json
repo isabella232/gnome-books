@@ -105,6 +105,18 @@
             ]
         },
         {
+            "name" : "libgsf",
+            "cleanup" : [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/libgsf.git"
+                }
+            ]
+        },
+        {
             "name": "evince",
             "buildsystem": "meson",
             "cleanup": [ "/share/GConf", "/share/help" ],
