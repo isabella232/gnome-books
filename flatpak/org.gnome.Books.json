@@ -156,6 +156,7 @@
                              "-Dminer_fs=true",
                              "-Dminer_fs_cache_location=$XDG_CACHE_HOME/org.gnome.Books/miner/files",
                              "-Dminer_rss=false",
+                             "-Dwriteback=false",
                              "-Dsystemd_user_services=false" ],
             "sources": [
                 {
