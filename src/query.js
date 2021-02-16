@@ -79,6 +79,7 @@ var QueryBuilder = new Lang.Class({
 
     _buildOptional: function() {
         let sparql =
+            'OPTIONAL { ?urn nie:isStoredAs ?file . } ';
             'OPTIONAL { ?urn nco:creator ?creator . } ' +
             'OPTIONAL { ?urn nco:publisher ?publisher . } ';
 
@@ -145,7 +146,7 @@ var QueryBuilder = new Lang.Class({
     _buildQueryInternal: function(global, flags, offsetController, sortBy) {
 	let selectClauses =
             '    (nie:isStoredAs(?urn) AS ?uri) ' +
-            '    (COALESCE (nfo:fileName(nie:isStoredAs(?urn)), tracker:string-from-filename(nie:isStoredAs(?urn))) AS ?filename) ' +
+            '    (COALESCE (nfo:fileName(?file), tracker:string-from-filename(nie:isStoredAs(?urn))) AS ?filename) ' +
             '    (nie:mimeType(?urn) AS ?mimetype) ' +
             '    (nie:title(?urn) AS ?title) ' +
             '    (tracker:coalesce(nco:fullname(?creator), nco:fullname(?publisher), \'\') AS ?author) ' +
