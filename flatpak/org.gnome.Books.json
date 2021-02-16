@@ -181,6 +181,17 @@
             ]
         },
         {
+            "name": "gjs",
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/gjs.git",
+                    "branch": "wip/carlosg/arrays-in-signals"
+                }
+            ]
+        },
+        {
             "name": "gnome-books",
             "buildsystem": "meson",
             "config-opts": [ "-Denable-documentation=false" ],
